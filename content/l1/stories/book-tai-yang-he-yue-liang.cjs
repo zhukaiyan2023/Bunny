@@ -49,8 +49,9 @@ module.exports = {
     {
       id: 'cover-tai-yang-he-yue-liang',
       subject: '太阳和月亮',
-      prompt: '3 岁女孩专属绘本封面。画面分为左右两半：左边是 pastel 奶黄色的太阳姐姐（带粉腮红、戴花环），右边是淡紫渐变的月亮姐姐（戴小星星发夹），两只圆胖白兔 Bunny 在画面下方手拉手（头顶带粉色蝴蝶结）。顶部用大号中文写"太阳和月亮"。背景 pastel 柔粉 → 淡紫渐变，有彩虹、爱心、花瓣装饰。3D 渲染，圆润温暖。',
-      outPath: '/assets/art/l1/stories/cover-tai-yang-he-yue-liang.png',
+      // 🚫 不写中文字！模型对任何文字渲染都不可靠
+      prompt: 'A 3 year old girl picture book cover illustration. The scene is split in half: left side has a chubby pastel yellow sun character with pink cheek blush and a flower crown; right side has a chubby lavender crescent moon character with a tiny star hairpin. Two chubby white Bunny characters hold hands at the bottom, both with pink bow ties. Background is pastel pink to lavender gradient, decorated with rainbow hearts petals. Dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no writing anywhere.',
+      outPath: '/assets/art/l1/stories/cover-tai-yang-he-yue-liang.jpg',
     },
   ],
   story: {

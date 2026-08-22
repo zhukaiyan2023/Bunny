@@ -49,8 +49,8 @@ module.exports = {
     {
       id: 'cover-sen-lin-li-de-yi-tian',
       subject: '森林里的一天',
-      prompt: '3 岁女孩专属绘本封面。圆胖白兔 Bunny 站在 pastel 薄荷绿色森林前面，戴着粉色花环，森林里有粉色小山、有小树、有小花和小蘑菇。顶部用大号中文写"森林里的一天"。画面有彩虹、爱心、蝴蝶、小云朵装饰。背景 pastel 柔色渐变，3D 渲染，圆润温暖。',
-      outPath: '/assets/art/l1/stories/cover-sen-lin-li-de-yi-tian.png',
+      prompt: 'A 3 year old girl picture book cover illustration. A cute chubby white Bunny character stands in front of a pastel mint green forest wearing a pink flower crown. The forest has pink mountains, small trees, tiny flowers and cute mushrooms. Decorated with rainbow hearts butterflies small clouds. Pastel soft gradient background, dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no writing anywhere.',
+      outPath: '/assets/art/l1/stories/cover-sen-lin-li-de-yi-tian.jpg',
     },
   ],
   story: {

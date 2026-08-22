@@ -59,8 +59,9 @@ module.exports = {
     {
       id: 'cover-xiao-tu-de-jia',
       subject: '小兔子找妈妈',
-      prompt: '3 岁女孩专属绘本封面。圆胖白兔小 Bunny 抬头看向远方（眼睛有星光），远景是 pastel 森林和粉色小山，封面顶部用大号中文写"小兔子找妈妈"。画面有花朵、爱心、蝴蝶装饰。背景 pastel 柔粉渐变，3D 渲染，圆润，温暖。',
-      outPath: '/assets/art/l1/stories/cover-xiao-tu-de-jia.png',
+      // 🚫 不写中文字！模型对任何文字渲染都不可靠
+      prompt: 'A 3 year old girl picture book cover illustration. A cute chubby white Bunny character looking up into the distance with sparkly eyes. Background shows a pastel forest with soft pink mountains. Decorated with flowers hearts butterflies. Pastel pink gradient background, dreamy soft warm, rounded chubby shapes with no sharp edges, all elements chubby with cute faces, 3D render, no Chinese text no Chinese characters no writing anywhere.',
+      outPath: '/assets/art/l1/stories/cover-xiao-tu-de-jia.jpg',
     },
   ],
   // 给 StoryPage 用的元数据

@@ -7,7 +7,36 @@
  *   - 笔画 ≤ 7，方便 3-6 岁书写练习
  *
  * 🎨 风格基线：3 岁女孩适龄 pastel 绘本风格
+ *
+ * 🚫 严禁要求模型"写字"——模型对任何文字渲染都不可靠
+ *    改用 emoji + 视觉元素来表达"山 / 水 / 火 / 木"等
  */
+
+const STYLE_SUFFIX = '3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.';
+
+/**
+ * 为每个 Tier-A 字符生成"主体 + Bunny" 的视觉 prompt
+ * 不要求模型写任何字，只画它对应的实物
+ */
+function buildPictoPrompt(c) {
+  const visualSubject = {
+    '山': 'three soft rounded mountain peaks like cute little hills',
+    '水': 'gentle flowing water drops and a small wave',
+    '火': 'soft rounded flames',
+    '木': 'a small chubby tree with a brown trunk and green canopy',
+    '日': 'a soft sun with a smiling face and small radiating petals',
+    '月': 'a crescent moon with a sleepy face',
+    '人': 'a small walking person silhouette',
+    '口': 'a soft rounded square shaped like a small mouth',
+    '目': 'a big round cute eye with eyelashes',
+    '耳': 'a soft rounded ear shape',
+    '手': 'a chubby open hand with five small fingers',
+    '心': 'a soft pink heart shape with a smile',
+    '足': 'a cute chubby footprint',
+    '雨': 'soft rain drops falling from a tiny cloud',
+  }[c.glyph] ?? `a cute visual symbol for ${c.glyph}`;
+  return `A cute chubby white Bunny character stands beside ${visualSubject}. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. ${STYLE_SUFFIX}`;
+}
 
 const TIER_A = [
   {

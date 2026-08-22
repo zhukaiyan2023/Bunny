@@ -7,7 +7,26 @@
  *   - 进入"汉字家族"演示
  *
  * 🎨 风格基线：3 岁女孩适龄 pastel 绘本风格
+ *
+ * 🚫 严禁要求模型写中文字——模型对任何文字渲染都不可靠
  */
+
+const STYLE_SUFFIX = '3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.';
+
+/**
+ * 为每个 Tier-B 字符生成"部件 + Bunny" 的视觉 prompt
+ * 用 emoji + 实物描述代替中文字
+ */
+function buildPictoPrompt(c) {
+  const visualSubject = {
+    '林': 'two cute chubby trees standing close together like siblings',
+    '森': 'three cute chubby trees grouped together like a tiny forest',
+    '明': 'a soft sun and a crescent moon smiling together side by side',
+    '休': 'a small person silhouette leaning against a chubby tree',
+    '好': 'a mother figure and a tiny baby figure together with hearts around',
+  }[c.glyph] ?? `a cute visual symbol for ${c.glyph}`;
+  return `A cute chubby white Bunny character stands beside ${visualSubject}. Bunny is on the left, the visual symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. ${STYLE_SUFFIX}`;
+}
 
 const TIER_B = [
   {
@@ -119,8 +138,8 @@ module.exports = {
   art: TIER_B.map((c) => ({
     id: `picto-${c.id.replace('char-', '')}`,
     subject: c.glyph,
-    prompt: `3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，双手指向一个超大的「${c.glyph}」字，字周围浮动着它的两个部件 ${c.components.map((id) => id.replace('char-', '')).join(' + ')}，每个部件用拟人化图标展示（带圆眼睛 + 腮红 + 甜甜笑）。背景是 pastel 渐变（${c.origin.evolution[0]}），有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟。`,
-    outPath: `/assets/art/l1/tier-b/picto-${c.id.replace('char-', '')}.png`,
+    prompt: buildPictoPrompt(c),
+    outPath: `/assets/art/l1/tier-b/picto-${c.id.replace('char-', '')}.jpg`,
     refId: c.id,
   })),
 };
