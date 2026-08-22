@@ -49,7 +49,7 @@ module.exports = {
     {
       id: 'cover-sen-lin-li-de-yi-tian',
       subject: '森林里的一天',
-      prompt: 'A 3 year old girl picture book cover illustration. A cute chubby white Bunny character stands in front of a pastel mint green forest wearing a pink flower crown. The forest has pink mountains, small trees, tiny flowers and cute mushrooms. Decorated with rainbow hearts butterflies small clouds. Pastel soft gradient background, dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no writing anywhere.',
+      prompt: 'A 3 year old girl picture book cover illustration. A cute chubby white Bunny character stands in front of a pastel mint green forest wearing a pink flower crown. The forest has pink mountains, small trees, tiny flowers and cute mushrooms. Decorated with rainbow hearts butterflies small clouds. Pastel soft gradient background, dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no alphabet letters no digits no writing anywhere in the image.',
       outPath: '/assets/art/l1/stories/cover-sen-lin-li-de-yi-tian.jpg',
     },
   ],

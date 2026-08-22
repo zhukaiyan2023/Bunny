@@ -16,16 +16,18 @@ const STYLE_SUFFIX = '3 year old girl picture book style, pastel pink mint butte
 /**
  * 为每个 Tier-B 字符生成"部件 + Bunny" 的视觉 prompt
  * 用 emoji + 实物描述代替中文字
+ *
+ * 🚫 严禁出现任何字母/字符/汉字/数字
  */
 function buildPictoPrompt(c) {
   const visualSubject = {
-    '林': 'two cute chubby trees standing close together like siblings',
-    '森': 'three cute chubby trees grouped together like a tiny forest',
-    '明': 'a soft sun and a crescent moon smiling together side by side',
-    '休': 'a small person silhouette leaning against a chubby tree',
-    '好': 'a mother figure and a tiny baby figure together with hearts around',
-  }[c.glyph] ?? `a cute visual symbol for ${c.glyph}`;
-  return `A cute chubby white Bunny character stands beside ${visualSubject}. Bunny is on the left, the visual symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. ${STYLE_SUFFIX}`;
+    '林': 'two cute chubby trees standing close together like siblings, NO text NO letters',
+    '森': 'three cute chubby trees grouped together like a tiny forest, NO text NO letters',
+    '明': 'a soft smiling sun and a crescent moon smiling together side by side, NO text NO letters',
+    '休': 'a small chubby person silhouette leaning against a chubby tree, NO text NO letters',
+    '好': 'a chubby mother figure and a tiny chubby baby figure together with hearts around them, NO text NO letters',
+  }[c.glyph] ?? `a cute visual scene for ${c.glyph}, NO text NO letters`;
+  return `A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of ${visualSubject}. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. ${STYLE_SUFFIX}`;
 }
 
 const TIER_B = [

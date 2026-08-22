@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "builtAt": "2026-08-22T02:36:27.117Z",
+  "builtAt": "2026-08-22T02:55:59.041Z",
   "cueCount": 72,
   "artCount": 48,
   "cues": [
@@ -661,152 +661,152 @@
     {
       "id": "picto-shan",
       "subject": "山",
-      "prompt": "A cute chubby white Bunny character stands beside three soft rounded mountain peaks like cute little hills. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of three soft rounded mountain peaks like cute little hills, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-shan.jpg",
       "refId": "char-shan"
     },
     {
       "id": "picto-shui",
       "subject": "水",
-      "prompt": "A cute chubby white Bunny character stands beside gentle flowing water drops and a small wave. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of gentle flowing water drops and a small wave, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-shui.jpg",
       "refId": "char-shui"
     },
     {
       "id": "picto-huo",
       "subject": "火",
-      "prompt": "A cute chubby white Bunny character stands beside soft rounded flames. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of soft rounded dancing flames, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-huo.jpg",
       "refId": "char-huo"
     },
     {
       "id": "picto-mu",
       "subject": "木",
-      "prompt": "A cute chubby white Bunny character stands beside a small chubby tree with a brown trunk and green canopy. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a small chubby tree with a brown trunk and green canopy, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-mu.jpg",
       "refId": "char-mu"
     },
     {
       "id": "picto-ri",
       "subject": "日",
-      "prompt": "A cute chubby white Bunny character stands beside a soft sun with a smiling face and small radiating petals. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft smiling sun with small radiating petals, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-ri.jpg",
       "refId": "char-ri"
     },
     {
       "id": "picto-yue",
       "subject": "月",
-      "prompt": "A cute chubby white Bunny character stands beside a crescent moon with a sleepy face. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a crescent moon with a sleepy face, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-yue.jpg",
       "refId": "char-yue"
     },
     {
       "id": "picto-ren",
       "subject": "人",
-      "prompt": "A cute chubby white Bunny character stands beside a small walking person silhouette. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a small chubby walking person silhouette, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-ren.jpg",
       "refId": "char-ren"
     },
     {
       "id": "picto-kou",
       "subject": "口",
-      "prompt": "A cute chubby white Bunny character stands beside a soft rounded square shaped like a small mouth. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft rounded square opening shaped like a small mouth, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-kou.jpg",
       "refId": "char-kou"
     },
     {
       "id": "picto-mu-eye",
       "subject": "目",
-      "prompt": "A cute chubby white Bunny character stands beside a big round cute eye with eyelashes. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a big round cute eye with eyelashes, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-mu-eye.jpg",
       "refId": "char-mu-eye"
     },
     {
       "id": "picto-er",
       "subject": "耳",
-      "prompt": "A cute chubby white Bunny character stands beside a soft rounded ear shape. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft rounded ear shape, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-er.jpg",
       "refId": "char-er"
     },
     {
       "id": "picto-shou",
       "subject": "手",
-      "prompt": "A cute chubby white Bunny character stands beside a chubby open hand with five small fingers. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a chubby open hand with five small fingers, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-shou.jpg",
       "refId": "char-shou"
     },
     {
       "id": "picto-xin",
       "subject": "心",
-      "prompt": "A cute chubby white Bunny character stands beside a soft pink heart shape with a smile. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft pink heart shape with a smile, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-xin.jpg",
       "refId": "char-xin"
     },
     {
       "id": "picto-zu",
       "subject": "足",
-      "prompt": "A cute chubby white Bunny character stands beside a cute chubby footprint. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a cute chubby footprint shape, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-zu.jpg",
       "refId": "char-zu"
     },
     {
       "id": "picto-yu",
       "subject": "雨",
-      "prompt": "A cute chubby white Bunny character stands beside soft rain drops falling from a tiny cloud. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of soft rain drops falling from a tiny cloud, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-a/picto-yu.jpg",
       "refId": "char-yu"
     },
     {
       "id": "picto-lin",
       "subject": "林",
-      "prompt": "A cute chubby white Bunny character stands beside two cute chubby trees standing close together like siblings. Bunny is on the left, the visual symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of two cute chubby trees standing close together like siblings, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-b/picto-lin.jpg",
       "refId": "char-lin"
     },
     {
       "id": "picto-sen",
       "subject": "森",
-      "prompt": "A cute chubby white Bunny character stands beside three cute chubby trees grouped together like a tiny forest. Bunny is on the left, the visual symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of three cute chubby trees grouped together like a tiny forest, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-b/picto-sen.jpg",
       "refId": "char-sen"
     },
     {
       "id": "picto-ming",
       "subject": "明",
-      "prompt": "A cute chubby white Bunny character stands beside a soft sun and a crescent moon smiling together side by side. Bunny is on the left, the visual symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft smiling sun and a crescent moon smiling together side by side, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-b/picto-ming.jpg",
       "refId": "char-ming"
     },
     {
       "id": "picto-xiu",
       "subject": "休",
-      "prompt": "A cute chubby white Bunny character stands beside a small person silhouette leaning against a chubby tree. Bunny is on the left, the visual symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a small chubby person silhouette leaning against a chubby tree, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-b/picto-xiu.jpg",
       "refId": "char-xiu"
     },
     {
       "id": "picto-hao",
       "subject": "好",
-      "prompt": "A cute chubby white Bunny character stands beside a mother figure and a tiny baby figure together with hearts around. Bunny is on the left, the visual symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a chubby mother figure and a tiny chubby baby figure together with hearts around them, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
       "outPath": "/assets/art/l1/tier-b/picto-hao.jpg",
       "refId": "char-hao"
     },
     {
       "id": "cover-sen-lin-li-de-yi-tian",
       "subject": "森林里的一天",
-      "prompt": "A 3 year old girl picture book cover illustration. A cute chubby white Bunny character stands in front of a pastel mint green forest wearing a pink flower crown. The forest has pink mountains, small trees, tiny flowers and cute mushrooms. Decorated with rainbow hearts butterflies small clouds. Pastel soft gradient background, dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no writing anywhere.",
+      "prompt": "A 3 year old girl picture book cover illustration. A cute chubby white Bunny character stands in front of a pastel mint green forest wearing a pink flower crown. The forest has pink mountains, small trees, tiny flowers and cute mushrooms. Decorated with rainbow hearts butterflies small clouds. Pastel soft gradient background, dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no alphabet letters no digits no writing anywhere in the image.",
       "outPath": "/assets/art/l1/stories/cover-sen-lin-li-de-yi-tian.jpg"
     },
     {
       "id": "cover-tai-yang-he-yue-liang",
       "subject": "太阳和月亮",
-      "prompt": "A 3 year old girl picture book cover illustration. The scene is split in half: left side has a chubby pastel yellow sun character with pink cheek blush and a flower crown; right side has a chubby lavender crescent moon character with a tiny star hairpin. Two chubby white Bunny characters hold hands at the bottom, both with pink bow ties. Background is pastel pink to lavender gradient, decorated with rainbow hearts petals. Dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no writing anywhere.",
+      "prompt": "A 3 year old girl picture book cover illustration. The scene is split in half: left side has a chubby pastel yellow sun character with pink cheek blush and a flower crown; right side has a chubby lavender crescent moon character with a tiny star hairpin. Two chubby white Bunny characters hold hands at the bottom, both with pink bow ties. Background is pastel pink to lavender gradient, decorated with rainbow hearts petals. Dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no alphabet letters no digits no writing anywhere in the image.",
       "outPath": "/assets/art/l1/stories/cover-tai-yang-he-yue-liang.jpg"
     },
     {
       "id": "cover-xiao-tu-de-jia",
       "subject": "小兔子找妈妈",
-      "prompt": "A 3 year old girl picture book cover illustration. A cute chubby white Bunny character looking up into the distance with sparkly eyes. Background shows a pastel forest with soft pink mountains. Decorated with flowers hearts butterflies. Pastel pink gradient background, dreamy soft warm, rounded chubby shapes with no sharp edges, all elements chubby with cute faces, 3D render, no Chinese text no Chinese characters no writing anywhere.",
+      "prompt": "A 3 year old girl picture book cover illustration. A cute chubby white Bunny character looking up into the distance with sparkly eyes. Background shows a pastel forest with soft pink mountains. Decorated with flowers hearts butterflies. Pastel pink gradient background, dreamy soft warm, rounded chubby shapes with no sharp edges, all elements chubby with cute faces, 3D render, no Chinese text no Chinese characters no alphabet letters no digits no writing anywhere in the image.",
       "outPath": "/assets/art/l1/stories/cover-xiao-tu-de-jia.jpg"
     }
   ]

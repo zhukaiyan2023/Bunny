@@ -50,7 +50,7 @@ module.exports = {
       id: 'cover-tai-yang-he-yue-liang',
       subject: '太阳和月亮',
       // 🚫 不写中文字！模型对任何文字渲染都不可靠
-      prompt: 'A 3 year old girl picture book cover illustration. The scene is split in half: left side has a chubby pastel yellow sun character with pink cheek blush and a flower crown; right side has a chubby lavender crescent moon character with a tiny star hairpin. Two chubby white Bunny characters hold hands at the bottom, both with pink bow ties. Background is pastel pink to lavender gradient, decorated with rainbow hearts petals. Dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no writing anywhere.',
+      prompt: 'A 3 year old girl picture book cover illustration. The scene is split in half: left side has a chubby pastel yellow sun character with pink cheek blush and a flower crown; right side has a chubby lavender crescent moon character with a tiny star hairpin. Two chubby white Bunny characters hold hands at the bottom, both with pink bow ties. Background is pastel pink to lavender gradient, decorated with rainbow hearts petals. Dreamy soft warm, rounded chubby shapes, 3D render, no Chinese text no Chinese characters no alphabet letters no digits no writing anywhere in the image.',
       outPath: '/assets/art/l1/stories/cover-tai-yang-he-yue-liang.jpg',
     },
   ],

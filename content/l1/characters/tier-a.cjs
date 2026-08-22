@@ -17,25 +17,28 @@ const STYLE_SUFFIX = '3 year old girl picture book style, pastel pink mint butte
 /**
  * 为每个 Tier-A 字符生成"主体 + Bunny" 的视觉 prompt
  * 不要求模型写任何字，只画它对应的实物
+ *
+ * 🚫 严禁出现任何字母/字符/汉字/数字
+ *    全部用 emoji + 拟人化的实物形态表达
  */
 function buildPictoPrompt(c) {
   const visualSubject = {
-    '山': 'three soft rounded mountain peaks like cute little hills',
-    '水': 'gentle flowing water drops and a small wave',
-    '火': 'soft rounded flames',
-    '木': 'a small chubby tree with a brown trunk and green canopy',
-    '日': 'a soft sun with a smiling face and small radiating petals',
-    '月': 'a crescent moon with a sleepy face',
-    '人': 'a small walking person silhouette',
-    '口': 'a soft rounded square shaped like a small mouth',
-    '目': 'a big round cute eye with eyelashes',
-    '耳': 'a soft rounded ear shape',
-    '手': 'a chubby open hand with five small fingers',
-    '心': 'a soft pink heart shape with a smile',
-    '足': 'a cute chubby footprint',
-    '雨': 'soft rain drops falling from a tiny cloud',
-  }[c.glyph] ?? `a cute visual symbol for ${c.glyph}`;
-  return `A cute chubby white Bunny character stands beside ${visualSubject}. Bunny is on the left, the symbol is on the right and fills 60 percent of the frame. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. ${STYLE_SUFFIX}`;
+    '山': 'three soft rounded mountain peaks like cute little hills, NO text NO letters',
+    '水': 'gentle flowing water drops and a small wave, NO text NO letters',
+    '火': 'soft rounded dancing flames, NO text NO letters',
+    '木': 'a small chubby tree with a brown trunk and green canopy, NO text NO letters',
+    '日': 'a soft smiling sun with small radiating petals, NO text NO letters',
+    '月': 'a crescent moon with a sleepy face, NO text NO letters',
+    '人': 'a small chubby walking person silhouette, NO text NO letters',
+    '口': 'a soft rounded square opening shaped like a small mouth, NO text NO letters',
+    '目': 'a big round cute eye with eyelashes, NO text NO letters',
+    '耳': 'a soft rounded ear shape, NO text NO letters',
+    '手': 'a chubby open hand with five small fingers, NO text NO letters',
+    '心': 'a soft pink heart shape with a smile, NO text NO letters',
+    '足': 'a cute chubby footprint shape, NO text NO letters',
+    '雨': 'soft rain drops falling from a tiny cloud, NO text NO letters',
+  }[c.glyph] ?? `a cute visual scene for ${c.glyph}, NO text NO letters`;
+  return `A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of ${visualSubject}. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. ${STYLE_SUFFIX}`;
 }
 
 const TIER_A = [

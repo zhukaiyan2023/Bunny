@@ -60,7 +60,7 @@ module.exports = {
       id: 'cover-xiao-tu-de-jia',
       subject: '小兔子找妈妈',
       // 🚫 不写中文字！模型对任何文字渲染都不可靠
-      prompt: 'A 3 year old girl picture book cover illustration. A cute chubby white Bunny character looking up into the distance with sparkly eyes. Background shows a pastel forest with soft pink mountains. Decorated with flowers hearts butterflies. Pastel pink gradient background, dreamy soft warm, rounded chubby shapes with no sharp edges, all elements chubby with cute faces, 3D render, no Chinese text no Chinese characters no writing anywhere.',
+      prompt: 'A 3 year old girl picture book cover illustration. A cute chubby white Bunny character looking up into the distance with sparkly eyes. Background shows a pastel forest with soft pink mountains. Decorated with flowers hearts butterflies. Pastel pink gradient background, dreamy soft warm, rounded chubby shapes with no sharp edges, all elements chubby with cute faces, 3D render, no Chinese text no Chinese characters no alphabet letters no digits no writing anywhere in the image.',
       outPath: '/assets/art/l1/stories/cover-xiao-tu-de-jia.jpg',
     },
   ],
