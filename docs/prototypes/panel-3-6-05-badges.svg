@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="1024" viewBox="0 0 1366 1024" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!--
+    Panel 3-6-05 · Bunny 3-6 岁专属 · 我的小屋 / 收集勋章
+    设计原则：
+      - 拟人化小屋作为视觉中心，带烟囱、门、窗表情
+      - 勋章墙：3×3 网格，已获得勋章 6 个 + 占位 3 个
+      - Bunny 在角落陪伴；不显示百分比、不显示排名
+      - 进度用"已经找到了 5 颗星，再找 3 颗拿到彩虹徽章"
+  -->
+  <defs>
+    <linearGradient id="bg-badges-3-6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF4E6"/>
+      <stop offset="50%" stop-color="#FFE0BF"/>
+      <stop offset="100%" stop-color="#FFC1CC"/>
+    </linearGradient>
+    <linearGradient id="card-badges" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFF9F0"/>
+    </linearGradient>
+    <linearGradient id="house-roof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF9F43"/>
+      <stop offset="100%" stop-color="#E94545"/>
+    </linearGradient>
+    <linearGradient id="house-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE9A8"/>
+      <stop offset="100%" stop-color="#FFC76B"/>
+    </linearGradient>
+    <filter id="shadow-badges-3-6"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-opacity="0.18"/></filter>
+
+    <symbol id="badge-eyes" viewBox="-30 -30 60 60">
+      <circle cx="-22" cy="-30" r="6" fill="#2C2C54"/>
+      <circle cx="22" cy="-30" r="6" fill="#2C2C54"/>
+      <circle cx="-20" cy="-32" r="2.5" fill="#FFFFFF"/>
+      <circle cx="24" cy="-32" r="2.5" fill="#FFFFFF"/>
+      <ellipse cx="-30" cy="-12" rx="9" ry="6" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="30" cy="-12" rx="9" ry="6" fill="#FFC1CC" opacity="0.85"/>
+    </symbol>
+    <symbol id="bunny-mini-b" viewBox="-60 -60 120 120">
+      <ellipse cx="-22" cy="-14" rx="9" ry="34" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="-22" cy="-8" rx="4.5" ry="22" fill="#FFD3DC"/>
+      <ellipse cx="22" cy="-14" rx="9" ry="34" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="22" cy="-8" rx="4.5" ry="22" fill="#FFD3DC"/>
+      <circle cx="0" cy="0" r="32" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <circle cx="-12" cy="-4" r="5" fill="#2C2C54"/>
+      <circle cx="12" cy="-4" r="5" fill="#2C2C54"/>
+      <circle cx="-10" cy="-6" r="2" fill="#FFFFFF"/>
+      <circle cx="14" cy="-6" r="2" fill="#FFFFFF"/>
+      <ellipse cx="-20" cy="8" rx="7" ry="5" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="20" cy="8" rx="7" ry="5" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="0" cy="14" rx="4" ry="2.5" fill="#FFC1CC"/>
+      <path d="M -8 22 Q 0 30 8 22" stroke="#2C2C54" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="url(#bg-badges-3-6)"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1366" height="96" fill="#FFFFFF" opacity="0.92"/>
+  <g transform="translate(56 48)">
+    <circle r="32" fill="#FFE9A8" stroke="#EAE6DD" stroke-width="2"/>
+    <text y="10" font-size="28" text-anchor="middle">←</text>
+  </g>
+  <text x="683" y="46" font-size="22" font-weight="700" fill="#2C2C54" text-anchor="middle">我的小屋</text>
+  <text x="683" y="72" font-size="14" fill="#5C5C8A" text-anchor="middle">今天又找到了 3 颗星</text>
+  <g transform="translate(1180 32)">
+    <rect width="150" height="56" rx="28" fill="#FFE9A8"/>
+    <text x="32" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="60" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="88" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="116" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="132" y="38" font-size="14" font-weight="700" fill="#7A4F00">5</text>
+  </g>
+
+  <!-- 拟人化小屋 + Bunny 在旁边 -->
+  <g transform="translate(40 130)">
+    <rect width="640" height="380" rx="36" fill="url(#card-badges)" filter="url(#shadow-badges-3-6)"/>
+    <text x="36" y="48" font-size="18" font-weight="700" fill="#5C5C8A">这是 Bunny 的家</text>
+    <text x="36" y="76" font-size="14" fill="#5C5C8A">欢迎来做客</text>
+
+    <!-- 小屋 -->
+    <g transform="translate(220 220)">
+      <!-- 烟囱 -->
+      <rect x="50" y="-160" width="30" height="40" fill="#E94545" stroke="#2C2C54" stroke-width="3"/>
+      <!-- 烟 -->
+      <circle cx="65" cy="-180" r="10" fill="#FFFFFF" opacity="0.7"/>
+      <circle cx="80" cy="-200" r="14" fill="#FFFFFF" opacity="0.5"/>
+      <circle cx="92" cy="-220" r="18" fill="#FFFFFF" opacity="0.4"/>
+      <!-- 屋顶 -->
+      <path d="M -130 -10 L 0 -140 L 130 -10 Z" fill="url(#house-roof)" stroke="#2C2C54" stroke-width="4"/>
+      <!-- 屋顶眼睛（拟人） -->
+      <use href="#badge-eyes" x="-90" y="-100" width="80" height="60"/>
+      <!-- 房身 -->
+      <rect x="-110" y="-10" width="220" height="160" fill="url(#house-body)" stroke="#2C2C54" stroke-width="4"/>
+      <!-- 门 -->
+      <path d="M -32 150 L -32 50 Q -32 30 -10 30 Q 12 30 12 50 L 12 150 Z" fill="#E94545" stroke="#2C2C54" stroke-width="3"/>
+      <circle cx="6" cy="92" r="3" fill="#FFD15C"/>
+      <!-- 窗 -->
+      <rect x="-80" y="20" width="50" height="50" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <line x1="-55" y1="20" x2="-55" y2="70" stroke="#2C2C54" stroke-width="2"/>
+      <line x1="-80" y1="45" x2="-30" y2="45" stroke="#2C2C54" stroke-width="2"/>
+      <rect x="30" y="20" width="50" height="50" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <line x1="55" y1="20" x2="55" y2="70" stroke="#2C2C54" stroke-width="2"/>
+      <line x1="30" y1="45" x2="80" y2="45" stroke="#2C2C54" stroke-width="2"/>
+    </g>
+
+    <!-- Bunny 坐小屋旁 -->
+    <g transform="translate(450 280)">
+      <ellipse cx="-32" cy="80" rx="20" ry="10" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="32" cy="80" rx="20" ry="10" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="0" cy="36" rx="56" ry="46" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <rect x="-22" y="0" width="44" height="36" rx="8" fill="#E94545" stroke="#2C2C54" stroke-width="2"/>
+      <path d="M -22 -28 Q -34 -28 -38 -8 Q -42 24 -32 36 Q -18 36 -14 22 Q -14 -8 -14 -28 Z" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <path d="M -22 -22 Q -28 0 -30 18 Q -32 36 -26 36 Q -22 22 -22 8 Q -22 -8 -22 -22 Z" fill="#FFD3DC"/>
+      <path d="M 22 -28 Q 34 -28 38 -8 Q 42 24 32 36 Q 18 36 14 22 Q 14 -8 14 -28 Z" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <path d="M 22 -22 Q 28 0 30 18 Q 32 36 26 36 Q 22 22 22 8 Q 22 -8 22 -22 Z" fill="#FFD3DC"/>
+      <circle cx="0" cy="-10" r="40" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <ellipse cx="-22" cy="6" rx="9" ry="6" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="22" cy="6" rx="9" ry="6" fill="#FFC1CC" opacity="0.85"/>
+      <circle cx="-13" cy="-16" r="5" fill="#2C2C54"/>
+      <circle cx="13" cy="-16" r="5" fill="#2C2C54"/>
+      <circle cx="-11" cy="-18" r="2" fill="#FFFFFF"/>
+      <circle cx="15" cy="-18" r="2" fill="#FFFFFF"/>
+      <ellipse cx="0" cy="-2" rx="4" ry="2.5" fill="#FFC1CC"/>
+      <path d="M -7 4 Q 0 12 7 4" stroke="#2C2C54" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 右侧：进度条 + 提示 -->
+  <g transform="translate(700 130)">
+    <rect width="626" height="380" rx="36" fill="url(#card-badges)" filter="url(#shadow-badges-3-6)"/>
+    <use href="#bunny-mini-b" x="20" y="20" width="100" height="100"/>
+    <g transform="translate(140 50)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#2C2C54">Bunny 的话</text>
+      <text x="0" y="28" font-size="14" fill="#5C5C8A">你已经种下 47 棵小苗啦！</text>
+    </g>
+    <!-- 3000 字总进度 -->
+    <g transform="translate(40 140)">
+      <text x="0" y="20" font-size="16" font-weight="700" fill="#2C2C54">你离 3000 字还有多远？</text>
+      <text x="0" y="42" font-size="14" fill="#5C5C8A">家岛上已学 47 / 300 字</text>
+      <g transform="translate(0 64)">
+        <rect width="546" height="20" rx="10" fill="#FFE9A8"/>
+        <rect width="86" height="20" rx="10" fill="#39B86A"/>
+      </g>
+      <g transform="translate(0 100)" font-size="14">
+        <text x="0" y="14" font-weight="700" fill="#1F6A4D">🌱 47 / 3000 字</text>
+        <text x="546" y="14" text-anchor="end" font-weight="700" fill="#7A4F00">下一颗：再读 1 个故事</text>
+      </g>
+    </g>
+    <!-- 字花园入口 + 收藏 -->
+    <g transform="translate(40 260)">
+      <rect width="266" height="56" rx="28" fill="#39B86A"/>
+      <text x="133" y="36" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">🌳 看字花园全景</text>
+    </g>
+    <g transform="translate(316 260)">
+      <rect width="270" height="56" rx="28" fill="#E94545"/>
+      <text x="135" y="36" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">🗂️ 看收藏册</text>
+    </g>
+  </g>
+    <!-- 旧收藏按钮已被替换为字花园入口 + 收藏册双按钮 -->
+  </g>
+
+  <!-- 勋章墙：3×3 网格 -->
+  <g transform="translate(40 530)">
+    <text x="0" y="20" font-size="18" font-weight="700" fill="#2C2C54">我的勋章</text>
+    <text x="200" y="20" font-size="14" fill="#5C5C8A">点一下勋章可以听 Bunny 介绍哦</text>
+
+    <!-- row 1 -->
+    <g transform="translate(0 36)">
+      <!-- 第一天 -->
+      <rect width="200" height="160" rx="28" fill="#FFD15C" filter="url(#shadow-badges-3-6)"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="100" y="120" font-size="48" text-anchor="middle">🌟</text>
+      <text x="100" y="146" font-size="14" font-weight="700" fill="#7A4F00" text-anchor="middle">第一天</text>
+    </g>
+    <g transform="translate(220 36)">
+      <rect width="200" height="160" rx="28" fill="#A8E6CF" filter="url(#shadow-badges-3-6)"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="100" y="120" font-size="48" text-anchor="middle">📖</text>
+      <text x="100" y="146" font-size="14" font-weight="700" fill="#1F6A4D" text-anchor="middle">小读者</text>
+    </g>
+    <g transform="translate(440 36)">
+      <rect width="200" height="160" rx="28" fill="#FFC1CC" filter="url(#shadow-badges-3-6)"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="100" y="120" font-size="48" text-anchor="middle">🌸</text>
+      <text x="100" y="146" font-size="14" font-weight="700" fill="#7A2A4D" text-anchor="middle">汉字朋友</text>
+    </g>
+    <g transform="translate(660 36)">
+      <rect width="200" height="160" rx="28" fill="#B5DEFF" filter="url(#shadow-badges-3-6)"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="100" y="120" font-size="48" text-anchor="middle">🎤</text>
+      <text x="100" y="146" font-size="14" font-weight="700" fill="#3F4C7A" text-anchor="middle">小小朗诵家</text>
+    </g>
+    <g transform="translate(880 36)">
+      <rect width="200" height="160" rx="28" fill="#D9C2F0" filter="url(#shadow-badges-3-6)"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="100" y="120" font-size="48" text-anchor="middle">🎮</text>
+      <text x="100" y="146" font-size="14" font-weight="700" fill="#7B5EAB" text-anchor="middle">游戏小能手</text>
+    </g>
+    <g transform="translate(1100 36)">
+      <rect width="226" height="160" rx="28" fill="#FFE9A8" filter="url(#shadow-badges-3-6)"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="113" y="120" font-size="48" text-anchor="middle">🐰</text>
+      <text x="113" y="146" font-size="14" font-weight="700" fill="#A37A2E" text-anchor="middle">Bunny 的朋友</text>
+    </g>
+    <!-- row 2: 占位 -->
+    <g transform="translate(0 216)">
+      <rect width="200" height="160" rx="28" fill="#EAE6DD" opacity="0.5"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="100" y="98" font-size="40" fill="#9A9A9A" text-anchor="middle">🔒</text>
+      <text x="100" y="128" font-size="12" fill="#9A9A9A" text-anchor="middle">还差 3 颗星</text>
+      <text x="100" y="146" font-size="12" fill="#9A9A9A" text-anchor="middle">→ 彩虹徽章</text>
+    </g>
+    <g transform="translate(220 216)">
+      <rect width="200" height="160" rx="28" fill="#EAE6DD" opacity="0.5"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="100" y="98" font-size="40" fill="#9A9A9A" text-anchor="middle">🔒</text>
+      <text x="100" y="128" font-size="12" fill="#9A9A9A" text-anchor="middle">还差 5 颗星</text>
+      <text x="100" y="146" font-size="12" fill="#9A9A9A" text-anchor="middle">→ 故事大王</text>
+    </g>
+    <g transform="translate(440 216)">
+      <rect width="200" height="160" rx="28" fill="#EAE6DD" opacity="0.5"/>
+      <use href="#badge-eyes" x="20" y="20" width="80" height="80"/>
+      <text x="100" y="98" font-size="40" fill="#9A9A9A" text-anchor="middle">🔒</text>
+      <text x="100" y="128" font-size="12" fill="#9A9A9A" text-anchor="middle">还差 8 颗星</text>
+      <text x="100" y="146" font-size="12" fill="#9A9A9A" text-anchor="middle">→ 汉字小博士</text>
+    </g>
+    <!-- 大收集入口 -->
+    <g transform="translate(660 216)">
+      <rect width="666" height="160" rx="28" fill="#E94545" filter="url(#shadow-badges-3-6)"/>
+      <text x="40" y="56" font-size="24" font-weight="700" fill="#FFFFFF">看全部勋章 →</text>
+      <text x="40" y="86" font-size="14" fill="#FFFFFF" opacity="0.9">你已经收集了 6 个勋章</text>
+      <text x="40" y="112" font-size="14" fill="#FFFFFF" opacity="0.9">Bunny 陪你继续努力哦！</text>
+      <text x="600" y="120" font-size="100" text-anchor="end">🎁</text>
+    </g>
+  </g>
+</svg>

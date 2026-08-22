@@ -1,0 +1,813 @@
+{
+  "version": "1",
+  "builtAt": "2026-08-21T18:13:16.556Z",
+  "cueCount": 72,
+  "artCount": 48,
+  "cues": [
+    {
+      "id": "praise-1",
+      "kind": "praise",
+      "text": "哇，你找到啦，你真棒呀。",
+      "url": "/assets/audio/l0/praise/praise-1.mp3"
+    },
+    {
+      "id": "praise-2",
+      "kind": "praise",
+      "text": "你真厉害，像小小朗诵家呢。",
+      "url": "/assets/audio/l0/praise/praise-2.mp3"
+    },
+    {
+      "id": "praise-3",
+      "kind": "praise",
+      "text": "再读一次，就会更清楚哦。",
+      "url": "/assets/audio/l0/praise/praise-3.mp3"
+    },
+    {
+      "id": "praise-4",
+      "kind": "praise",
+      "text": "Bunny 看到你啦，做得真好呢。",
+      "url": "/assets/audio/l0/praise/praise-4.mp3"
+    },
+    {
+      "id": "praise-5",
+      "kind": "praise",
+      "text": "哇，你又认识了一个新字呀。",
+      "url": "/assets/audio/l0/praise/praise-5.mp3"
+    },
+    {
+      "id": "praise-6",
+      "kind": "praise",
+      "text": "我们一起再来一次吧。",
+      "url": "/assets/audio/l0/praise/praise-6.mp3"
+    },
+    {
+      "id": "praise-7",
+      "kind": "praise",
+      "text": "你今天呀，又种了一棵小苗呢。",
+      "url": "/assets/audio/l0/praise/praise-7.mp3"
+    },
+    {
+      "id": "praise-8",
+      "kind": "praise",
+      "text": "今天的故事讲完啦，明天再一起玩。",
+      "url": "/assets/audio/l0/praise/praise-8.mp3"
+    },
+    {
+      "id": "reading-prompt-1",
+      "kind": "reading",
+      "text": "先听 Bunny 读一遍吧。",
+      "url": "/assets/audio/l0/reading/reading-prompt-1.mp3"
+    },
+    {
+      "id": "reading-prompt-2",
+      "kind": "reading",
+      "text": "现在到你了呀，跟我一起读。",
+      "url": "/assets/audio/l0/reading/reading-prompt-2.mp3"
+    },
+    {
+      "id": "reading-prompt-3",
+      "kind": "reading",
+      "text": "按住 Bunny 头呢，开始录音啦。",
+      "url": "/assets/audio/l0/reading/reading-prompt-3.mp3"
+    },
+    {
+      "id": "reading-prompt-4",
+      "kind": "reading",
+      "text": "松开小手吧，让 Bunny 听一听。",
+      "url": "/assets/audio/l0/reading/reading-prompt-4.mp3"
+    },
+    {
+      "id": "bunny-welcome-1",
+      "kind": "welcome",
+      "text": "你好呀小朋友，我是 Bunny，我们一起玩吧。",
+      "url": "/assets/audio/l0/welcome/bunny-welcome-1.mp3"
+    },
+    {
+      "id": "bunny-welcome-2",
+      "kind": "welcome",
+      "text": "欢迎欢迎，Bunny 在等你呢。",
+      "url": "/assets/audio/l0/welcome/bunny-welcome-2.mp3"
+    },
+    {
+      "id": "bunny-welcome-3",
+      "kind": "welcome",
+      "text": "今天呀，我们读一个暖暖的故事。",
+      "url": "/assets/audio/l0/welcome/bunny-welcome-3.mp3"
+    },
+    {
+      "id": "world-home-1",
+      "kind": "world",
+      "text": "欢迎来到 Bunny 的家，这里呀有四个好玩的小岛。",
+      "url": "/assets/audio/l0/worlds/world-home-1.mp3"
+    },
+    {
+      "id": "world-story-island",
+      "kind": "world",
+      "text": "故事岛呀，跟 Bunny 一起听好听的故事。",
+      "url": "/assets/audio/l0/worlds/world-story-island.mp3"
+    },
+    {
+      "id": "world-character-garden",
+      "kind": "world",
+      "text": "汉字花园呢，和字宝宝做朋友。",
+      "url": "/assets/audio/l0/worlds/world-character-garden.mp3"
+    },
+    {
+      "id": "world-game-land",
+      "kind": "world",
+      "text": "玩游戏呀，找一找，看一看。",
+      "url": "/assets/audio/l0/worlds/world-game-land.mp3"
+    },
+    {
+      "id": "world-my-house",
+      "kind": "world",
+      "text": "我的小屋呀，是收集勋章的地方。",
+      "url": "/assets/audio/l0/worlds/world-my-house.mp3"
+    },
+    {
+      "id": "world-garden-map",
+      "kind": "world",
+      "text": "字花园全景呢，看看你种了多少棵小苗呀。",
+      "url": "/assets/audio/l0/worlds/world-garden-map.mp3"
+    },
+    {
+      "id": "char-shan-pron",
+      "kind": "character",
+      "text": "山，山，山。",
+      "url": "/assets/audio/l1/tier-a/shan-pron.mp3",
+      "refId": "char-shan"
+    },
+    {
+      "id": "char-shui-pron",
+      "kind": "character",
+      "text": "水，水，水。",
+      "url": "/assets/audio/l1/tier-a/shui-pron.mp3",
+      "refId": "char-shui"
+    },
+    {
+      "id": "char-huo-pron",
+      "kind": "character",
+      "text": "火，火，火。",
+      "url": "/assets/audio/l1/tier-a/huo-pron.mp3",
+      "refId": "char-huo"
+    },
+    {
+      "id": "char-mu-pron",
+      "kind": "character",
+      "text": "木，木，木。",
+      "url": "/assets/audio/l1/tier-a/mu-pron.mp3",
+      "refId": "char-mu"
+    },
+    {
+      "id": "char-ri-pron",
+      "kind": "character",
+      "text": "日，日，日。",
+      "url": "/assets/audio/l1/tier-a/ri-pron.mp3",
+      "refId": "char-ri"
+    },
+    {
+      "id": "char-yue-pron",
+      "kind": "character",
+      "text": "月，月，月。",
+      "url": "/assets/audio/l1/tier-a/yue-pron.mp3",
+      "refId": "char-yue"
+    },
+    {
+      "id": "char-ren-pron",
+      "kind": "character",
+      "text": "人，人，人。",
+      "url": "/assets/audio/l1/tier-a/ren-pron.mp3",
+      "refId": "char-ren"
+    },
+    {
+      "id": "char-kou-pron",
+      "kind": "character",
+      "text": "口，口，口。",
+      "url": "/assets/audio/l1/tier-a/kou-pron.mp3",
+      "refId": "char-kou"
+    },
+    {
+      "id": "char-mu-eye-pron",
+      "kind": "character",
+      "text": "目，目，目。",
+      "url": "/assets/audio/l1/tier-a/mu-eye-pron.mp3",
+      "refId": "char-mu-eye"
+    },
+    {
+      "id": "char-er-pron",
+      "kind": "character",
+      "text": "耳，耳，耳。",
+      "url": "/assets/audio/l1/tier-a/er-pron.mp3",
+      "refId": "char-er"
+    },
+    {
+      "id": "char-shou-pron",
+      "kind": "character",
+      "text": "手，手，手。",
+      "url": "/assets/audio/l1/tier-a/shou-pron.mp3",
+      "refId": "char-shou"
+    },
+    {
+      "id": "char-xin-pron",
+      "kind": "character",
+      "text": "心，心，心。",
+      "url": "/assets/audio/l1/tier-a/xin-pron.mp3",
+      "refId": "char-xin"
+    },
+    {
+      "id": "char-zu-pron",
+      "kind": "character",
+      "text": "足，足，足。",
+      "url": "/assets/audio/l1/tier-a/zu-pron.mp3",
+      "refId": "char-zu"
+    },
+    {
+      "id": "char-yu-pron",
+      "kind": "character",
+      "text": "雨，雨，雨。",
+      "url": "/assets/audio/l1/tier-a/yu-pron.mp3",
+      "refId": "char-yu"
+    },
+    {
+      "id": "char-lin-pron",
+      "kind": "character",
+      "text": "林，林，林。",
+      "url": "/assets/audio/l1/tier-b/lin-pron.mp3",
+      "refId": "char-lin"
+    },
+    {
+      "id": "char-sen-pron",
+      "kind": "character",
+      "text": "森，森，森。",
+      "url": "/assets/audio/l1/tier-b/sen-pron.mp3",
+      "refId": "char-sen"
+    },
+    {
+      "id": "char-ming-pron",
+      "kind": "character",
+      "text": "明，明，明。",
+      "url": "/assets/audio/l1/tier-b/ming-pron.mp3",
+      "refId": "char-ming"
+    },
+    {
+      "id": "char-xiu-pron",
+      "kind": "character",
+      "text": "休，休，休。",
+      "url": "/assets/audio/l1/tier-b/xiu-pron.mp3",
+      "refId": "char-xiu"
+    },
+    {
+      "id": "char-hao-pron",
+      "kind": "character",
+      "text": "好，好，好。",
+      "url": "/assets/audio/l1/tier-b/hao-pron.mp3",
+      "refId": "char-hao"
+    },
+    {
+      "id": "museum-shan-reveal",
+      "kind": "museum",
+      "text": "你看呀，远处的山是什么样子呢，三座尖尖的山峰。古人呀，就这样画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-shan.mp3",
+      "refId": "char-shan"
+    },
+    {
+      "id": "museum-shui-reveal",
+      "kind": "museum",
+      "text": "中间一股水流，旁边溅起小水花呢。古人呀，把水画下来啦。",
+      "url": "/assets/audio/l1/tier-a/museum-shui.mp3",
+      "refId": "char-shui"
+    },
+    {
+      "id": "museum-huo-reveal",
+      "kind": "museum",
+      "text": "火苗往上跳，一团尖尖的火焰呀。古人呀，看着火就画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-huo.mp3",
+      "refId": "char-huo"
+    },
+    {
+      "id": "museum-mu-reveal",
+      "kind": "museum",
+      "text": "上面有树枝，下面有树根，中间是树干呀。一棵树呢，就是\"木\"。",
+      "url": "/assets/audio/l1/tier-a/museum-mu.mp3",
+      "refId": "char-mu"
+    },
+    {
+      "id": "museum-ri-reveal",
+      "kind": "museum",
+      "text": "圆圆的太阳呀，中间加一点。古人呀，把最亮的地方点了一下。",
+      "url": "/assets/audio/l1/tier-a/museum-ri.mp3",
+      "refId": "char-ri"
+    },
+    {
+      "id": "museum-yue-reveal",
+      "kind": "museum",
+      "text": "弯弯的月亮呢，像一弯小船呀。古人呀，把月亮画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-yue.mp3",
+      "refId": "char-yue"
+    },
+    {
+      "id": "museum-ren-reveal",
+      "kind": "museum",
+      "text": "弯腰走路的人呀，侧着身子。古人呀，把走路的人画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-ren.mp3",
+      "refId": "char-ren"
+    },
+    {
+      "id": "museum-kou-reveal",
+      "kind": "museum",
+      "text": "张开的小嘴巴呀，方方的样子呢。古人呀，画了一个方方的小嘴。",
+      "url": "/assets/audio/l1/tier-a/museum-kou.mp3",
+      "refId": "char-kou"
+    },
+    {
+      "id": "museum-mu-eye-reveal",
+      "kind": "museum",
+      "text": "竖起来的小眼睛呀，中间一个小瞳孔呢。古人呀，把眼睛画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-mu-eye.mp3",
+      "refId": "char-mu-eye"
+    },
+    {
+      "id": "museum-er-reveal",
+      "kind": "museum",
+      "text": "大大的小耳朵呀，像一片小叶子呢。古人呀，把耳朵画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-er.mp3",
+      "refId": "char-er"
+    },
+    {
+      "id": "museum-shou-reveal",
+      "kind": "museum",
+      "text": "张开的小手呀，五根手指伸出来呢。古人呀，把手画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-shou.mp3",
+      "refId": "char-shou"
+    },
+    {
+      "id": "museum-xin-reveal",
+      "kind": "museum",
+      "text": "小小的心脏呀，像一颗尖尖的果子呢。古人呀，把心画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-xin.mp3",
+      "refId": "char-xin"
+    },
+    {
+      "id": "museum-zu-reveal",
+      "kind": "museum",
+      "text": "人的小脚呀，下面有脚趾呢。古人呀，把脚画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-zu.mp3",
+      "refId": "char-zu"
+    },
+    {
+      "id": "museum-yu-reveal",
+      "kind": "museum",
+      "text": "天上乌云下雨呀，云下面有雨滴呢。古人呀，把云和雨滴都画了下来。",
+      "url": "/assets/audio/l1/tier-a/museum-yu.mp3",
+      "refId": "char-yu"
+    },
+    {
+      "id": "museum-lin-reveal",
+      "kind": "museum",
+      "text": "一棵树不够呀，要很多很多树呢。所以呀，两个\"木\"放在一起，就变成了\"林\"。",
+      "url": "/assets/audio/l1/tier-b/museum-lin.mp3",
+      "refId": "char-lin"
+    },
+    {
+      "id": "museum-sen-reveal",
+      "kind": "museum",
+      "text": "\"林\"已经很多啦，\"森\"还要更多呀。三个\"木\"放在一起呢，就是大森林。",
+      "url": "/assets/audio/l1/tier-b/museum-sen.mp3",
+      "refId": "char-sen"
+    },
+    {
+      "id": "museum-ming-reveal",
+      "kind": "museum",
+      "text": "白天有太阳，晚上有月亮呀。把它们放在一起呢，就是最亮的时候呀。",
+      "url": "/assets/audio/l1/tier-b/museum-ming.mp3",
+      "refId": "char-ming"
+    },
+    {
+      "id": "museum-xiu-reveal",
+      "kind": "museum",
+      "text": "一个人走累了呀，靠在大树旁边休息呢。这就是\"休\"呀，人靠在木旁。",
+      "url": "/assets/audio/l1/tier-b/museum-xiu.mp3",
+      "refId": "char-xiu"
+    },
+    {
+      "id": "museum-hao-reveal",
+      "kind": "museum",
+      "text": "有妈妈有宝宝呀，一家人在一起呢。古时候呀，觉得这是最美好的事情呢。",
+      "url": "/assets/audio/l1/tier-b/museum-hao.mp3",
+      "refId": "char-hao"
+    },
+    {
+      "id": "story-sen-lin-li-de-yi-tian-p1",
+      "kind": "story",
+      "text": "森林里，住着一只小小兔。",
+      "url": "/assets/audio/l1/stories/sen-lin-li-de-yi-tian/story-sen-lin-li-de-yi-tian-p1.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-sen-lin-li-de-yi-tian-p1"
+    },
+    {
+      "id": "story-sen-lin-li-de-yi-tian-p2",
+      "kind": "story",
+      "text": "小小兔有大大大的耳朵，短短的尾巴。",
+      "url": "/assets/audio/l1/stories/sen-lin-li-de-yi-tian/story-sen-lin-li-de-yi-tian-p2.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-sen-lin-li-de-yi-tian-p2"
+    },
+    {
+      "id": "story-sen-lin-li-de-yi-tian-p3",
+      "kind": "story",
+      "text": "它喜欢下雨天在森林里跳来跳去。",
+      "url": "/assets/audio/l1/stories/sen-lin-li-de-yi-tian/story-sen-lin-li-de-yi-tian-p3.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-sen-lin-li-de-yi-tian-p3"
+    },
+    {
+      "id": "story-sen-lin-li-de-yi-tian-p4",
+      "kind": "story",
+      "text": "森林里的一天，真美好呀！",
+      "url": "/assets/audio/l1/stories/sen-lin-li-de-yi-tian/story-sen-lin-li-de-yi-tian-p4.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-sen-lin-li-de-yi-tian-p4"
+    },
+    {
+      "id": "story-tai-yang-he-yue-liang-p1",
+      "kind": "story",
+      "text": "天上有太阳，照得大地暖暖的。",
+      "url": "/assets/audio/l1/stories/tai-yang-he-yue-liang/story-tai-yang-he-yue-liang-p1.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-tai-yang-he-yue-liang-p1"
+    },
+    {
+      "id": "story-tai-yang-he-yue-liang-p2",
+      "kind": "story",
+      "text": "太阳下山了，天慢慢黑下来。",
+      "url": "/assets/audio/l1/stories/tai-yang-he-yue-liang/story-tai-yang-he-yue-liang-p2.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-tai-yang-he-yue-liang-p2"
+    },
+    {
+      "id": "story-tai-yang-he-yue-liang-p3",
+      "kind": "story",
+      "text": "月亮出来了，亮亮的挂在天上。",
+      "url": "/assets/audio/l1/stories/tai-yang-he-yue-liang/story-tai-yang-he-yue-liang-p3.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-tai-yang-he-yue-liang-p3"
+    },
+    {
+      "id": "story-tai-yang-he-yue-liang-p4",
+      "kind": "story",
+      "text": "太阳和月亮，轮流照顾小朋友。",
+      "url": "/assets/audio/l1/stories/tai-yang-he-yue-liang/story-tai-yang-he-yue-liang-p4.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-tai-yang-he-yue-liang-p4"
+    },
+    {
+      "id": "story-xiao-tu-de-jia-p1",
+      "kind": "story",
+      "text": "小兔子在森林里找妈妈。",
+      "url": "/assets/audio/l1/stories/xiao-tu-de-jia/story-xiao-tu-de-jia-p1.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-xiao-tu-de-jia-p1"
+    },
+    {
+      "id": "story-xiao-tu-de-jia-p2",
+      "kind": "story",
+      "text": "它问大树：我的妈妈在哪里？",
+      "url": "/assets/audio/l1/stories/xiao-tu-de-jia/story-xiao-tu-de-jia-p2.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-xiao-tu-de-jia-p2"
+    },
+    {
+      "id": "story-xiao-tu-de-jia-p3",
+      "kind": "story",
+      "text": "它问小草：我的妈妈在哪里？",
+      "url": "/assets/audio/l1/stories/xiao-tu-de-jia/story-xiao-tu-de-jia-p3.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-xiao-tu-de-jia-p3"
+    },
+    {
+      "id": "story-xiao-tu-de-jia-p4",
+      "kind": "story",
+      "text": "妈妈在山洞里等它。",
+      "url": "/assets/audio/l1/stories/xiao-tu-de-jia/story-xiao-tu-de-jia-p4.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-xiao-tu-de-jia-p4"
+    },
+    {
+      "id": "story-xiao-tu-de-jia-p5",
+      "kind": "story",
+      "text": "小兔子终于找到妈妈啦！",
+      "url": "/assets/audio/l1/stories/xiao-tu-de-jia/story-xiao-tu-de-jia-p5.mp3",
+      "refType": "story-page-audio",
+      "refId": "book-xiao-tu-de-jia-p5"
+    }
+  ],
+  "art": [
+    {
+      "id": "bunny-idle",
+      "subject": "Bunny 姿势 idle",
+      "prompt": "一只圆胖的白色小兔 Bunny 站立姿势，长垂耳 + 粉色内耳 + 红色小书包 + 黑色圆点眼 + 腮红椭圆，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/bunny/bunny-idle.png"
+    },
+    {
+      "id": "bunny-happy",
+      "subject": "Bunny 姿势 happy",
+      "prompt": "一只圆胖的白色小兔 Bunny 开心跳跃姿势，长垂耳飘起来、笑得眯起眼、双手举过头、红色小书包在身上，周围飘着小心心和花瓣，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/bunny/bunny-happy.png"
+    },
+    {
+      "id": "bunny-cheering",
+      "subject": "Bunny 姿势 cheering",
+      "prompt": "一只圆胖的白色小兔 Bunny 张开双手的庆祝姿势，长垂耳 + 粉色内耳 + 红色小书包 + 大大的笑脸，身边有彩带和星星，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/bunny/bunny-cheering.png"
+    },
+    {
+      "id": "bunny-reading",
+      "subject": "Bunny 姿势 reading",
+      "prompt": "一只圆胖的白色小兔 Bunny 盘腿坐地上抱着一本打开的童话书，眼睛认真看书表情专注，长垂耳 + 红色小书包，身边有小花和蝴蝶，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/bunny/bunny-reading.png"
+    },
+    {
+      "id": "bunny-listening",
+      "subject": "Bunny 姿势 listening",
+      "prompt": "一只圆胖的白色小兔 Bunny 侧着头听声音，长垂耳一只立起来另一只垂下来，粉色内耳，红色小书包，表情专注可爱，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/bunny/bunny-listening.png"
+    },
+    {
+      "id": "bunny-waving",
+      "subject": "Bunny 姿势 waving",
+      "prompt": "一只圆胖的白色小兔 Bunny 挥手打招呼，红色小书包，长垂耳一只举起来另一只垂下来，大大的笑脸，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/bunny/bunny-waving.png"
+    },
+    {
+      "id": "companion-fox",
+      "subject": "朋友 fox",
+      "prompt": "一只可爱圆胖的小狐狸，全身柔橘红色，戴着粉色蝴蝶结围巾，表情甜甜的笑，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/companions/companion-fox.png"
+    },
+    {
+      "id": "companion-frog",
+      "subject": "朋友 frog",
+      "prompt": "一只可爱圆胖的小青蛙，全身薄荷绿色，大眼睛戴蝴蝶结，蹲在一朵粉色睡莲上，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/companions/companion-frog.png"
+    },
+    {
+      "id": "companion-bird",
+      "subject": "朋友 bird",
+      "prompt": "一只可爱圆胖的小鸟，全身奶黄 + 橘色尖嘴，头顶一朵小花，站在粉色树枝上，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/companions/companion-bird.png"
+    },
+    {
+      "id": "companion-panda",
+      "subject": "朋友 panda",
+      "prompt": "一只可爱圆胖的小熊猫，全身黑白分明，戴着粉色领巾，手里捧着一颗爱心，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/companions/companion-panda.png"
+    },
+    {
+      "id": "companion-deer",
+      "subject": "朋友 deer",
+      "prompt": "一只可爱圆胖的小鹿，全身奶棕 + 白色斑点，有粉色小鹿角，戴着花朵花环，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/companions/companion-deer.png"
+    },
+    {
+      "id": "ui-book",
+      "subject": "UI 装饰 book",
+      "prompt": "一本打开的童话书，粉色封面，画面居中、上下两页、有彩色插画（花 + 蝴蝶 + 心），3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/ui/ui-book.png"
+    },
+    {
+      "id": "ui-scroll",
+      "subject": "UI 装饰 scroll",
+      "prompt": "一卷打开的柔黄色卷轴，上面有粉色手写中文\"森林\"，纸色奶黄，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/ui/ui-scroll.png"
+    },
+    {
+      "id": "ui-star",
+      "subject": "UI 装饰 star",
+      "prompt": "一颗奶黄金色星星，带拟人笑脸（圆眼睛 + 粉腮红 + 甜甜笑），3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/ui/ui-star.png"
+    },
+    {
+      "id": "ui-lock",
+      "subject": "UI 装饰 lock",
+      "prompt": "一把粉色挂锁，金色心形锁孔，把手，无表情友好款，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/ui/ui-lock.png"
+    },
+    {
+      "id": "ui-gift",
+      "subject": "UI 装饰 gift",
+      "prompt": "一个柔粉礼品盒，奶白金色蝴蝶结，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/ui/ui-gift.png"
+    },
+    {
+      "id": "badge-starter",
+      "subject": "世界徽章 starter",
+      "prompt": "一枚 pastel 绿色圆形徽章，写粉色\"起步\"两个字 + 一个🌱小苗图标，圆润，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/badges/badge-starter.png"
+    },
+    {
+      "id": "badge-family",
+      "subject": "世界徽章 family",
+      "prompt": "一枚 pastel 粉色圆形徽章，写白色\"家\"字 + 🏠小房子图标，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/badges/badge-family.png"
+    },
+    {
+      "id": "badge-animals",
+      "subject": "世界徽章 animals",
+      "prompt": "一枚 pastel 桃色圆形徽章，写白色\"动物\"两个字 + 🐰小兔子图标，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/badges/badge-animals.png"
+    },
+    {
+      "id": "badge-plants",
+      "subject": "世界徽章 plants",
+      "prompt": "一枚 pastel 薄荷圆形徽章，写白色\"植物\"两个字 + 🌳小树图标，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/badges/badge-plants.png"
+    },
+    {
+      "id": "badge-body",
+      "subject": "世界徽章 body",
+      "prompt": "一枚 pastel 淡紫圆形徽章，写白色\"身体\"两个字 + 👀小眼睛图标，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/badges/badge-body.png"
+    },
+    {
+      "id": "badge-stories",
+      "subject": "世界徽章 stories",
+      "prompt": "一枚 pastel 天蓝圆形徽章，写白色\"故事\"两个字 + 📖打开的书图标，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/badges/badge-stories.png"
+    },
+    {
+      "id": "bg-forest-light",
+      "subject": "背景 forest-light",
+      "prompt": "一片阳光穿透的森林地面，pastel 柔和的薄荷绿 + 奶棕树影、有小花和蝴蝶，画面宽幅 1024×1024，无前景元素，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/backgrounds/bg-forest-light.png"
+    },
+    {
+      "id": "bg-pond",
+      "subject": "背景 pond",
+      "prompt": "一片宁静的 pastel 池塘，柔蓝绿色水面 + 粉色睡莲 + 远山倒影、有小蝴蝶，画面宽幅 1024×1024，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/backgrounds/bg-pond.png"
+    },
+    {
+      "id": "bg-sky-day",
+      "subject": "背景 sky-day",
+      "prompt": "一片 pastel 明亮蓝天 + 几朵奶白云 + 一道柔和彩虹，画面宽幅 1024×1024，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/backgrounds/bg-sky-day.png"
+    },
+    {
+      "id": "bg-meadow",
+      "subject": "背景 meadow",
+      "prompt": "一片 pastel 开满野花的草地，奶黄 + 粉 + 淡紫小花 + 蝴蝶，画面宽幅 1024×1024，3-6 岁女孩专属绘本风格，pastel 柔粉 + 薄荷 + 奶黄 + 淡紫调色板，画面梦幻柔软温暖，圆润无尖角，所有角色胖嘟嘟并带圆眼睛 + 腮红 + 甜甜笑，3D 渲染，picture-book 风，背景透明或淡奶油色 #FFF4E6。",
+      "outPath": "/assets/art/l0/backgrounds/bg-meadow.png"
+    },
+    {
+      "id": "picto-shan",
+      "subject": "山",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「山」字，字是从 ⛰️ 演变过来的样子（⛰️ → ⿱山山 → 山），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-shan.png",
+      "refId": "char-shan"
+    },
+    {
+      "id": "picto-shui",
+      "subject": "水",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「水」字，字是从 💧 演变过来的样子（💧 → 𣱳 → 水），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-shui.png",
+      "refId": "char-shui"
+    },
+    {
+      "id": "picto-huo",
+      "subject": "火",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「火」字，字是从 🔥 演变过来的样子（🔥 → 灬 → 火），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-huo.png",
+      "refId": "char-huo"
+    },
+    {
+      "id": "picto-mu",
+      "subject": "木",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「木」字，字是从 🌳 演变过来的样子（🌳 → 木 → 木），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-mu.png",
+      "refId": "char-mu"
+    },
+    {
+      "id": "picto-ri",
+      "subject": "日",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「日」字，字是从 ☀️ 演变过来的样子（☀️ → ⺊ → 日），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-ri.png",
+      "refId": "char-ri"
+    },
+    {
+      "id": "picto-yue",
+      "subject": "月",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「月」字，字是从 🌙 演变过来的样子（🌙 → ⺼ → 月），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-yue.png",
+      "refId": "char-yue"
+    },
+    {
+      "id": "picto-ren",
+      "subject": "人",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「人」字，字是从 🧍 演变过来的样子（🧍 → 人 → 人），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-ren.png",
+      "refId": "char-ren"
+    },
+    {
+      "id": "picto-kou",
+      "subject": "口",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「口」字，字是从 👄 演变过来的样子（👄 → 口 → 口），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-kou.png",
+      "refId": "char-kou"
+    },
+    {
+      "id": "picto-mu-eye",
+      "subject": "目",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「目」字，字是从 👁️ 演变过来的样子（👁️ → 目 → 目），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-mu-eye.png",
+      "refId": "char-mu-eye"
+    },
+    {
+      "id": "picto-er",
+      "subject": "耳",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「耳」字，字是从 👂 演变过来的样子（👂 → 耳 → 耳），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-er.png",
+      "refId": "char-er"
+    },
+    {
+      "id": "picto-shou",
+      "subject": "手",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「手」字，字是从 🖐️ 演变过来的样子（🖐️ → 扌 → 手），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-shou.png",
+      "refId": "char-shou"
+    },
+    {
+      "id": "picto-xin",
+      "subject": "心",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「心」字，字是从 ❤️ 演变过来的样子（❤️ → ⺗ → 心），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-xin.png",
+      "refId": "char-xin"
+    },
+    {
+      "id": "picto-zu",
+      "subject": "足",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「足」字，字是从 🦶 演变过来的样子（🦶 → ⾛ → 足），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-zu.png",
+      "refId": "char-zu"
+    },
+    {
+      "id": "picto-yu",
+      "subject": "雨",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，旁边画一个巨大的「雨」字，字是从 🌧️ 演变过来的样子（🌧️ → ⻗ → 雨），字占画面 60% 高度，颜色用奶黄或柔粉。背景是 pastel 渐变（柔粉 #FFC1CC → 奶黄 #FFE9A8 → 薄荷 #A8E6CF）。画面有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟带拟人笑脸。",
+      "outPath": "/assets/art/l1/tier-a/picto-yu.png",
+      "refId": "char-yu"
+    },
+    {
+      "id": "picto-lin",
+      "subject": "林",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，双手指向一个超大的「林」字，字周围浮动着它的两个部件 mu + mu，每个部件用拟人化图标展示（带圆眼睛 + 腮红 + 甜甜笑）。背景是 pastel 渐变（🌳🌳），有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟。",
+      "outPath": "/assets/art/l1/tier-b/picto-lin.png",
+      "refId": "char-lin"
+    },
+    {
+      "id": "picto-sen",
+      "subject": "森",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，双手指向一个超大的「森」字，字周围浮动着它的两个部件 mu + mu + mu，每个部件用拟人化图标展示（带圆眼睛 + 腮红 + 甜甜笑）。背景是 pastel 渐变（🌳🌳🌳），有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟。",
+      "outPath": "/assets/art/l1/tier-b/picto-sen.png",
+      "refId": "char-sen"
+    },
+    {
+      "id": "picto-ming",
+      "subject": "明",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，双手指向一个超大的「明」字，字周围浮动着它的两个部件 ri + yue，每个部件用拟人化图标展示（带圆眼睛 + 腮红 + 甜甜笑）。背景是 pastel 渐变（☀️🌙），有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟。",
+      "outPath": "/assets/art/l1/tier-b/picto-ming.png",
+      "refId": "char-ming"
+    },
+    {
+      "id": "picto-xiu",
+      "subject": "休",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，双手指向一个超大的「休」字，字周围浮动着它的两个部件 ren + mu，每个部件用拟人化图标展示（带圆眼睛 + 腮红 + 甜甜笑）。背景是 pastel 渐变（🧍🌳），有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟。",
+      "outPath": "/assets/art/l1/tier-b/picto-xiu.png",
+      "refId": "char-xiu"
+    },
+    {
+      "id": "picto-hao",
+      "subject": "好",
+      "prompt": "3 岁女孩专属绘本风格。圆胖白兔 Bunny 站在 pastel 柔和背景中央，双手指向一个超大的「好」字，字周围浮动着它的两个部件 nv + zi，每个部件用拟人化图标展示（带圆眼睛 + 腮红 + 甜甜笑）。背景是 pastel 渐变（👩👦），有花朵、爱心、蝴蝶等装饰。3D 渲染，圆润无尖角，所有元素胖嘟嘟。",
+      "outPath": "/assets/art/l1/tier-b/picto-hao.png",
+      "refId": "char-hao"
+    },
+    {
+      "id": "cover-sen-lin-li-de-yi-tian",
+      "subject": "森林里的一天",
+      "prompt": "3 岁女孩专属绘本封面。圆胖白兔 Bunny 站在 pastel 薄荷绿色森林前面，戴着粉色花环，森林里有粉色小山、有小树、有小花和小蘑菇。顶部用大号中文写\"森林里的一天\"。画面有彩虹、爱心、蝴蝶、小云朵装饰。背景 pastel 柔色渐变，3D 渲染，圆润温暖。",
+      "outPath": "/assets/art/l1/stories/cover-sen-lin-li-de-yi-tian.png"
+    },
+    {
+      "id": "cover-tai-yang-he-yue-liang",
+      "subject": "太阳和月亮",
+      "prompt": "3 岁女孩专属绘本封面。画面分为左右两半：左边是 pastel 奶黄色的太阳姐姐（带粉腮红、戴花环），右边是淡紫渐变的月亮姐姐（戴小星星发夹），两只圆胖白兔 Bunny 在画面下方手拉手（头顶带粉色蝴蝶结）。顶部用大号中文写\"太阳和月亮\"。背景 pastel 柔粉 → 淡紫渐变，有彩虹、爱心、花瓣装饰。3D 渲染，圆润温暖。",
+      "outPath": "/assets/art/l1/stories/cover-tai-yang-he-yue-liang.png"
+    },
+    {
+      "id": "cover-xiao-tu-de-jia",
+      "subject": "小兔子找妈妈",
+      "prompt": "3 岁女孩专属绘本封面。圆胖白兔小 Bunny 抬头看向远方（眼睛有星光），远景是 pastel 森林和粉色小山，封面顶部用大号中文写\"小兔子找妈妈\"。画面有花朵、爱心、蝴蝶装饰。背景 pastel 柔粉渐变，3D 渲染，圆润，温暖。",
+      "outPath": "/assets/art/l1/stories/cover-xiao-tu-de-jia.png"
+    }
+  ]
+}

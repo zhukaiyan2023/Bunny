@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=1366, initial-scale=1"/>
+  <title>Bunny · 3-6 岁 × 3000 字原型总览</title>
+  <style>
+    :root {
+      --bunny-cream: #FFF4E6;
+      --bunny-peach: #FFE0BF;
+      --bunny-sky: #B5DEFF;
+      --bunny-red: #E94545;
+      --bunny-mint: #A8E6CF;
+      --bunny-butter: #FFE9A8;
+      --bunny-pink: #FFC1CC;
+      --bunny-lavender: #D9C2F0;
+      --bunny-ink: #2C2C54;
+      --bunny-soft-ink: #5C5C8A;
+      --bunny-border: #EAE6DD;
+      --bunny-green-dark: #1F6A4D;
+      --bunny-amber-dark: #7A4F00;
+      --bunny-pink-dark: #7A2A4D;
+      --bunny-lavender-dark: #7B5EAB;
+      --bunny-blue-dark: #3F4C7A;
+      --bunny-white: #FFFFFF;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, var(--bunny-cream) 0%, var(--bunny-peach) 50%, var(--bunny-sky) 100%);
+      font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      color: var(--bunny-ink);
+    }
+    .wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 48px 32px 96px;
+    }
+    h1 {
+      font-size: 36px;
+      margin: 0 0 8px;
+      color: var(--bunny-ink);
+    }
+    .lead {
+      font-size: 16px;
+      margin: 0 0 24px;
+      color: var(--bunny-soft-ink);
+      max-width: 920px;
+      line-height: 1.6;
+    }
+    .badge-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .badge-row span {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .badge-row .red { background: var(--bunny-red); color: var(--bunny-white); }
+    .badge-row .mint { background: var(--bunny-mint); color: var(--bunny-green-dark); }
+    .badge-row .butter { background: var(--bunny-butter); color: var(--bunny-amber-dark); }
+    .badge-row .pink { background: var(--bunny-pink); color: var(--bunny-pink-dark); }
+    .badge-row .lavender { background: var(--bunny-lavender); color: var(--bunny-lavender-dark); }
+    .badge-row .ink { background: var(--bunny-ink); color: var(--bunny-white); }
+    .arch {
+      background: #FFFFFF;
+      border: 2px solid var(--bunny-border);
+      border-radius: 28px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(20, 50, 75, 0.08);
+    }
+    .arch h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      color: var(--bunny-ink);
+    }
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .arch-cell {
+      text-align: center;
+      padding: 14px 8px;
+      border-radius: 16px;
+    }
+    .arch-cell .age { font-size: 13px; font-weight: 700; color: var(--bunny-soft-ink); margin-bottom: 6px; }
+    .arch-cell .words { font-size: 22px; font-weight: 700; }
+    .arch-cell .stages { font-size: 11px; color: var(--bunny-soft-ink); margin-top: 4px; line-height: 1.3; }
+    .island-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .island {
+      padding: 8px 10px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .island.done { background: var(--bunny-mint); color: var(--bunny-green-dark); }
+    .island.current { background: var(--bunny-butter); color: var(--bunny-amber-dark); }
+    .island.next { background: #FFFFFF; color: var(--bunny-soft-ink); border: 1px dashed var(--bunny-border); }
+    .island.future { background: rgba(255,255,255,0.55); color: var(--bunny-soft-ink); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: #FFFFFF;
+      border: 2px solid var(--bunny-border);
+      border-radius: 28px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(20, 50, 75, 0.08);
+    }
+    .card .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .card.l-yellow .label { background: var(--bunny-butter); color: var(--bunny-amber-dark); }
+    .card.l-mint .label { background: var(--bunny-mint); color: var(--bunny-green-dark); }
+    .card.l-pink .label { background: var(--bunny-pink); color: var(--bunny-pink-dark); }
+    .card.l-blue .label { background: var(--bunny-sky); color: var(--bunny-blue-dark); }
+    .card.l-lavender .label { background: var(--bunny-lavender); color: var(--bunny-lavender-dark); }
+    .card.l-red .label { background: var(--bunny-red); color: var(--bunny-white); }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      color: var(--bunny-ink);
+    }
+    .card .meta {
+      font-size: 13px;
+      color: var(--bunny-soft-ink);
+      margin: 0 0 14px;
+      line-height: 1.5;
+    }
+    .card .frame {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid var(--bunny-border);
+      overflow: hidden;
+      background: #F7FBFF;
+    }
+    .card .frame img {
+      width: 100%;
+      display: block;
+    }
+    .principle {
+      margin-top: 36px;
+      padding: 24px 28px;
+      background: #FFFFFF;
+      border: 2px solid var(--bunny-border);
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(20, 50, 75, 0.08);
+    }
+    .principle h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      color: var(--bunny-ink);
+    }
+    .principle ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.7;
+      color: var(--bunny-soft-ink);
+      font-size: 15px;
+    }
+    .principle ul li b {
+      color: var(--bunny-red);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🐰 Bunny · 3-6 岁 × 3000 字原型</h1>
+    <p class="lead">
+      Open Design 风格 · 1366×1024 横屏 Pad · 大 Bunny · 大按钮 · 拟人化图标 · 零负面反馈 ·
+      配合 <code>docs/prototypes/KIDS_3_6_RESEARCH.md</code> 阅读。
+    </p>
+
+    <div class="badge-row">
+      <span class="ink">3-6 岁适龄</span>
+      <span class="red">3000 字长期目标</span>
+      <span class="mint">10 个主题岛</span>
+      <span class="butter">5-10 分钟 / 次</span>
+      <span class="pink">3-5 字 / 次</span>
+      <span class="lavender">无负面反馈</span>
+    </div>
+
+    <div class="arch">
+      <h2>🌳 3000 字架构（与 3-6 岁体验的衔接）</h2>
+      <div class="arch-grid">
+        <div class="arch-cell" style="background:#A8E6CF;">
+          <div class="age">3 岁 · 启蒙</div>
+          <div class="words" style="color: var(--bunny-green-dark);">100 字</div>
+          <div class="stages">大 Bunny · 图→字 · 拟人字<br/>（本次原型）</div>
+        </div>
+        <div class="arch-cell" style="background:#FFE9A8;">
+          <div class="age">6 岁 · 入学</div>
+          <div class="words" style="color: var(--bunny-amber-dark);">300 字</div>
+          <div class="stages">教材同步 · 字源<br/>（panel-08 跟读）</div>
+        </div>
+        <div class="arch-cell" style="background:#B5DEFF;">
+          <div class="age">9 岁 · 进阶</div>
+          <div class="words" style="color: var(--bunny-blue-dark);">1500 字</div>
+          <div class="stages">偏旁 · 汉字家族 · 阅读</div>
+        </div>
+        <div class="arch-cell" style="background:#FFC1CC;">
+          <div class="age">12 岁 · 自由</div>
+          <div class="words" style="color: var(--bunny-pink-dark);">3000 字</div>
+          <div class="stages">原创故事 · 文化阅读</div>
+        </div>
+      </div>
+      <div class="island-list">
+        <div class="island done">🌱 起步 50/50</div>
+        <div class="island current">🏠 家 47/300</div>
+        <div class="island next">🐰 动物 0/300</div>
+        <div class="island next">🌳 植物 0/300</div>
+        <div class="island next">👀 身体 0/300</div>
+        <div class="island next">🏃 动作 0/300</div>
+        <div class="island next">🎨 颜色 0/300</div>
+        <div class="island next">🌤️ 自然 0/300</div>
+        <div class="island next">🔢 数字 0/300</div>
+        <div class="island future">📚 故事 / 字家族 600 字</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card l-red">
+        <span class="label">01 · 首页</span>
+        <h3>世界地图 / 4 大岛入口</h3>
+        <p class="meta">Bunny 在中央说话；4 个大岛屿（故事岛 / 汉字花园 / 玩游戏 / 我的小屋），每个岛显示"本岛 N 字 · 已学 N 字"。顶部"已学 47 / 3000 字"。</p>
+        <div class="frame"><img src="panel-3-6-01-home.svg" alt="Bunny 3-6 岁专属首页"/></div>
+      </div>
+
+      <div class="card l-yellow">
+        <span class="label">02 · 绘本陪读</span>
+        <h3>Bunny 讲故事</h3>
+        <p class="meta">大插画 + 当前句子单行大字 + Bunny 大头像。点击字不打断故事，只让 Bunny 重读。右侧大麦克风按钮（≥ 120px）。</p>
+        <div class="frame"><img src="panel-3-6-02-story.svg" alt="Bunny 3-6 岁专属绘本陪读"/></div>
+      </div>
+
+      <div class="card l-mint">
+        <span class="label">03 · 汉字花园</span>
+        <h3>拟人化汉字方块 + 图示</h3>
+        <p class="meta">先图后字，不引入字源 / 演变 / 词语。主字卡 ≥ 240px 大字 + 拼音 + Bunny 跟读。标签"🌳 家岛 · 第 2 个字 / 本岛还有 253 字没学"。</p>
+        <div class="frame"><img src="panel-3-6-03-characters.svg" alt="Bunny 3-6 岁专属汉字花园"/></div>
+      </div>
+
+      <div class="card l-blue">
+        <span class="label">04 · 玩游戏</span>
+        <h3>找一找 / 大场景 + 3 个字按钮</h3>
+        <p class="meta">单题单屏，3 个大按钮（≥ 160×160）带表情。错误反馈 = "Bunny 没听清，再点一次"。永不显示"正确率"。</p>
+        <div class="frame"><img src="panel-3-6-04-game.svg" alt="Bunny 3-6 岁专属游戏"/></div>
+      </div>
+
+      <div class="card l-pink">
+        <span class="label">05 · 我的小屋</span>
+        <h3>拟人化小屋 + 勋章墙 + 字花园入口</h3>
+        <p class="meta">小屋带眼睛 + 烟囱 + 窗户。3×2 勋章网格。3000 字进度条 "47/3000"。两个大按钮："🌳 看字花园全景 / 🗂️ 看收藏册"。</p>
+        <div class="frame"><img src="panel-3-6-05-badges.svg" alt="Bunny 3-6 岁专属我的小屋"/></div>
+      </div>
+
+      <div class="card l-mint">
+        <span class="label">06 · 跟 Bunny 读</span>
+        <h3>大麦克风 + Bunny 鼓励语</h3>
+        <p class="meta">屏幕里只 1 个句子 + 1 个 ≥ 200px 麦克风按钮 + Bunny 鼓励条。完全无分数 / 无红叉 / 无扣分。</p>
+        <div class="frame"><img src="panel-3-6-06-readalong.svg" alt="Bunny 3-6 岁专属跟读"/></div>
+      </div>
+
+      <div class="card l-lavender">
+        <span class="label">07 · 字花园全景（3000 字骨架）</span>
+        <h3>10 个主题岛 × 300 字</h3>
+        <p class="meta">起步岛（已种满 50）+ 当前家岛（已学 47/300）+ 动物/植物/身体/动作/颜色/自然/数字 + 故事/字家族。每个汉字 = 1 棵苗（已学）/ 1 颗果（掌握）/ 1 颗种（未学）。3-6 岁只看到长出来的那一片。</p>
+        <div class="frame"><img src="panel-3-6-07-garden-map.svg" alt="Bunny 字花园全景"/></div>
+      </div>
+
+      <div class="card l-yellow">
+        <span class="label">08 · 字时光机</span>
+        <h3>3 / 6 / 9 / 12 岁四阶段字量目标</h3>
+        <p class="meta">启蒙 100 字 → 入学 300 字 → 进阶 1500 字 → 自由阅读 3000 字。让孩子从小知道"读完这一岛还有下一岛，但每次只学一点点"。</p>
+        <div class="frame"><img src="panel-3-6-08-evolution.svg" alt="Bunny 字时光机"/></div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <h2>设计基线（3-6 岁适龄 × 3000 字架构）</h2>
+      <ul>
+        <li><b>单次体验小</b> · 3-5 字 / 次，5-10 分钟；不试图一次塞 3000 字。</li>
+        <li><b>长期累积显式可见</b> · 顶部 47/3000 字、字花园 10 岛、时光机 4 阶段 —— 让孩子从小知道"还有好多没种"。</li>
+        <li><b>大 Bunny 始终在场</b> · 圆胖 1.5 头身，白毛 + 粉内耳 + 红书包 + 长垂耳，绝不出现其他动物或竖耳兔。</li>
+        <li><b>主 CTA ≥ 120px · 触控目标 ≥ 88px</b> · 不引入 swipe / drag / pinch 等组合手势。</li>
+        <li><b>图标为主 · 文字最少</b> · 屏幕汉字 ≤ 20 个，且 ≤ 2 行。拟人化图标都带圆眼睛 + 腮红。</li>
+        <li><b>永不负面反馈</b> · 错误 = "Bunny 没听清，再点一次"，从不出现红叉、扣分、排名、失败屏。</li>
+        <li><b>进度用星 / 用苗</b> · "找到 5 颗星"、"种下 47 棵苗"，不用百分数 / 等级数字。</li>
+        <li><b>3000 字 = 10 岛 × 300 字</b> · 每个岛一个主题（家 / 动物 / 植物 / 身体 / 动作 / 颜色 / 自然 / 数字 / 故事 / 字家族），让孩子按主题认知汉字。</li>
+        <li><b>分级体验而非分级 UI</b> · 3-6 岁和 6-9 岁共享同一个 Bunny 视觉系统，但首页 4 岛 → 字花园 10 岛、字时光机呈现"再大一些的样子"。</li>
+        <li><b>Bunny 品牌色</b> · 红 #E94545 · 奶油 #FFF4E6 · 桃 #FFE0BF · 薄荷 #A8E6CF · 黄油 #FFE9A8 · 淡紫 #D9C2F0 · 柔粉 #FFC1CC。</li>
+        <li><b>音频优先</b> · 所有 UI 元素都应有"点一下 Bunny 读给你听"的能力。</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

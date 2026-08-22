@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="1024" viewBox="0 0 1366 1024" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!--
+    Panel 3-6-06 · Bunny 3-6 岁专属 · 跟 Bunny 读 / 鼓励优先
+    设计原则：
+      - 屏幕里只 1 个句子 + 1 个麦克风按钮 + Bunny 鼓励条
+      - 麦克风按钮直径 ≥ 200px；触屏三圈波纹动画提示
+      - 完全无分数、无红叉、无扣分、无三维评分
+      - 反馈语只用 Bunny 鼓励短句
+      - 录音状态用 Bunny 嘴型 + 大爱心可视化
+  -->
+  <defs>
+    <linearGradient id="bg-read-3-6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF4E6"/>
+      <stop offset="40%" stop-color="#FFE0BF"/>
+      <stop offset="100%" stop-color="#D9C2F0"/>
+    </linearGradient>
+    <linearGradient id="card-read-3-6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFF9F0"/>
+    </linearGradient>
+    <linearGradient id="mic-grad-3-6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFB37C"/>
+      <stop offset="100%" stop-color="#E94545"/>
+    </linearGradient>
+    <filter id="shadow-read-3-6"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-opacity="0.18"/></filter>
+
+    <symbol id="bunny-big-read" viewBox="-100 -100 200 200">
+      <ellipse cx="-22" cy="-50" rx="11" ry="56" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <ellipse cx="-22" cy="-40" rx="5.5" ry="38" fill="#FFD3DC"/>
+      <ellipse cx="22" cy="-50" rx="11" ry="56" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <ellipse cx="22" cy="-40" rx="5.5" ry="38" fill="#FFD3DC"/>
+      <ellipse cx="0" cy="0" r="50" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <ellipse cx="-28" cy="12" rx="11" ry="7" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="28" cy="12" rx="11" ry="7" fill="#FFC1CC" opacity="0.85"/>
+      <circle cx="-16" cy="-8" r="6.5" fill="#2C2C54"/>
+      <circle cx="16" cy="-8" r="6.5" fill="#2C2C54"/>
+      <circle cx="-14" cy="-10" r="2.5" fill="#FFFFFF"/>
+      <circle cx="18" cy="-10" r="2.5" fill="#FFFFFF"/>
+      <ellipse cx="0" cy="10" rx="5" ry="3" fill="#FFC1CC"/>
+      <path d="M -10 18 Q 0 28 10 18" stroke="#2C2C54" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="url(#bg-read-3-6)"/>
+
+  <!-- 装饰云 + 心 -->
+  <g opacity="0.55">
+    <ellipse cx="180" cy="180" rx="46" ry="14" fill="#FFFFFF"/>
+    <ellipse cx="200" cy="166" rx="28" ry="12" fill="#FFFFFF"/>
+  </g>
+  <g fill="#FFC1CC" opacity="0.7">
+    <path d="M 1170 200 q -10 -10 -20 0 q -10 10 0 20 l 20 20 l 20 -20 q 10 -10 0 -20 q -10 -10 -20 0 z"/>
+    <path d="M 1230 280 q -8 -8 -16 0 q -8 8 0 16 l 16 16 l 16 -16 q 8 -8 0 -16 q -8 -8 -16 0 z"/>
+  </g>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1366" height="96" fill="#FFFFFF" opacity="0.92"/>
+  <g transform="translate(56 48)">
+    <circle r="32" fill="#FFE9A8" stroke="#EAE6DD" stroke-width="2"/>
+    <text y="10" font-size="28" text-anchor="middle">←</text>
+  </g>
+  <text x="683" y="46" font-size="22" font-weight="700" fill="#2C2C54" text-anchor="middle">跟 Bunny 读</text>
+  <text x="683" y="72" font-size="14" fill="#5C5C8A" text-anchor="middle">第 2 句 / 共 4 句</text>
+  <g transform="translate(1180 32)">
+    <rect width="150" height="56" rx="28" fill="#A8E6CF"/>
+    <text x="32" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="60" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="88" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="116" y="38" font-size="22" text-anchor="middle">☆</text>
+    <text x="132" y="38" font-size="14" font-weight="700" fill="#1F6A4D" text-anchor="middle">3/4</text>
+  </g>
+
+  <!-- 当前句子 -->
+  <g transform="translate(40 130)">
+    <rect width="1286" height="200" rx="36" fill="url(#card-read-3-6)" stroke="#A8E6CF" stroke-width="3" filter="url(#shadow-read-3-6)"/>
+    <text x="40" y="56" font-size="18" font-weight="700" fill="#1F6A4D">第 2 句</text>
+    <text x="40" y="140" font-size="72" font-weight="700" fill="#2C2C54">小兔子在</text>
+    <rect x="500" y="76" width="220" height="80" rx="32" fill="#A8E6CF"/>
+    <text x="610" y="138" font-size="64" font-weight="700" fill="#1F6A4D" text-anchor="middle">森林里</text>
+    <text x="780" y="140" font-size="72" font-weight="700" fill="#2C2C54">找妈妈。</text>
+
+    <!-- 听 Bunny -->
+    <g transform="translate(950 36)">
+      <rect width="296" height="124" rx="24" fill="#FFE9A8"/>
+      <circle cx="48" cy="62" r="32" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <text x="48" y="74" font-size="28" text-anchor="middle">🔊</text>
+      <text x="96" y="50" font-size="16" font-weight="700" fill="#7A4F00">先听 Bunny 读</text>
+      <text x="96" y="78" font-size="14" fill="#7A4F00">再点下面大圆圈</text>
+      <text x="96" y="100" font-size="12" fill="#7A4F00">跟你一起读</text>
+    </g>
+  </g>
+
+  <!-- 中央：超大麦克风 -->
+  <g transform="translate(483 360)">
+    <!-- 三圈波纹 -->
+    <circle r="220" fill="none" stroke="#FFC1CC" stroke-width="3" opacity="0.4"/>
+    <circle r="180" fill="none" stroke="#FFC1CC" stroke-width="3" opacity="0.6"/>
+    <circle r="140" fill="none" stroke="#FFC1CC" stroke-width="3" opacity="0.8"/>
+    <!-- 麦克风主体 -->
+    <circle r="110" fill="url(#mic-grad-3-6)" stroke="#FFFFFF" stroke-width="6" filter="url(#shadow-read-3-6)"/>
+    <circle r="110" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.5"/>
+    <text y="38" font-size="80" text-anchor="middle">🎤</text>
+    <!-- 顶部提示弧 -->
+    <path d="M -100 -90 Q 0 -130 100 -90" stroke="#E94545" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M -100 -90 L -90 -100 M -100 -90 L -110 -100" stroke="#E94545" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 100 -90 L 90 -100 M 100 -90 L 110 -100" stroke="#E94545" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- 录音中提示 -->
+    <text y="160" font-size="22" font-weight="700" fill="#E94545" text-anchor="middle">按住 Bunny 头开始</text>
+  </g>
+
+  <!-- Bunny 鼓励 -->
+  <g transform="translate(40 770)">
+    <rect width="1286" height="140" rx="36" fill="#A8E6CF" filter="url(#shadow-read-3-6)"/>
+    <use href="#bunny-big-read" x="0" y="0" width="200" height="200"/>
+    <g transform="translate(220 30)">
+      <text x="0" y="40" font-size="36" font-weight="700" fill="#1F6A4D">太棒了！像小小朗诵家！</text>
+      <text x="0" y="80" font-size="18" fill="#1F6A4D">再读一次，会更清楚哦～</text>
+      <text x="0" y="106" font-size="14" fill="#1F6A4D" opacity="0.85">Bunny 永远鼓励你，从来不扣分</text>
+    </g>
+    <!-- 撒心 + 星 -->
+    <g transform="translate(940 24)">
+      <text font-size="32" fill="#FFD15C">⭐</text>
+      <text x="40" y="-8" font-size="22" fill="#FFD15C">⭐</text>
+      <text x="80" y="0" font-size="18" fill="#FFD15C">⭐</text>
+      <text x="180" y="-12" font-size="32" fill="#FFC1CC">💗</text>
+      <text x="240" y="0" font-size="22" fill="#FFC1CC">💗</text>
+      <text x="290" y="-6" font-size="18" fill="#FFC1CC">💗</text>
+    </g>
+  </g>
+
+  <!-- 底部进度：4 句 -->
+  <g transform="translate(40 920)">
+    <rect width="1286" height="16" rx="8" fill="#EAE6DD"/>
+    <rect width="966" height="16" rx="8" fill="#A8E6CF"/>
+  </g>
+
+  <!-- 不显示的元素（显式注释：不要负面反馈） -->
+  <!--
+    已删除的设计（按反 slop / 适龄基线）：
+    - 红叉 ❌ / 错误次数
+    - 流利度 / 完整度 / 发音 三维评分
+    - "再来一次 -1 分"
+    - 排行榜 / 同伴对比
+  -->
+</svg>

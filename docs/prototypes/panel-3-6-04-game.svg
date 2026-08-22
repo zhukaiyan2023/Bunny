@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="1024" viewBox="0 0 1366 1024" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!--
+    Panel 3-6-04 · Bunny 3-6 岁专属 · 玩游戏 / 找一找
+    设计原则：
+      - 单题单屏：1 个任务 + 3 个大按钮（其他字符不出现）
+      - 大场景图：森林 / 山 / 池塘，3-5 个可选图标
+      - 每个按钮 ≥ 160×160 触控目标 + 拟人表情
+      - 不显示"正确率" / "得分"；只用 Bunny 鼓励语
+      - 错误提示 = "Bunny 没听清，再点一次"，永不负面
+  -->
+  <defs>
+    <linearGradient id="bg-game-3-6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF4E6"/>
+      <stop offset="55%" stop-color="#FFE0BF"/>
+      <stop offset="100%" stop-color="#B5DEFF"/>
+    </linearGradient>
+    <linearGradient id="scene-game" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE9A8"/>
+      <stop offset="50%" stop-color="#FFC1CC"/>
+      <stop offset="100%" stop-color="#FFC76B"/>
+    </linearGradient>
+    <linearGradient id="card-game" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFF9F0"/>
+    </linearGradient>
+    <linearGradient id="btn-yes" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A8E6CF"/>
+      <stop offset="100%" stop-color="#39B86A"/>
+    </linearGradient>
+    <filter id="shadow-game-3-6"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-opacity="0.18"/></filter>
+
+    <symbol id="big-eye-g" viewBox="-30 -30 60 60">
+      <circle cx="-22" cy="-30" r="6" fill="#2C2C54"/>
+      <circle cx="22" cy="-30" r="6" fill="#2C2C54"/>
+      <circle cx="-20" cy="-32" r="2.5" fill="#FFFFFF"/>
+      <circle cx="24" cy="-32" r="2.5" fill="#FFFFFF"/>
+      <ellipse cx="-30" cy="-12" rx="9" ry="6" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="30" cy="-12" rx="9" ry="6" fill="#FFC1CC" opacity="0.85"/>
+    </symbol>
+    <symbol id="bunny-mini-g" viewBox="-60 -60 120 120">
+      <ellipse cx="-22" cy="-14" rx="9" ry="34" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="-22" cy="-8" rx="4.5" ry="22" fill="#FFD3DC"/>
+      <ellipse cx="22" cy="-14" rx="9" ry="34" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="22" cy="-8" rx="4.5" ry="22" fill="#FFD3DC"/>
+      <circle cx="0" cy="0" r="32" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <circle cx="-12" cy="-4" r="5" fill="#2C2C54"/>
+      <circle cx="12" cy="-4" r="5" fill="#2C2C54"/>
+      <circle cx="-10" cy="-6" r="2" fill="#FFFFFF"/>
+      <circle cx="14" cy="-6" r="2" fill="#FFFFFF"/>
+      <ellipse cx="-20" cy="8" rx="7" ry="5" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="20" cy="8" rx="7" ry="5" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="0" cy="14" rx="4" ry="2.5" fill="#FFC1CC"/>
+      <path d="M -8 22 Q 0 30 8 22" stroke="#2C2C54" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="url(#bg-game-3-6)"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1366" height="96" fill="#FFFFFF" opacity="0.92"/>
+  <g transform="translate(56 48)">
+    <circle r="32" fill="#FFE9A8" stroke="#EAE6DD" stroke-width="2"/>
+    <text y="10" font-size="28" text-anchor="middle">←</text>
+  </g>
+  <text x="683" y="46" font-size="22" font-weight="700" fill="#2C2C54" text-anchor="middle">玩游戏</text>
+  <text x="683" y="72" font-size="14" fill="#5C5C8A" text-anchor="middle">找一找 · 3 / 8</text>
+  <g transform="translate(1180 32)">
+    <rect width="150" height="56" rx="28" fill="#FFC1CC"/>
+    <text x="32" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="60" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="88" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="128" y="38" font-size="16" font-weight="700" fill="#7A2A4D" text-anchor="middle">3/8</text>
+  </g>
+
+  <!-- Bunny 提示条 -->
+  <g transform="translate(40 130)">
+    <rect width="1286" height="120" rx="28" fill="#FFFFFF" filter="url(#shadow-game-3-6)"/>
+    <use href="#bunny-mini-g" x="20" y="0" width="120" height="120"/>
+    <g transform="translate(160 28)">
+      <text x="0" y="32" font-size="28" font-weight="700" fill="#2C2C54">哪个是「山」呀？</text>
+      <text x="0" y="62" font-size="16" fill="#5C5C8A">点一下你看见的那个字</text>
+    </g>
+    <!-- 目标字小提示 -->
+    <g transform="translate(1080 24)">
+      <rect width="180" height="72" rx="20" fill="#FFE9A8"/>
+      <text x="36" y="48" font-size="36" font-weight="700" fill="#E94545" text-anchor="middle">山</text>
+      <text x="80" y="36" font-size="14" font-weight="700" fill="#7A4F00">找一个</text>
+      <text x="80" y="56" font-size="14" fill="#7A4F00">一样的</text>
+    </g>
+  </g>
+
+  <!-- 大场景 -->
+  <g transform="translate(40 270)">
+    <rect width="1286" height="280" rx="36" fill="url(#scene-game)" filter="url(#shadow-game-3-6)"/>
+    <!-- 太阳 -->
+    <circle cx="1180" cy="80" r="46" fill="#FFD15C" stroke="#2C2C54" stroke-width="3"/>
+    <g stroke="#2C2C54" stroke-width="3" stroke-linecap="round">
+      <line x1="1180" y1="14" x2="1180" y2="6"/>
+      <line x1="1180" y1="154" x2="1180" y2="146"/>
+      <line x1="1114" y1="80" x2="1106" y2="80"/>
+      <line x1="1254" y1="80" x2="1246" y2="80"/>
+      <line x1="1132" y1="32" x2="1126" y2="26"/>
+      <line x1="1228" y1="128" x2="1234" y2="134"/>
+      <line x1="1132" y1="128" x2="1126" y2="134"/>
+      <line x1="1228" y1="32" x2="1234" y2="26"/>
+    </g>
+    <!-- 大山 -->
+    <g transform="translate(280 220)">
+      <path d="M -120 0 L -40 -130 L 0 -50 L 50 -150 L 130 0 Z" fill="#A8E6CF" stroke="#2C2C54" stroke-width="4"/>
+      <path d="M -40 -130 L -64 -88 L -16 -88 Z" fill="#FFFFFF"/>
+      <path d="M 50 -150 L 24 -104 L 76 -104 Z" fill="#FFFFFF"/>
+    </g>
+    <!-- 小山 -->
+    <g transform="translate(620 230)">
+      <path d="M -80 0 L -20 -80 L 30 -40 L 90 0 Z" fill="#39B86A" stroke="#2C2C54" stroke-width="3"/>
+    </g>
+    <!-- 树 -->
+    <g transform="translate(880 230)">
+      <ellipse cx="0" cy="-30" rx="40" ry="50" fill="#39B86A" stroke="#2C2C54" stroke-width="3"/>
+      <rect x="-10" y="10" width="20" height="40" fill="#7A4F00" stroke="#2C2C54" stroke-width="3"/>
+    </g>
+    <g transform="translate(1020 240)">
+      <ellipse cx="0" cy="-26" rx="34" ry="42" fill="#6FD7A0" stroke="#2C2C54" stroke-width="3"/>
+      <rect x="-8" y="6" width="16" height="34" fill="#7A4F00" stroke="#2C2C54" stroke-width="3"/>
+    </g>
+    <!-- 草 -->
+    <rect x="0" y="220" width="1286" height="60" fill="#39B86A"/>
+    <g fill="#6FD7A0">
+      <path d="M 100 220 L 100 240 L 105 240 Z"/>
+      <path d="M 460 220 L 460 244 L 466 244 Z"/>
+      <path d="M 760 220 L 760 240 L 765 240 Z"/>
+      <path d="M 1100 220 L 1100 242 L 1105 242 Z"/>
+    </g>
+    <!-- 小花 -->
+    <g transform="translate(180 230)">
+      <circle r="6" fill="#E94545"/>
+      <circle cx="-10" cy="0" r="6" fill="#FFC1CC"/>
+      <circle cx="10" cy="0" r="6" fill="#FFC1CC"/>
+      <circle r="3" fill="#FFD15C"/>
+    </g>
+    <!-- Bunny 在树下 -->
+    <g transform="translate(900 196)">
+      <ellipse cx="-12" cy="22" rx="10" ry="6" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2"/>
+      <ellipse cx="12" cy="22" rx="10" ry="6" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2"/>
+      <ellipse cx="0" cy="0" rx="26" ry="22" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <path d="M -12 -16 Q -22 -16 -22 -2 Q -22 16 -16 22 Q -8 22 -8 8 Q -8 -10 -8 -16 Z" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <path d="M -12 -10 Q -16 0 -16 14 Q -14 22 -10 22 Q -10 6 -10 -10 Z" fill="#FFD3DC"/>
+      <path d="M 12 -16 Q 22 -16 22 -2 Q 22 16 16 22 Q 8 22 8 8 Q 8 -10 8 -16 Z" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <path d="M 12 -10 Q 16 0 16 14 Q 14 22 10 22 Q 10 6 10 -10 Z" fill="#FFD3DC"/>
+      <circle cx="0" cy="-8" r="18" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <circle cx="-6" cy="-10" r="2.5" fill="#2C2C54"/>
+      <circle cx="6" cy="-10" r="2.5" fill="#2C2C54"/>
+      <ellipse cx="-9" cy="-2" rx="4" ry="2.5" fill="#FFC1CC"/>
+      <ellipse cx="9" cy="-2" rx="4" ry="2.5" fill="#FFC1CC"/>
+    </g>
+  </g>
+
+  <!-- 3 个字按钮 -->
+  <g transform="translate(40 580)">
+    <text x="0" y="20" font-size="14" font-weight="700" fill="#5C5C8A">点一下你看见的字</text>
+    <g transform="translate(0 36)">
+      <!-- 错 -->
+      <rect width="404" height="220" rx="32" fill="#FFFFFF" stroke="#EAE6DD" stroke-width="3" filter="url(#shadow-game-3-6)"/>
+      <use href="#big-eye-g" x="40" y="20" width="80" height="80"/>
+      <text x="202" y="180" font-size="160" font-weight="700" fill="#2C2C54" text-anchor="middle">木</text>
+    </g>
+    <g transform="translate(424 36)">
+      <!-- 对 ✓ -->
+      <rect width="404" height="220" rx="32" fill="url(#btn-yes)" stroke="#39B86A" stroke-width="6" filter="url(#shadow-game-3-6)"/>
+      <use href="#big-eye-g" x="40" y="20" width="80" height="80"/>
+      <text x="202" y="180" font-size="160" font-weight="700" fill="#FFFFFF" text-anchor="middle">山</text>
+      <!-- ✓ 大徽章 -->
+      <g transform="translate(330 30)">
+        <circle r="44" fill="#FFFFFF" stroke="#39B86A" stroke-width="6"/>
+        <text y="18" font-size="56" font-weight="700" fill="#39B86A" text-anchor="middle">✓</text>
+      </g>
+      <!-- 撒星 -->
+      <g transform="translate(80 50)">
+        <text font-size="22" fill="#FFD15C">⭐</text>
+        <text x="40" y="-12" font-size="16" fill="#FFD15C">⭐</text>
+        <text x="280" y="-20" font-size="18" fill="#FFD15C">⭐</text>
+        <text x="220" y="40" font-size="14" fill="#FFD15C">⭐</text>
+      </g>
+    </g>
+    <g transform="translate(848 36)">
+      <rect width="398" height="220" rx="32" fill="#FFFFFF" stroke="#EAE6DD" stroke-width="3" filter="url(#shadow-game-3-6)"/>
+      <use href="#big-eye-g" x="40" y="20" width="80" height="80"/>
+      <text x="199" y="180" font-size="160" font-weight="700" fill="#2C2C54" text-anchor="middle">水</text>
+    </g>
+  </g>
+
+  <!-- Bunny 鼓励 + 跳过 -->
+  <g transform="translate(40 870)">
+    <rect width="800" height="56" rx="28" fill="#A8E6CF"/>
+    <use href="#bunny-mini-g" x="0" y="-32" width="120" height="120"/>
+    <text x="120" y="36" font-size="20" font-weight="700" fill="#1F6A4D">太棒了！你找到了「山」！</text>
+  </g>
+  <g transform="translate(960 870)">
+    <rect width="170" height="56" rx="28" fill="#FFFFFF" stroke="#EAE6DD" stroke-width="2"/>
+    <text x="85" y="38" font-size="18" font-weight="700" fill="#5C5C8A" text-anchor="middle">跳过 →</text>
+  </g>
+  <g transform="translate(1150 870)">
+    <rect width="176" height="56" rx="28" fill="#FFD15C"/>
+    <text x="88" y="38" font-size="18" font-weight="700" fill="#7A4F00" text-anchor="middle">下一题 →</text>
+  </g>
+</svg>

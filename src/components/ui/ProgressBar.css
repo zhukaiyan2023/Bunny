@@ -1,0 +1,30 @@
+.progress { display: flex; flex-direction: column; gap: 6px; }
+.progress__label { font-size: 13px; font-weight: 700; color: var(--bunny-soft-ink); }
+.progress__track {
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bunny-border);
+}
+.progress__track--mint    { background: rgba(168, 230, 207, 0.4); }
+.progress__track--butter  { background: rgba(255, 233, 168, 0.5); }
+.progress__track--red     { background: rgba(233, 69, 69, 0.18); }
+.progress__track--pink    { background: rgba(255, 193, 204, 0.5); }
+.progress__track--sky     { background: rgba(181, 222, 255, 0.55); }
+
+.progress__fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.progress__track--mint .progress__fill    { background: var(--bunny-mint-deep); }
+.progress__track--butter .progress__fill  { background: var(--bunny-yellow); }
+.progress__track--red .progress__fill     { background: var(--bunny-red); }
+.progress__track--pink .progress__fill    { background: var(--bunny-pink-deep); }
+.progress__track--sky .progress__fill     { background: var(--bunny-blue-deep); }
+
+.progress__caption {
+  font-size: 12px;
+  color: var(--bunny-soft-ink);
+  font-weight: 700;
+}

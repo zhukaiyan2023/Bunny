@@ -1,0 +1,19 @@
+.card {
+  border-radius: var(--radius-card);
+  border: 2px solid var(--bunny-border);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--bunny-cream) 100%);
+}
+
+.card--soft     { background: linear-gradient(180deg, #FFFFFF 0%, var(--bunny-cream) 100%); }
+.card--mint     { background: var(--bunny-mint); border-color: transparent; }
+.card--butter   { background: var(--bunny-butter); border-color: transparent; }
+.card--pink     { background: var(--bunny-pink); border-color: transparent; }
+.card--sky      { background: var(--bunny-sky); border-color: transparent; }
+.card--lavender { background: var(--bunny-lavender); border-color: transparent; }
+
+.card--shadow-soft { box-shadow: var(--shadow-soft); }
+.card--shadow-pop  { box-shadow: var(--shadow-pop); }
+.card--shadow-none { box-shadow: none; }
+
+.card.is-clickable { cursor: pointer; transition: transform 0.12s ease; }
+.card.is-clickable:hover { transform: translateY(-3px); }

@@ -1,0 +1,29 @@
+node_modules/
+.DS_Store
+.env
+*.log
+.idea/
+/dist/
+.vite/
+.playwright-report/
+test-results/
+/tmp/
+
+# Generated runtime audio (committed as silent placeholders via
+# `node tools/make-placeholders.mjs`; real audio is rebuilt per-env).
+assets/audio/l*/
+assets/audio/l*/*
+
+# Raw generator output.
+assets/art/.raw/
+
+# Local scratch worktrees.
+.claude/worktrees/
+.claude/projects/
+.claude/tasks/
+.claude/sessions/
+.claude/settings.local.json
+.claude/.DS_Store
+
+# Open Design tooling (untracked)
+.od-tooling/

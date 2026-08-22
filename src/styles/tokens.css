@@ -1,0 +1,53 @@
+/**
+ * Bunny · Design Tokens
+ *
+ * These tokens come directly from docs/STYLE_GUIDE.md and the Open
+ * Design rule_bunny_palette / rule_bunny_mascot / rule_pad_landscape_touch
+ * memory entries. Do not introduce additional palette colors without
+ * updating those rules.
+ */
+
+:root {
+  /* ----- Brand palette ----- */
+  --bunny-cream:      #FFF4E6;  /* 主背景 */
+  --bunny-peach:      #FFE0BF;  /* 二级背景 */
+  --bunny-red:        #E94545;  /* Bunny Red · CTA / 装备 */
+  --bunny-mint:       #A8E6CF;
+  --bunny-sky:        #B5DEFF;
+  --bunny-butter:     #FFE9A8;
+  --bunny-lavender:   #D9C2F0;
+  --bunny-pink:       #FFC1CC;
+  --bunny-mint-deep:  #39B86A;
+
+  /* ----- Inks / borders ----- */
+  --bunny-ink:        #2C2C54;
+  --bunny-soft-ink:   #5C5C8A;
+  --bunny-border:     #EAE6DD;
+
+  /* ----- Bunny 衍生色 ----- */
+  --bunny-pink-deep:  #7A2A4D;
+  --bunny-amber-deep: #7A4F00;
+  --bunny-green-deep: #1F6A4D;
+  --bunny-blue-deep:  #3F4C7A;
+  --bunny-lavender-deep: #7B5EAB;
+  --bunny-pink-ear:   #FFD3DC;  /* 内耳粉 */
+  --bunny-cheek:      #FFC1CC;  /* 腮红 */
+  --bunny-yellow:     #FFD15C;
+
+  /* ----- Geometry ----- */
+  --radius-card: 24px;
+  --radius-button: 22px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 6px 18px rgba(20, 50, 75, 0.12);
+  --shadow-pop:  0 12px 28px rgba(20, 50, 75, 0.18);
+
+  /* ----- Touch targets ----- */
+  --touch-min: 56px;
+  --touch-hero: 88px;
+  --touch-mascot: 120px;
+
+  /* ----- Type ----- */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', 'Source Han Sans SC', sans-serif;
+}

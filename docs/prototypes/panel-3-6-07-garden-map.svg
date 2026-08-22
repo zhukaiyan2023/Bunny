@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="1024" viewBox="0 0 1366 1024" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!--
+    Panel 3-6-07 · Bunny 3-6 岁 × 3000 字架构 · 字花园全景地图
+    设计目的：
+      把 3000 汉字拆成 10 个"主题岛"，每个岛 300 字。
+      - 起步岛（启蒙字 50） / 家 / 动物 / 植物 / 身体 / 动作 / 颜色 / 自然 / 数字 / 故事 / 汉字家族
+      每个汉字 = 一颗种子（未学）或一棵小苗（学过）/ 一朵花（熟练）/ 一颗果（掌握）
+      3-6 岁只看到"长出来的那一片"，但能感受到"还有很多种子会发芽"。
+      不显示百分数；用"Bunny 陪你种了 47 棵苗，再种 5 棵就解锁新岛"。
+  -->
+  <defs>
+    <linearGradient id="bg-garden" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF4E6"/>
+      <stop offset="50%" stop-color="#FFE0BF"/>
+      <stop offset="100%" stop-color="#A8E6CF"/>
+    </linearGradient>
+    <linearGradient id="card-garden" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFF9F0"/>
+    </linearGradient>
+    <linearGradient id="sea-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B5DEFF"/>
+      <stop offset="100%" stop-color="#7CCFAF"/>
+    </linearGradient>
+    <linearGradient id="island-current" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE9A8"/>
+      <stop offset="100%" stop-color="#FFC76B"/>
+    </linearGradient>
+    <linearGradient id="island-done" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C6F0D8"/>
+      <stop offset="100%" stop-color="#39B86A"/>
+    </linearGradient>
+    <filter id="shadow-garden"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-opacity="0.18"/></filter>
+
+    <!-- 已学（绿色小苗） -->
+    <symbol id="sprout" viewBox="-12 -16 24 32">
+      <ellipse cx="0" cy="14" rx="10" ry="3" fill="#7A4F00"/>
+      <path d="M 0 14 Q 0 -4 0 -10" stroke="#39B86A" stroke-width="2.5" fill="none"/>
+      <ellipse cx="-5" cy="-6" rx="5" ry="3" fill="#A8E6CF" transform="rotate(-30 -5 -6)"/>
+      <ellipse cx="5" cy="-6" rx="5" ry="3" fill="#A8E6CF" transform="rotate(30 5 -6)"/>
+    </symbol>
+    <!-- 熟练（粉色花） -->
+    <symbol id="bloom" viewBox="-12 -16 24 32">
+      <ellipse cx="0" cy="14" rx="10" ry="3" fill="#7A4F00"/>
+      <path d="M 0 14 Q 0 -4 0 -10" stroke="#39B86A" stroke-width="2" fill="none"/>
+      <circle cx="-5" cy="-8" r="3.5" fill="#FFC1CC"/>
+      <circle cx="5" cy="-8" r="3.5" fill="#FFC1CC"/>
+      <circle cx="0" cy="-12" r="3.5" fill="#FFC1CC"/>
+      <circle cx="0" cy="-8" r="2.5" fill="#FFD15C"/>
+    </symbol>
+    <!-- 掌握（红色果） -->
+    <symbol id="fruit" viewBox="-12 -16 24 32">
+      <ellipse cx="0" cy="14" rx="10" ry="3" fill="#7A4F00"/>
+      <path d="M 0 14 Q 0 -4 0 -10" stroke="#39B86A" stroke-width="2" fill="none"/>
+      <circle cx="0" cy="-10" r="5" fill="#E94545" stroke="#2C2C54" stroke-width="1.5"/>
+      <path d="M 0 -14 Q 2 -16 4 -14" stroke="#39B86A" stroke-width="2" fill="none"/>
+    </symbol>
+    <!-- 未学（灰色种子） -->
+    <symbol id="seed" viewBox="-8 -8 16 16">
+      <ellipse cx="0" cy="2" rx="6" ry="3" fill="#C9C5BD"/>
+      <ellipse cx="0" cy="0" rx="5" ry="2.5" fill="#D9D5CD"/>
+    </symbol>
+    <!-- Bunny mini -->
+    <symbol id="bunny-mini-gd" viewBox="-60 -60 120 120">
+      <ellipse cx="-22" cy="-14" rx="9" ry="34" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="-22" cy="-8" rx="4.5" ry="22" fill="#FFD3DC"/>
+      <ellipse cx="22" cy="-14" rx="9" ry="34" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="22" cy="-8" rx="4.5" ry="22" fill="#FFD3DC"/>
+      <circle cx="0" cy="0" r="32" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <circle cx="-12" cy="-4" r="5" fill="#2C2C54"/>
+      <circle cx="12" cy="-4" r="5" fill="#2C2C54"/>
+      <circle cx="-10" cy="-6" r="2" fill="#FFFFFF"/>
+      <circle cx="14" cy="-6" r="2" fill="#FFFFFF"/>
+      <ellipse cx="-20" cy="8" rx="7" ry="5" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="20" cy="8" rx="7" ry="5" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="0" cy="14" rx="4" ry="2.5" fill="#FFC1CC"/>
+      <path d="M -8 22 Q 0 30 8 22" stroke="#2C2C54" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="url(#bg-garden)"/>
+
+  <!-- 装饰海浪 -->
+  <g opacity="0.6">
+    <path d="M 0 720 Q 60 700 120 720 T 240 720 T 360 720" stroke="#7CCFAF" stroke-width="3" fill="none"/>
+    <path d="M 1000 760 Q 1060 740 1120 760 T 1240 760" stroke="#7CCFAF" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1366" height="96" fill="#FFFFFF" opacity="0.92"/>
+  <g transform="translate(56 48)">
+    <circle r="32" fill="#FFE9A8" stroke="#EAE6DD" stroke-width="2"/>
+    <text y="10" font-size="28" text-anchor="middle">←</text>
+  </g>
+  <text x="683" y="46" font-size="22" font-weight="700" fill="#2C2C54" text-anchor="middle">🌳 字花园全景</text>
+  <text x="683" y="72" font-size="14" fill="#5C5C8A" text-anchor="middle">你种下了多少棵小苗？</text>
+  <g transform="translate(1180 32)">
+    <rect width="150" height="56" rx="28" fill="#FFE9A8"/>
+    <text x="32" y="38" font-size="22" text-anchor="middle">🌱</text>
+    <text x="78" y="38" font-size="18" font-weight="700" fill="#7A4F00">47 棵苗</text>
+  </g>
+
+  <!-- 大海 + 10 个主题岛（横向带状） -->
+  <!-- 主视觉区 -->
+  <g transform="translate(40 130)">
+    <rect width="1286" height="540" rx="36" fill="url(#sea-grad)" filter="url(#shadow-garden)"/>
+    <text x="20" y="32" font-size="14" font-weight="700" fill="#3F4C7A">10 座小岛 · 每岛 300 字 · 3000 字等你种</text>
+
+    <!-- 岛 1 · 起步岛（已完成 50/50，孩子从这里开始） -->
+    <g transform="translate(80 80)">
+      <ellipse cx="80" cy="100" rx="80" ry="64" fill="url(#island-done)"/>
+      <text x="80" y="56" font-size="20" font-weight="700" fill="#1F6A4D" text-anchor="middle">🌱 起步岛</text>
+      <!-- 已学完，全是 fruit -->
+      <g transform="translate(20 80)">
+        <use href="#fruit" x="0" y="0" width="22" height="32"/>
+        <use href="#fruit" x="30" y="0" width="22" height="32"/>
+        <use href="#fruit" x="60" y="0" width="22" height="32"/>
+        <use href="#fruit" x="90" y="0" width="22" height="32"/>
+        <use href="#fruit" x="120" y="0" width="22" height="32"/>
+      </g>
+      <text x="80" y="160" font-size="12" font-weight="700" fill="#1F6A4D" text-anchor="middle">已种满 · 50 字</text>
+    </g>
+
+    <!-- 岛 2 · 家岛（当前岛，已学 47/300） -->
+    <g transform="translate(280 100)">
+      <ellipse cx="100" cy="120" rx="100" ry="80" fill="url(#island-current)" filter="url(#shadow-garden)"/>
+      <text x="100" y="50" font-size="22" font-weight="700" fill="#7A4F00" text-anchor="middle">🏠 家</text>
+      <!-- 字符网格：5×12 = 60 个格子代表本岛 300 字（本屏只画前 60 个）-->
+      <g transform="translate(20 70)">
+        <!-- 已学（47） -->
+        <g>
+          <use href="#fruit" x="0" y="0" width="20" height="28"/>
+          <use href="#fruit" x="24" y="0" width="20" height="28"/>
+          <use href="#bloom" x="48" y="0" width="20" height="28"/>
+          <use href="#bloom" x="72" y="0" width="20" height="28"/>
+          <use href="#fruit" x="96" y="0" width="20" height="28"/>
+          <use href="#fruit" x="120" y="0" width="20" height="28"/>
+          <use href="#sprout" x="144" y="0" width="20" height="28"/>
+        </g>
+        <g transform="translate(0 32)">
+          <use href="#fruit" x="0" y="0" width="20" height="28"/>
+          <use href="#bloom" x="24" y="0" width="20" height="28"/>
+          <use href="#fruit" x="48" y="0" width="20" height="28"/>
+          <use href="#sprout" x="72" y="0" width="20" height="28"/>
+          <use href="#fruit" x="96" y="0" width="20" height="28"/>
+          <use href="#bloom" x="120" y="0" width="20" height="28"/>
+          <use href="#fruit" x="144" y="0" width="20" height="28"/>
+        </g>
+        <g transform="translate(0 64)">
+          <use href="#sprout" x="0" y="0" width="20" height="28"/>
+          <use href="#fruit" x="24" y="0" width="20" height="28"/>
+          <use href="#bloom" x="48" y="0" width="20" height="28"/>
+          <use href="#fruit" x="72" y="0" width="20" height="28"/>
+          <use href="#sprout" x="96" y="0" width="20" height="28"/>
+          <use href="#fruit" x="120" y="0" width="20" height="28"/>
+          <use href="#bloom" x="144" y="0" width="20" height="28"/>
+        </g>
+        <g transform="translate(0 96)">
+          <use href="#fruit" x="0" y="0" width="20" height="28"/>
+          <use href="#sprout" x="24" y="0" width="20" height="28"/>
+          <use href="#fruit" x="48" y="0" width="20" height="28"/>
+          <use href="#bloom" x="72" y="0" width="20" height="28"/>
+          <use href="#fruit" x="96" y="0" width="20" height="28"/>
+          <use href="#sprout" x="120" y="0" width="20" height="28"/>
+          <use href="#fruit" x="144" y="0" width="20" height="28"/>
+        </g>
+        <!-- 未学（13 个 seed） -->
+        <g transform="translate(0 0)" opacity="0.65">
+          <use href="#seed" x="0" y="0" width="16" height="16"/>
+        </g>
+      </g>
+      <text x="100" y="232" font-size="13" font-weight="700" fill="#7A4F00" text-anchor="middle">47 / 300 字 · 你在这里！</text>
+    </g>
+
+    <!-- 岛 3 · 动物岛（未解锁） -->
+    <g transform="translate(540 80)" opacity="0.9">
+      <ellipse cx="80" cy="100" rx="80" ry="64" fill="#FFFFFF" opacity="0.55"/>
+      <text x="80" y="50" font-size="18" font-weight="700" fill="#5C5C8A" text-anchor="middle">🐰 动物</text>
+      <g transform="translate(20 80)">
+        <use href="#seed" x="0" y="0" width="16" height="16"/>
+        <use href="#seed" x="20" y="0" width="16" height="16"/>
+        <use href="#seed" x="40" y="0" width="16" height="16"/>
+        <use href="#seed" x="60" y="0" width="16" height="16"/>
+        <use href="#seed" x="80" y="0" width="16" height="16"/>
+        <use href="#seed" x="100" y="0" width="16" height="16"/>
+        <use href="#seed" x="120" y="0" width="16" height="16"/>
+        <use href="#seed" x="0" y="20" width="16" height="16"/>
+        <use href="#seed" x="20" y="20" width="16" height="16"/>
+        <use href="#seed" x="40" y="20" width="16" height="16"/>
+        <use href="#seed" x="60" y="20" width="16" height="16"/>
+      </g>
+      <text x="80" y="148" font-size="12" fill="#5C5C8A" text-anchor="middle">0 / 300 字 · 下一座</text>
+    </g>
+
+    <!-- 岛 4 · 植物岛（未解锁） -->
+    <g transform="translate(740 110)" opacity="0.9">
+      <ellipse cx="80" cy="100" rx="80" ry="60" fill="#FFFFFF" opacity="0.5"/>
+      <text x="80" y="50" font-size="18" font-weight="700" fill="#5C5C8A" text-anchor="middle">🌳 植物</text>
+      <g transform="translate(20 80)">
+        <use href="#seed" x="0" y="0" width="16" height="16"/>
+        <use href="#seed" x="20" y="0" width="16" height="16"/>
+        <use href="#seed" x="40" y="0" width="16" height="16"/>
+        <use href="#seed" x="60" y="0" width="16" height="16"/>
+        <use href="#seed" x="80" y="0" width="16" height="16"/>
+        <use href="#seed" x="100" y="0" width="16" height="16"/>
+      </g>
+      <text x="80" y="138" font-size="12" fill="#5C5C8A" text-anchor="middle">0 / 300 字</text>
+    </g>
+
+    <!-- 岛 5-10 · 一排远景 -->
+    <g transform="translate(940 60)" opacity="0.7">
+      <ellipse cx="160" cy="140" rx="140" ry="100" fill="#FFFFFF" opacity="0.4"/>
+      <text x="160" y="40" font-size="16" font-weight="700" fill="#5C5C8A" text-anchor="middle">身体 / 动作 / 颜色 / 自然 / 数字 / 故事</text>
+      <text x="160" y="80" font-size="36" text-anchor="middle" opacity="0.6">🏝️ 🏝️ 🏝️ 🏝️ 🏝️ 🏝️</text>
+      <text x="160" y="200" font-size="14" fill="#5C5C8A" text-anchor="middle">还有 6 座岛等你来 · 共 1800 字</text>
+      <text x="160" y="226" font-size="14" fill="#5C5C8A" text-anchor="middle">🌟 + 汉字家族 900 字</text>
+    </g>
+
+    <!-- Bunny 在当前岛（家岛）下面说话 -->
+    <g transform="translate(380 380)">
+      <rect width="240" height="100" rx="20" fill="#FFFFFF"/>
+      <use href="#bunny-mini-gd" x="0" y="0" width="100" height="100"/>
+      <text x="110" y="40" font-size="14" font-weight="700" fill="#2C2C54">家岛上你种了</text>
+      <text x="110" y="62" font-size="14" font-weight="700" fill="#E94545">47 棵小苗啦！</text>
+      <text x="110" y="84" font-size="12" fill="#5C5C8A">再来 5 棵就解锁动物岛</text>
+    </g>
+  </g>
+
+  <!-- 底部：3000 字总览条 -->
+  <g transform="translate(40 700)">
+    <rect width="1286" height="160" rx="32" fill="url(#card-garden)" filter="url(#shadow-garden)"/>
+    <text x="36" y="40" font-size="20" font-weight="700" fill="#2C2C54">🌳 字花园全景 · 3000 字</text>
+    <text x="36" y="62" font-size="13" fill="#5C5C8A">你离"自由读绘本"还有多远？</text>
+
+    <!-- 10 个岛进度 -->
+    <g transform="translate(36 80)">
+      <text x="0" y="14" font-size="12" fill="#5C5C8A">🌱 起步 50 / 50</text>
+      <rect x="120" y="2" width="160" height="14" rx="7" fill="#EAE6DD"/>
+      <rect x="120" y="2" width="160" height="14" rx="7" fill="#39B86A"/>
+      <text x="290" y="14" font-size="12" font-weight="700" fill="#1F6A4D">✓</text>
+
+      <text x="340" y="14" font-size="12" fill="#5C5C8A">🏠 家 47 / 300</text>
+      <rect x="460" y="2" width="160" height="14" rx="7" fill="#EAE6DD"/>
+      <rect x="460" y="2" width="26" height="14" rx="7" fill="#FFC76B"/>
+
+      <text x="680" y="14" font-size="12" fill="#5C5C8A">🐰 动物 0 / 300</text>
+      <rect x="800" y="2" width="160" height="14" rx="7" fill="#EAE6DD"/>
+      <rect x="800" y="2" width="0" height="14" rx="7" fill="#FFC76B"/>
+
+      <text x="1020" y="14" font-size="12" fill="#5C5C8A">...</text>
+    </g>
+    <g transform="translate(36 110)">
+      <text x="0" y="14" font-size="14" font-weight="700" fill="#2C2C54">已经种下：47 / 3000 字</text>
+      <text x="280" y="14" font-size="12" fill="#5C5C8A">（已熟练 18 · 已掌握 12 · 学苗 17）</text>
+      <text x="700" y="14" font-size="14" font-weight="700" fill="#E94545">→ 下一个目标：动物岛（300 字）</text>
+    </g>
+  </g>
+
+  <!-- 底部 6 tab 底栏 -->
+  <rect x="0" y="936" width="1366" height="88" fill="#FFFFFF" stroke="#EAE6DD" stroke-width="1"/>
+  <g font-size="12" font-weight="600" text-anchor="middle">
+    <g transform="translate(114 950)"><text y="22" font-size="28" fill="#5C5C8A">🏝️</text><text y="56" fill="#5C5C8A">首页</text></g>
+    <g transform="translate(341 950)"><text y="22" font-size="28" fill="#5C5C8A">📖</text><text y="56" fill="#5C5C8A">故事</text></g>
+    <g transform="translate(569 950)"><text y="22" font-size="28" fill="#5C5C8A">🌸</text><text y="56" fill="#5C5C8A">汉字</text></g>
+    <g transform="translate(797 950)"><text y="22" font-size="28" fill="#5C5C8A">🎮</text><text y="56" fill="#5C5C8A">游戏</text></g>
+    <g transform="translate(1024 950)">
+      <rect x="-30" y="-8" width="60" height="60" rx="30" fill="#A8E6CF"/>
+      <text y="32" font-size="28" fill="#1F6A4D">🌳</text>
+      <text y="62" font-size="12" font-weight="700" fill="#1F6A4D">字花园</text>
+    </g>
+    <g transform="translate(1252 950)"><text y="22" font-size="28" fill="#5C5C8A">🐰</text><text y="56" fill="#5C5C8A">家长</text></g>
+  </g>
+</svg>

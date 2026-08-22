@@ -1,0 +1,112 @@
+/**
+ * Bunny · Global stylesheet
+ *
+ * 1. CSS reset (essential only).
+ * 2. Body / app shell typography & background.
+ * 3. Re-usable utility classes.
+ *
+ * Canvas is fixed 1366x1024 (Pad landscape). At smaller widths we
+ * letterbox so the prototype stays centred on Pad hardware.
+ */
+
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+  color: var(--bunny-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: linear-gradient(180deg,
+    var(--bunny-cream)  0%,
+    var(--bunny-peach)  50%,
+    var(--bunny-sky)   100%);
+  background-attachment: fixed;
+  min-width: 1024px;
+}
+
+/* ----- App shell ----- */
+
+.app-shell {
+  width: 1366px;
+  height: 1024px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+@media (max-width: 1366px) {
+  .app-shell { transform-origin: top left; }
+}
+
+/* ----- Typography ----- */
+
+h1, h2, h3, h4 { margin: 0; line-height: 1.2; font-weight: 700; }
+h1 { font-size: 36px; }
+h2 { font-size: 28px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+
+p { margin: 0; line-height: 1.55; }
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ----- Common helpers ----- */
+
+.soft-card {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--bunny-cream) 100%);
+  border: 2px solid var(--bunny-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Color helpers */
+.bg-cream   { background: var(--bunny-cream); }
+.bg-peach   { background: var(--bunny-peach); }
+.bg-mint    { background: var(--bunny-mint); }
+.bg-sky     { background: var(--bunny-sky); }
+.bg-butter  { background: var(--bunny-butter); }
+.bg-lavender{ background: var(--bunny-lavender); }
+.bg-pink    { background: var(--bunny-pink); }
+.bg-red     { background: var(--bunny-red); color: #fff; }
+
+.ink        { color: var(--bunny-ink); }
+.soft-ink   { color: var(--bunny-soft-ink); }
+.green-ink  { color: var(--bunny-green-deep); }
+.amber-ink  { color: var(--bunny-amber-deep); }
+.pink-ink   { color: var(--bunny-pink-deep); }
+.blue-ink   { color: var(--bunny-blue-deep); }
+
+/* Touch target guarantee — children must opt-in to be smaller. */
+button, [role="button"] {
+  min-height: var(--touch-min);
+}

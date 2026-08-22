@@ -1,0 +1,48 @@
+.top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 32px;
+  background: rgba(255, 255, 255, 0.92);
+  z-index: 40;
+}
+
+.top-bar__back {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bunny-butter);
+  border: 2px solid var(--bunny-border);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--bunny-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-bar__title-block {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.top-bar__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--bunny-ink);
+  margin: 0;
+}
+
+.top-bar__subtitle {
+  font-size: 13px;
+  color: var(--bunny-soft-ink);
+  margin: 4px 0 0;
+}
+
+.top-bar__right {
+  flex-shrink: 0;
+}

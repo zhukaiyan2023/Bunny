@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="1024" viewBox="0 0 1366 1024" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!--
+    Panel 3-6-02 · Bunny 3-6 岁专属 · 绘本陪读 / Bunny 讲故事
+    设计原则：
+      - 大插画占主区 60%+；当前句子单行大字 48px
+      - Bunny 大头像占右下角，全程陪伴；不打断故事
+      - 单个大麦克风按钮（≥ 120px）作为跟读触发
+      - 点击字不弹出解释卡（避免打断故事流）
+      - 进度用图示（4 颗星）代替百分比
+  -->
+  <defs>
+    <linearGradient id="bg-story-3-6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF4E6"/>
+      <stop offset="40%" stop-color="#FFE0BF"/>
+      <stop offset="100%" stop-color="#C6F0D8"/>
+    </linearGradient>
+    <linearGradient id="card-story-3-6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFF9F0"/>
+    </linearGradient>
+    <linearGradient id="forest-story" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C6F0D8"/>
+      <stop offset="100%" stop-color="#6FD7A0"/>
+    </linearGradient>
+    <linearGradient id="mic-story" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFB37C"/>
+      <stop offset="100%" stop-color="#E94545"/>
+    </linearGradient>
+    <filter id="shadow-story-3-6"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-opacity="0.18"/></filter>
+
+    <symbol id="big-eye-s" viewBox="-30 -30 60 60">
+      <circle cx="-22" cy="-30" r="6" fill="#2C2C54"/>
+      <circle cx="22" cy="-30" r="6" fill="#2C2C54"/>
+      <circle cx="-20" cy="-32" r="2.5" fill="#FFFFFF"/>
+      <circle cx="24" cy="-32" r="2.5" fill="#FFFFFF"/>
+      <ellipse cx="-30" cy="-12" rx="9" ry="6" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="30" cy="-12" rx="9" ry="6" fill="#FFC1CC" opacity="0.85"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1366" height="1024" fill="url(#bg-story-3-6)"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1366" height="96" fill="#FFFFFF" opacity="0.92"/>
+  <!-- 返回按钮（大） -->
+  <g transform="translate(56 48)">
+    <circle r="32" fill="#FFE9A8" stroke="#EAE6DD" stroke-width="2"/>
+    <text y="10" font-size="28" text-anchor="middle">←</text>
+  </g>
+  <!-- 标题 -->
+  <text x="683" y="46" font-size="22" font-weight="700" fill="#2C2C54" text-anchor="middle">《小兔子找妈妈》</text>
+  <text x="683" y="72" font-size="14" fill="#5C5C8A" text-anchor="middle">第 2 页 / 共 8 页</text>
+  <!-- 进度：4 颗星 -->
+  <g transform="translate(1180 32)">
+    <rect width="150" height="56" rx="28" fill="#FFE9A8"/>
+    <text x="20" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="46" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="72" y="38" font-size="22" text-anchor="middle">⭐</text>
+    <text x="98" y="38" font-size="22" text-anchor="middle">☆</text>
+    <text x="128" y="38" font-size="16" font-weight="700" fill="#7A4F00" text-anchor="middle">4/8</text>
+  </g>
+
+  <!-- 大插画区 -->
+  <g transform="translate(40 130)">
+    <rect width="820" height="540" rx="36" fill="url(#forest-story)" filter="url(#shadow-story-3-6)"/>
+    <!-- 树 -->
+    <g>
+      <ellipse cx="120" cy="380" rx="80" ry="100" fill="#6FD7A0"/>
+      <rect x="106" y="380" width="28" height="80" fill="#7A4F00"/>
+      <ellipse cx="280" cy="320" rx="100" ry="120" fill="#39B86A"/>
+      <rect x="262" y="320" width="36" height="100" fill="#7A4F00"/>
+      <ellipse cx="700" cy="360" rx="90" ry="110" fill="#6FD7A0"/>
+      <rect x="686" y="360" width="28" height="90" fill="#7A4F00"/>
+      <ellipse cx="500" cy="240" rx="110" ry="130" fill="#A8E6CF"/>
+      <rect x="482" y="240" width="36" height="120" fill="#7A4F00"/>
+    </g>
+    <!-- 草 -->
+    <rect x="0" y="460" width="820" height="80" fill="#A8E6CF"/>
+    <g fill="#39B86A">
+      <path d="M 60 460 L 60 480 L 64 480 Z"/>
+      <path d="M 200 460 L 200 482 L 205 482 Z"/>
+      <path d="M 380 460 L 380 480 L 384 480 Z"/>
+      <path d="M 580 460 L 580 484 L 585 484 Z"/>
+      <path d="M 720 460 L 720 480 L 724 480 Z"/>
+    </g>
+    <!-- 蘑菇 -->
+    <g transform="translate(180 470)">
+      <ellipse cx="0" cy="0" rx="22" ry="14" fill="#E94545"/>
+      <ellipse cx="0" cy="14" rx="10" ry="10" fill="#FFFFFF"/>
+      <circle cx="-8" cy="-4" r="3" fill="#FFFFFF"/>
+      <circle cx="8" cy="-2" r="3" fill="#FFFFFF"/>
+      <circle cx="0" cy="-6" r="3" fill="#FFFFFF"/>
+    </g>
+    <g transform="translate(620 478)">
+      <ellipse cx="0" cy="0" rx="18" ry="12" fill="#E94545"/>
+      <ellipse cx="0" cy="10" rx="8" ry="8" fill="#FFFFFF"/>
+    </g>
+    <!-- Bunny 大插画主角（找妈妈的小兔子） -->
+    <g transform="translate(380 360)">
+      <ellipse cx="-32" cy="100" rx="22" ry="10" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="32" cy="100" rx="22" ry="10" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="0" cy="50" rx="60" ry="50" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <path d="M -28 -22 Q -42 -22 -44 0 Q -48 36 -36 50 Q -22 50 -18 36 Q -18 0 -18 -22 Z" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <path d="M -28 -16 Q -36 -2 -38 22 Q -40 44 -32 46 Q -24 32 -24 18 Q -24 -4 -24 -16 Z" fill="#FFD3DC"/>
+      <path d="M 28 -22 Q 42 -22 44 0 Q 48 36 36 50 Q 22 50 18 36 Q 18 0 18 -22 Z" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <path d="M 28 -16 Q 36 -2 38 22 Q 40 44 32 46 Q 24 32 24 18 Q 24 -4 24 -16 Z" fill="#FFD3DC"/>
+      <circle cx="0" cy="0" r="42" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2.5"/>
+      <ellipse cx="-22" cy="10" rx="10" ry="6" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="22" cy="10" rx="10" ry="6" fill="#FFC1CC" opacity="0.85"/>
+      <circle cx="-14" cy="-6" r="5.5" fill="#2C2C54"/>
+      <circle cx="14" cy="-6" r="5.5" fill="#2C2C54"/>
+      <circle cx="-12" cy="-8" r="2" fill="#FFFFFF"/>
+      <circle cx="16" cy="-8" r="2" fill="#FFFFFF"/>
+      <ellipse cx="0" cy="8" rx="4" ry="2.5" fill="#FFC1CC"/>
+      <path d="M -7 14 Q 0 22 7 14" stroke="#2C2C54" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- 问号气泡：小兔子在问 -->
+    <g transform="translate(450 250)">
+      <circle r="22" fill="#FFFFFF" stroke="#2C2C54" stroke-width="2"/>
+      <text y="9" font-size="24" font-weight="700" fill="#E94545" text-anchor="middle">?</text>
+    </g>
+    <!-- 蝴蝶点缀 -->
+    <g transform="translate(620 220)">
+      <ellipse cx="-8" cy="0" rx="10" ry="8" fill="#FFC1CC" stroke="#2C2C54" stroke-width="1.5"/>
+      <ellipse cx="8" cy="0" rx="10" ry="8" fill="#FFC1CC" stroke="#2C2C54" stroke-width="1.5"/>
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#2C2C54" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- 右侧：Bunny + 当前句 + 大麦克风 -->
+  <g transform="translate(900 130)">
+    <!-- 大 Bunny -->
+    <g transform="translate(186 100)">
+      <ellipse cx="-32" cy="148" rx="26" ry="14" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <ellipse cx="32" cy="148" rx="26" ry="14" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <ellipse cx="0" cy="80" rx="88" ry="72" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <path d="M -42 50 L -50 116 Q -50 128 -38 128 L 38 128 Q 50 128 50 116 L 42 50 Z" fill="#E94545" stroke="#2C2C54" stroke-width="3"/>
+      <rect x="-10" y="86" width="20" height="10" rx="2" fill="#FFFFFF"/>
+      <path d="M -34 -10 Q -50 -10 -54 14 Q -58 60 -46 80 Q -28 80 -22 60 Q -22 14 -22 -10 Z" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <path d="M -34 -2 Q -42 14 -44 42 Q -46 74 -36 76 Q -28 56 -28 34 Q -28 4 -28 -2 Z" fill="#FFD3DC"/>
+      <path d="M 34 -10 Q 50 -10 54 14 Q 58 60 46 80 Q 28 80 22 60 Q 22 14 22 -10 Z" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <path d="M 34 -2 Q 42 14 44 42 Q 46 74 36 76 Q 28 56 28 34 Q 28 4 28 -2 Z" fill="#FFD3DC"/>
+      <circle cx="0" cy="0" r="60" fill="#FFFFFF" stroke="#2C2C54" stroke-width="3"/>
+      <ellipse cx="-34" cy="14" rx="13" ry="8" fill="#FFC1CC" opacity="0.85"/>
+      <ellipse cx="34" cy="14" rx="13" ry="8" fill="#FFC1CC" opacity="0.85"/>
+      <circle cx="-20" cy="-10" r="8" fill="#2C2C54"/>
+      <circle cx="20" cy="-10" r="8" fill="#2C2C54"/>
+      <circle cx="-18" cy="-13" r="3" fill="#FFFFFF"/>
+      <circle cx="22" cy="-13" r="3" fill="#FFFFFF"/>
+      <ellipse cx="0" cy="10" rx="5" ry="3.5" fill="#FFC1CC"/>
+      <path d="M -10 18 Q 0 28 10 18" stroke="#2C2C54" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- 对话气泡：Bunny 提示 -->
+    <g transform="translate(0 250)">
+      <rect width="426" height="100" rx="24" fill="#FFFFFF" stroke="#EAE6DD" stroke-width="2"/>
+      <circle cx="40" cy="50" r="22" fill="#FFE9A8"/>
+      <text x="40" y="58" font-size="22" text-anchor="middle">🔊</text>
+      <text x="80" y="42" font-size="18" font-weight="700" fill="#2C2C54">Bunny 在讲</text>
+      <text x="80" y="68" font-size="14" fill="#5C5C8A">听完之后，再跟我读</text>
+      <text x="80" y="90" font-size="12" fill="#5C5C8A">点大字，Bunny 再说一遍</text>
+    </g>
+
+    <!-- 当前句子（大字 48px，单行） -->
+    <g transform="translate(0 380)">
+      <rect width="426" height="120" rx="24" fill="url(#card-story-3-6)" stroke="#A8E6CF" stroke-width="3"/>
+      <text x="20" y="48" font-size="18" fill="#1F6A4D" font-weight="700">第 2 句</text>
+      <text x="20" y="98" font-size="38" font-weight="700" fill="#2C2C54">小兔子在</text>
+      <rect x="220" y="62" width="120" height="44" rx="20" fill="#A8E6CF"/>
+      <text x="280" y="96" font-size="36" font-weight="700" fill="#1F6A4D" text-anchor="middle">森林里</text>
+      <text x="350" y="98" font-size="38" font-weight="700" fill="#2C2C54">找妈妈。</text>
+    </g>
+
+    <!-- 大麦克风按钮 -->
+    <g transform="translate(0 524)">
+      <rect width="426" height="100" rx="24" fill="#A8E6CF"/>
+      <circle cx="64" cy="50" r="40" fill="url(#mic-story)" stroke="#FFFFFF" stroke-width="4"/>
+      <text x="64" y="62" font-size="32" text-anchor="middle">🎤</text>
+      <text x="124" y="42" font-size="22" font-weight="700" fill="#1F6A4D">我也要读</text>
+      <text x="124" y="68" font-size="14" fill="#1F6A4D">按住 Bunny 头开始</text>
+      <!-- 触摸圆环 -->
+      <circle cx="64" cy="50" r="58" fill="none" stroke="#A8E6CF" stroke-width="2" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- 底部翻页按钮 -->
+  <g transform="translate(40 700)">
+    <rect width="180" height="80" rx="40" fill="#FFFFFF" stroke="#EAE6DD" stroke-width="2"/>
+    <text x="90" y="50" font-size="22" font-weight="700" fill="#2C2C54" text-anchor="middle">← 上一页</text>
+  </g>
+  <g transform="translate(680 700)">
+    <rect width="180" height="80" rx="40" fill="#FFE9A8"/>
+    <text x="90" y="50" font-size="22" font-weight="700" fill="#7A4F00" text-anchor="middle">下一页 →</text>
+  </g>
+
+  <!-- 底部 6 tab 底栏 -->
+  <rect x="0" y="936" width="1366" height="88" fill="#FFFFFF" stroke="#EAE6DD" stroke-width="1"/>
+  <g font-size="12" font-weight="600" text-anchor="middle">
+    <g transform="translate(114 950)"><text y="22" font-size="28" fill="#5C5C8A">🏝️</text><text y="56" fill="#5C5C8A">首页</text></g>
+    <g transform="translate(341 950)">
+      <rect x="-30" y="-8" width="60" height="60" rx="30" fill="#FFE9A8"/>
+      <text y="32" font-size="28" fill="#7A4F00">📖</text>
+      <text y="62" font-size="12" font-weight="700" fill="#7A4F00">故事</text>
+    </g>
+    <g transform="translate(569 950)"><text y="22" font-size="28" fill="#5C5C8A">🌸</text><text y="56" fill="#5C5C8A">汉字</text></g>
+    <g transform="translate(797 950)"><text y="22" font-size="28" fill="#5C5C8A">🎮</text><text y="56" fill="#5C5C8A">游戏</text></g>
+    <g transform="translate(1024 950)"><text y="22" font-size="28" fill="#5C5C8A">🏠</text><text y="56" fill="#5C5C8A">小屋</text></g>
+    <g transform="translate(1252 950)"><text y="22" font-size="28" fill="#5C5C8A">🐰</text><text y="56" fill="#5C5C8A">家长</text></g>
+  </g>
+</svg>
