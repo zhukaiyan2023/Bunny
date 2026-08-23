@@ -67,9 +67,17 @@ function WaveformBars({ active }: { active: boolean }) {
 
 export function ReadAlongPage() {
   const params = useParams<{ storyId?: string }>();
-  const { stories } = useContent();
-  const { markCharacterExposed } = useLearner();
+  const { stories, characters } = useContent();
+  const { profile, markCharacterExposed } = useLearner();
   const { playText, stop } = useAudio();
+  const childName = profile.displayName || '妙妙';
+
+  // 按 glyph 索引
+  const charByGlyph = useMemo(() => {
+    const m: Record<string, string> = {};
+    for (const c of characters) m[c.glyph] = c.id;
+    return m;
+  }, [characters]);
 
   const story: Story = useMemo(() => {
     const found = stories.find((s) => s.id === params.storyId) ?? stories[0];
@@ -97,12 +105,14 @@ export function ReadAlongPage() {
       return;
     }
     setRecording(true);
-    void playText('你真厉害');
+    void playText(`${childName}真厉害`);
   };
 
   const handleWord = (ch: string) => {
     setHighlightedCh(ch);
-    markCharacterExposed(`char-${ch}`);
+    const charId = charByGlyph[ch];
+    if (charId) markCharacterExposed(charId);
+    void playText(ch);
   };
 
   return (
@@ -116,7 +126,7 @@ export function ReadAlongPage() {
     >
       <TopBar
         title="跟 Bunny 读"
-        subtitle={`第 ${idx + 1} 句 / 共 ${sentences.length} 句`}
+        subtitle={`${childName} · 第 ${idx + 1} 句 / 共 ${sentences.length} 句`}
       />
 
       <div
@@ -280,7 +290,7 @@ export function ReadAlongPage() {
                 marginBottom: 4,
               }}
             >
-              太棒了！像小小朗诵家！
+              {childName}太棒了！像小小朗诵家！
             </div>
             <div style={{ fontSize: 15, color: 'var(--bunny-soft-ink)' }}>
               再读一遍会

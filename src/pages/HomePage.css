@@ -265,8 +265,8 @@
 }
 
 .home-progress {
-  min-width: 190px;
-  padding: 8px 12px;
+  min-width: 240px;
+  padding: 8px 14px;
   border-radius: 16px;
   background: rgba(255,255,255,.9);
   border: 1px solid var(--bunny-border);
@@ -297,8 +297,40 @@
 .home-progress__fill {
   height: 100%;
   border-radius: 999px;
-  background: var(--bunny-mint-deep);
+  background: linear-gradient(90deg, var(--bunny-mint-deep), var(--bunny-yellow));
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.home-progress__meta {
+  margin-top: 4px;
+  font-size: 10px;
+  color: var(--bunny-soft-ink);
+  font-weight: 700;
+}
+
+.home-hero__cta {
+  position: absolute;
+  z-index: 5;
+  bottom: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--bunny-red);
+  color: #fff;
+  font-weight: 900;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-pop);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.home-hero__cta:hover { transform: translateX(-50%) translateY(-2px); }
+.home-hero__cta:active { transform: translateX(-50%) translateY(0); }
 
 @media (max-width: 1120px) {
   .home-page__main { grid-template-columns: minmax(260px, .62fr) minmax(0, 1.38fr); }

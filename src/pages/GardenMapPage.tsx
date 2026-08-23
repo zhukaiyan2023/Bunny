@@ -65,6 +65,7 @@ export function GardenMapPage() {
   const navigate = useNavigate();
   const { islands, characters } = useContent();
   const { profile } = useLearner();
+  const childName = profile.displayName || '妙妙';
 
   const data = useMemo(() => (islands.length ? islands.map((island) => {
     const fallback = DEFAULT_ISLANDS.find((item) => item.id === island.id);
@@ -74,13 +75,16 @@ export function GardenMapPage() {
   const progress = useMemo(() => {
     const map: Record<string, number> = {};
     for (const c of characters) {
-      const state = profile.mastery[c.id]?.state;
-      if (state && state !== 'unknown') map[c.island ?? 'starter'] = (map[c.island ?? 'starter'] ?? 0) + 1;
+      if (profile.mastery[c.id]?.state === 'mastered') {
+        map[c.island ?? 'starter'] = (map[c.island ?? 'starter'] ?? 0) + 1;
+      }
     }
     return map;
   }, [characters, profile.mastery]);
 
-  const learned = profile.learnedCount ?? Object.keys(profile.mastery).length;
+  const masteredCount = Object.values(profile.mastery).filter((m) => m.state === 'mastered').length;
+  const learned = masteredCount;
+
   const totalCapacity = data.reduce((sum, item) => sum + item.capacity, 0);
 
   const go = (id: string) => {
@@ -91,12 +95,12 @@ export function GardenMapPage() {
 
   return (
     <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-      <TopBar title="冒险乐园" subtitle="沿着 Bunny 的路线，一站一站认识汉字" right={<div style={{ padding: '9px 14px', borderRadius: 999, background: 'var(--bunny-mint)', color: 'var(--bunny-green-deep)', fontWeight: 900 }}>{learned} / 3000 字</div>} />
+      <TopBar title="冒险乐园" subtitle={`${childName}沿着 Bunny 的路线，一站一站认识汉字`} right={<div style={{ padding: '9px 14px', borderRadius: 999, background: 'var(--bunny-mint)', color: 'var(--bunny-green-deep)', fontWeight: 900 }}>{learned} / 3000 字</div>} />
 
       <main style={{ flex: 1, minHeight: 0, padding: '14px 22px 104px', display: 'grid', gridTemplateRows: 'auto minmax(0, 1fr) auto', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '10px 18px', background: '#fff', border: '2px solid var(--bunny-border)', borderRadius: 24, boxShadow: 'var(--shadow-soft)' }}>
           <Bunny pose="cheering" size={86} />
-          <div><div style={{ fontSize: 20, fontWeight: 900, color: 'var(--bunny-ink)' }}>今天去哪里冒险？</div><div style={{ marginTop: 4, fontSize: 13, color: 'var(--bunny-soft-ink)' }}>先从第 1 站出发，完成任务就能解锁下一站。</div></div>
+          <div><div style={{ fontSize: 20, fontWeight: 900, color: 'var(--bunny-ink)' }}>{childName}今天去哪里冒险？</div><div style={{ marginTop: 4, fontSize: 13, color: 'var(--bunny-soft-ink)' }}>先从第 1 站出发，完成任务就能解锁下一站。</div></div>
         </div>
 
         <section style={{ position: 'relative', minHeight: 0, borderRadius: 34, overflow: 'hidden', border: '2px solid var(--bunny-border)', boxShadow: 'var(--shadow-pop)', background: '#DFF2DE' }}>

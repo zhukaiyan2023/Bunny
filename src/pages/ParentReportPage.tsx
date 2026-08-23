@@ -6,6 +6,7 @@ import { Card } from '../components/ui/Card';
 import { Bunny } from '../components/mascot/Bunny';
 import { useLearner } from '../runtime/LearnerProvider';
 import { useContent } from '../runtime/ContentProvider';
+import { useAudio } from '../runtime/AudioProvider';
 import type { Character } from '../domain/types';
 
 /**
@@ -165,10 +166,19 @@ export function ParentReportPage() {
   const navigate = useNavigate();
   const { profile } = useLearner();
   const { characters } = useContent();
+  const { muted, toggleMuted } = useAudio();
+  const childName = profile.displayName || '妙妙';
 
-  const mastered = profile.masteredCount || 132;
+  // 妙妙真实掌握数（来自 mastery）
+  const masteredCount = useMemo(
+    () => Object.values(profile.mastery || {}).filter((m) => m.state === 'mastered').length,
+    [profile.mastery],
+  );
+  const mastered = masteredCount;
   const target = 3000;
   const literacyPct = mastered / target;
+  const l1Total = characters.length;
+  const l1MasteredPct = l1Total > 0 ? Math.round((mastered / l1Total) * 100) : 0;
 
   const stats: StatCard[] = useMemo(() => {
     const today = profile.dailyStats?.[profile.dailyStats.length - 1];
@@ -217,7 +227,7 @@ export function ParentReportPage() {
   return (
     <div className="page-parent">
       <TopBar
-        title="学习报告"
+        title={`${childName}的学习报告`}
         subtitle="给爸爸妈妈看的报告"
         right={
           <span className="parent-tag">本周</span>
@@ -232,14 +242,14 @@ export function ParentReportPage() {
               <RingProgress
                 size={196}
                 stroke={16}
-                value={literacyPct}
-                label="识字掌握率"
-                sublabel={`${mastered} / ${target} 字`}
+                value={l1Total > 0 ? mastered / l1Total : literacyPct}
+                label="L1 一年级完成度"
+                sublabel={`${mastered} / ${l1Total} 字 (${l1MasteredPct}%)`}
               />
             </div>
             <div className="parent-hero__copy">
               <h2 className="parent-hero__title">
-                {profile.displayName} 本周成长很好 🌿
+                {childName} 本周成长很好 🌿
               </h2>
               <p className="parent-hero__caption">
                 已坚持 <b>{profile.streakDays || 12}</b> 天连续学习 · 累计掌握{' '}
@@ -352,7 +362,7 @@ export function ParentReportPage() {
             <div className="parent-banner__copy">
               <div className="parent-banner__title">每天 10 分钟，爱上中文阅读</div>
               <div className="parent-banner__sub">
-                Bunny 陪 {profile.displayName} 一天一天种小苗。
+                Bunny 陪 {childName} 一天一天种小苗。
               </div>
             </div>
             <Button
@@ -361,6 +371,21 @@ export function ParentReportPage() {
               onClick={() => navigate('/daily')}
             >
               今日计划 →
+            </Button>
+            <Button
+              variant="lavender"
+              size="md"
+              onClick={() => navigate('/assessment')}
+            >
+              重测识字量
+            </Button>
+            <Button
+              variant={muted ? 'red' : 'mint'}
+              size="md"
+              onClick={toggleMuted}
+              title={muted ? '点一下开启 Bunny 的声音' : '点一下让 Bunny 安静'}
+            >
+              {muted ? '🔇 已静音' : '🔊 有声音'}
             </Button>
           </div>
         </section>
@@ -596,11 +621,12 @@ export function ParentReportPage() {
         .parent-banner__inner {
           display: flex;
           align-items: center;
-          gap: 16px;
+          gap: 14px;
           padding: 14px 20px;
           background: linear-gradient(90deg, var(--bunny-mint) 0%, var(--bunny-butter) 100%);
           border-radius: var(--radius-card);
           box-shadow: var(--shadow-soft);
+          flex-wrap: wrap;
         }
         .parent-banner__bunny {
           font-size: 40px;

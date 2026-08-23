@@ -108,6 +108,13 @@ export function CurriculumPage() {
   const { characters } = useContent();
   const { profile } = useLearner();
   const { playText } = useAudio();
+  const childName = profile.displayName || '妙妙';
+
+  // 妙妙的真实掌握数
+  const masteredCount = useMemo(
+    () => Object.values(profile.mastery || {}).filter((m) => m.state === 'mastered').length,
+    [profile.mastery],
+  );
 
   const starterChars = useMemo(() => getStarterFamily(characters).slice(0, 4), [characters]);
   const sampleA = starterChars[0];
@@ -124,11 +131,11 @@ export function CurriculumPage() {
   return (
     <div className="page-curriculum">
       <TopBar
-        title="课程体系"
-        subtitle="人教版 1-2 年级语文"
+        title={`${childName}的课程体系`}
+        subtitle="人教版 1 年级语文（小学一年级）"
         right={
           <div className="curr-summary">
-            <span className="curr-summary__num">{totalAll}</span>
+            <span className="curr-summary__num">{characters.length}</span>
             <span className="curr-summary__label">字</span>
           </div>
         }
@@ -153,7 +160,7 @@ export function CurriculumPage() {
             ))}
           </div>
           <div className="curr-starter__hint">
-            点击 → 字卡 · 当前 <b>{profile.learnedCount || 0}</b> / 50 启蒙字
+            点击 → 字卡 · {childName}当前 <b>{masteredCount}</b> / 304 字
           </div>
         </section>
 
@@ -244,6 +251,7 @@ export function CurriculumPage() {
             })}
           </div>
           <p className="curr-timeline__hint">
+            {childName}已掌握 <b style={{ color: 'var(--bunny-green-deep)' }}>{masteredCount}</b> 个字 ·
             当前阶段：一年级上（黄色高亮）。共 {totalAll} 字，按 10 个学段铺开。
           </p>
         </section>

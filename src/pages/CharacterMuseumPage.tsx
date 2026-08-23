@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { TopBar } from '../components/shell/TopBar';
 import { Bunny } from '../components/mascot/Bunny';
 import { Card } from '../components/ui/Card';
@@ -24,8 +24,11 @@ const FALLBACK_CHARS: Character[] = [
  */
 function teachingArtPath(ch: Character): string {
   const slug = ch.id.replace(/^char-/, '');
-  const tierDir = ch.tier === 'B' ? 'tier-b' : 'tier-a';
-  return `/assets/art/l1/${tierDir}/picto-${slug}.jpg`;
+  if (ch.tier === 'B') return `/assets/art/l1/tier-b/picto-${slug}.jpg`;
+  if (ch.tier === 'C') return `/assets/art/l1/tier-c/picto-${slug}.jpg`;
+  if (ch.tier === 'D') return `/assets/art/l1/tier-d/picto-${slug}.jpg`;
+  if (ch.tier === 'E') return `/assets/art/l1/tier-e/picto-${slug}.jpg`;
+  return `/assets/art/l1/tier-a/picto-${slug}.jpg`;
 }
 
 function TeachingArt({ ch, size = 340 }: { ch: Character; size?: number }) {
@@ -45,12 +48,14 @@ function TeachingArt({ ch, size = 340 }: { ch: Character; size?: number }) {
   );
 }
 
-function PreviewCard({ ch, onClick, active }: { ch: Character; onClick: () => void; active?: boolean }) {
+function PreviewCard({ ch, onClick, onPlay, active }: { ch: Character; onClick: () => void; onPlay: (e: React.MouseEvent) => void; active?: boolean }) {
   return (
     <button
       type="button"
       onClick={onClick}
+      title={`${ch.glyph}（${ch.pinyin[0]}）— ${ch.meaning?.[0] ?? ''}`}
       style={{
+        position: 'relative',
         minWidth: 0,
         minHeight: 142,
         border: active ? '3px solid var(--bunny-red)' : '2px solid var(--bunny-border)',
@@ -63,30 +68,90 @@ function PreviewCard({ ch, onClick, active }: { ch: Character; onClick: () => vo
         gap: 5,
         fontFamily: 'inherit',
         boxShadow: active ? 'var(--shadow-pop)' : 'var(--shadow-soft)',
+        cursor: 'pointer',
+        transition: 'transform 0.15s ease, box-shadow 0.15s ease',
       }}
+      onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = 'var(--shadow-pop)'; }}
+      onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = active ? 'var(--shadow-pop)' : 'var(--shadow-soft)'; }}
     >
+      <span
+        role="button"
+        aria-label={`播放 ${ch.glyph} 的读音`}
+        onClick={onPlay}
+        style={{
+          position: 'absolute',
+          top: 6,
+          right: 6,
+          width: 26,
+          height: 26,
+          borderRadius: '50%',
+          background: 'var(--bunny-mint)',
+          color: 'var(--bunny-green-deep)',
+          fontSize: 14,
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          boxShadow: 'var(--shadow-soft)',
+          zIndex: 2,
+        }}
+      >
+        🔊
+      </span>
       <div style={{ fontSize: 42, fontWeight: 900, color: 'var(--bunny-ink)', lineHeight: 1 }}>{ch.glyph}</div>
       <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--bunny-blue-deep)' }}>{ch.pinyin[0]}</div>
-      <div style={{ fontSize: 11, color: 'var(--bunny-soft-ink)' }}>{ch.meaning?.[0] ?? ''}</div>
+      <div style={{ fontSize: 11, color: 'var(--bunny-soft-ink)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '100%' }}>{ch.meaning?.[0] ?? ''}</div>
     </button>
   );
 }
 
 export function CharacterMuseumPage() {
   const { characters } = useContent();
-  const { markCharacterExposed } = useLearner();
+  const { profile, markCharacterExposed } = useLearner();
   const { playText } = useAudio();
+  const childName = profile.displayName || '妙妙';
 
+  // 妙妙已掌握 / 学习中字的数量
+  const masteredCount = useMemo(() => {
+    return Object.values(profile.mastery).filter((m) => m.state === 'mastered').length;
+  }, [profile.mastery]);
+  const learningCount = characters.length - masteredCount;
+
+  /**
+   * 「妙妙的汉字花园」：
+   *   1. 妙妙还没掌握的 5 字（学习入口）
+   *   2. 妙妙最近练过的 3 字（复习入口）
+   * 找不到则退回到前 8 个 tier-A 象形字
+   */
   const list = useMemo<Character[]>(() => {
     const source = characters.length > 0 ? characters : FALLBACK_CHARS;
-    const preferred = ['char-shan', 'char-shui', 'char-mu', 'char-ri', 'char-yue'];
-    const ordered = preferred.map((id) => source.find((c) => c.id === id)).filter(Boolean) as Character[];
-    return ordered.length >= 5 ? ordered.slice(0, 8) : source.slice(0, 8);
-  }, [characters]);
+    const mastered = new Set(
+      Object.entries(profile.mastery)
+        .filter(([, m]) => m.state === 'mastered')
+        .map(([id]) => id),
+    );
+    const toLearn = source.filter((c) => !mastered.has(c.id));
+    const toReview = source.filter((c) => mastered.has(c.id)).slice(0, 3);
+    const pick = [...toLearn.slice(0, 5), ...toReview];
+    if (pick.length > 0) return pick;
+    // 兜底：tier-A 象形字前 8
+    const preferred = ['char-shan', 'char-shui', 'char-mu', 'char-ri', 'char-yue', 'char-ren', 'char-kou', 'char-huo'];
+    return preferred.map((id) => source.find((c) => c.id === id)).filter(Boolean) as Character[];
+  }, [characters, profile.mastery]);
 
   const [idx, setIdx] = useState(0);
+  const [showLibrary, setShowLibrary] = useState(false);
   const main = list[idx] ?? list[0] ?? FALLBACK_CHARS[0];
   const next3 = useMemo(() => [1, 2, 3].map((offset) => list[(idx + offset) % list.length]).filter(Boolean), [idx, list]);
+
+  // 进入汉字花园时自动念出第一个字
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      if (main) void playText(`${main.glyph}，${main.pinyin[0]}`);
+    }, 600);
+    return () => window.clearTimeout(t);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleRead = () => {
     void playText(`${main.glyph}，${main.pinyin[0]}`);
@@ -95,14 +160,58 @@ export function CharacterMuseumPage() {
 
   return (
     <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-      <TopBar title="汉字花园" subtitle="先认识字，再发现这个字为什么这样写" />
+      <TopBar
+        title="汉字花园"
+        subtitle={`${childName} · 已掌握 ${masteredCount} 字，待学习 ${learningCount} 字 · 先认识字，再发现这个字为什么这样写`}
+        right={
+          showLibrary ? (
+            <button
+              type="button"
+              onClick={() => setShowLibrary(false)}
+              style={{
+                padding: '8px 14px', borderRadius: 999,
+                background: 'var(--bunny-mint)', color: 'var(--bunny-green-deep)',
+                fontWeight: 900, fontSize: 13, border: 'none', cursor: 'pointer',
+                boxShadow: 'var(--shadow-soft)', fontFamily: 'inherit',
+              }}
+            >
+              ← 回学习模式
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setShowLibrary(true)}
+              style={{
+                padding: '8px 14px', borderRadius: 999,
+                background: 'rgba(255,255,255,.95)', color: 'var(--bunny-blue-deep)',
+                fontWeight: 900, fontSize: 13, border: '2px solid var(--bunny-border)',
+                cursor: 'pointer', boxShadow: 'var(--shadow-soft)', fontFamily: 'inherit',
+              }}
+            >
+              📚 字库浏览
+            </button>
+          )
+        }
+      />
 
       <div style={{ flex: 1, minHeight: 0, padding: '18px 24px 104px', overflow: 'auto' }}>
+        {showLibrary ? (
+          <CharacterLibraryView
+            characters={characters}
+            mastery={profile.mastery}
+            onPick={(c) => {
+              const target = list.findIndex((x) => x.id === c.id);
+              if (target >= 0) setIdx(target);
+              setShowLibrary(false);
+              markCharacterExposed(c.id);
+            }}
+          />
+        ) : (
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(560px, 1.2fr) minmax(380px, .8fr)', gap: 20, minHeight: '100%' }}>
           <Card variant="soft" padding={24} style={{ minHeight: 0, display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 900, color: 'var(--bunny-soft-ink)' }}>汉字本体 · 第一视觉元素</div>
+                <div style={{ fontSize: 13, fontWeight: 900, color: 'var(--bunny-soft-ink)' }}>汉字本体 · 第 {idx + 1} / {list.length} 个</div>
                 <div style={{ marginTop: 4, fontSize: 28, fontWeight: 900, color: 'var(--bunny-ink)' }}>{main.glyph}</div>
               </div>
               <div style={{ padding: '8px 14px', borderRadius: 999, background: 'var(--bunny-mint)', color: 'var(--bunny-green-deep)', fontWeight: 900 }}>{main.meaning?.[0] ?? '汉字'}</div>
@@ -119,6 +228,7 @@ export function CharacterMuseumPage() {
 
             <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>
               <Button variant="red" size="lg" leading="🐰" onClick={handleRead}>跟 Bunny 读</Button>
+              <Button variant="ghost" size="lg" onClick={() => { const prev = (idx - 1 + list.length) % list.length; setIdx(prev); markCharacterExposed(list[prev].id); }}>上一个</Button>
               <Button variant="mint" size="lg" onClick={() => { const next = (idx + 1) % list.length; setIdx(next); markCharacterExposed(list[next].id); }}>下一个</Button>
             </div>
           </Card>
@@ -128,7 +238,7 @@ export function CharacterMuseumPage() {
               <div style={{ fontSize: 14, fontWeight: 900, color: 'var(--bunny-lavender-deep)' }}>汉字来历</div>
               <div style={{ marginTop: 10, fontSize: 25, fontWeight: 900, color: 'var(--bunny-ink)' }}>为什么是“{main.glyph}”？</div>
               <div style={{ marginTop: 10, fontSize: 16, lineHeight: 1.75, color: 'var(--bunny-soft-ink)' }}>{main.origin?.story ?? main.origin?.fact}</div>
-              <div style={{ marginTop: 14, padding: 14, borderRadius: 16, background: 'rgba(255,255,255,.72)', fontSize: 14, fontWeight: 800, color: 'var(--bunny-ink)' }}>① 看“{main.glyph}” ② 听故事 ③ 跟读 ④ 回到绘本里再遇见它</div>
+              <div style={{ marginTop: 14, padding: 14, borderRadius: 16, background: 'rgba(255,255,255,.72)', fontSize: 14, fontWeight: 800, color: 'var(--bunny-ink)' }}>① 看“{main.glyph}” ② 听故事 ③ 跟读 ④ 回到绘本里{childName}会再遇见它</div>
             </Card>
 
             <Card variant="butter" padding={18}>
@@ -140,11 +250,75 @@ export function CharacterMuseumPage() {
 
             <div style={{ minHeight: 0 }}>
               <div style={{ fontSize: 14, fontWeight: 900, color: 'var(--bunny-soft-ink)', marginBottom: 8 }}>接下来</div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 10 }}>{next3.map((ch) => <PreviewCard key={ch.id} ch={ch} onClick={() => { const target = list.indexOf(ch); if (target >= 0) { setIdx(target); markCharacterExposed(ch.id); } }} />)}</div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 10 }}>{next3.map((ch) => <PreviewCard key={ch.id} ch={ch} onClick={() => { const target = list.indexOf(ch); if (target >= 0) { setIdx(target); markCharacterExposed(ch.id); } }} onPlay={(e) => { e.stopPropagation(); void playText(`${ch.glyph}, ${ch.pinyin[0]}`); markCharacterExposed(ch.id); }} />)}</div>
             </div>
           </div>
         </div>
+        )}
       </div>
+    </div>
+  );
+}
+
+/**
+ * 字库浏览模式 — 按 tier 分组显示全部 304 字
+ */
+function CharacterLibraryView({
+  characters,
+  mastery,
+  onPick,
+}: {
+  characters: Character[];
+  mastery: Record<string, { state: string }>;
+  onPick: (c: Character) => void;
+}) {
+  const tiers = ['A', 'B', 'C', 'D', 'E'];
+  const tierLabels: Record<string, string> = { A: '象形字', B: '会意字', C: '高频字', D: '一年级下', E: '一年级扩展' };
+  return (
+    <div style={{ maxWidth: 1180, margin: '0 auto' }}>
+      <div style={{ fontSize: 14, color: 'var(--bunny-soft-ink)', marginBottom: 14 }}>
+        点击任意字 → 回到学习模式
+      </div>
+      {tiers.map((t) => {
+        const list = characters.filter((c) => c.tier === t);
+        if (list.length === 0) return null;
+        return (
+          <div key={t} style={{ marginBottom: 22 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+              <span style={{ display: 'inline-block', padding: '4px 10px', borderRadius: 8, background: 'var(--bunny-mint)', color: 'var(--bunny-green-deep)', fontWeight: 900, fontSize: 13 }}>{t}</span>
+              <span style={{ fontSize: 16, fontWeight: 900, color: 'var(--bunny-ink)' }}>{tierLabels[t] || t}</span>
+              <span style={{ fontSize: 13, color: 'var(--bunny-soft-ink)' }}>
+                {list.filter((c) => mastery[c.id]?.state === 'mastered').length} / {list.length} 已掌握
+              </span>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(56px, 1fr))', gap: 8 }}>
+              {list.map((c) => {
+                const mastered = mastery[c.id]?.state === 'mastered';
+                return (
+                  <button
+                    key={c.id}
+                    type="button"
+                    onClick={() => onPick(c)}
+                    title={`${c.glyph}（${c.pinyin[0]}）— ${c.meaning?.[0] ?? ''}`}
+                    style={{
+                      minHeight: 56,
+                      borderRadius: 12,
+                      background: mastered ? 'var(--bunny-mint)' : '#FFFFFF',
+                      color: 'var(--bunny-ink)',
+                      border: mastered ? '2px solid var(--bunny-mint-deep)' : '2px solid var(--bunny-border)',
+                      fontSize: 28, fontWeight: 900,
+                      cursor: 'pointer', fontFamily: 'inherit',
+                      boxShadow: 'var(--shadow-soft)',
+                    }}
+                  >
+                    {c.glyph}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -134,6 +134,7 @@ export function DailyPlanPage() {
   const { characters } = useContent();
   const { profile } = useLearner();
   const { playCue, playText } = useAudio();
+  const childName = profile.displayName || '妙妙';
 
   const [completed, setCompleted] = useState<Record<TaskKey, boolean>>({
     warmup: false,
@@ -147,14 +148,108 @@ export function DailyPlanPage() {
   const completedCount = TASKS.filter((t) => completed[t.key]).length;
   const allDone = completedCount === TASKS.length;
 
-  // 找几个会在 warmup 中复习的字（山、木、林）
-  const warmupChars: Character[] = useMemo(() => {
-    const ids = ['char-shan', 'char-mu', 'char-lin'];
-    const found = ids
-      .map((id) => characters.find((c) => c.id === id))
-      .filter(Boolean) as Character[];
-    return found.slice(0, 3);
-  }, [characters]);
+  /**
+   * 妙妙的「待学习字」按以下优先级：
+   *   1. assessment 测出来不认识的字（unknownCharacterIds）
+   *   2. tier-a 象形字里还没 master 的字（入门最优）
+   *   3. 全部 tier-A 里还没 master 的字
+   * 找不到则退回到前 3 个 tier-A。
+   */
+  const unknownList = useMemo(() => {
+    const masterSet = new Set(
+      Object.entries(profile.mastery)
+        .filter(([, m]) => m.state === 'mastered')
+        .map(([id]) => id),
+    );
+    const fromAssessment = profile.assessment?.unknownCharacterIds ?? [];
+    if (fromAssessment.length > 0) {
+      return fromAssessment
+        .map((id) => characters.find((c) => c.id === id))
+        .filter(Boolean) as Character[];
+    }
+    return (characters as Character[])
+      .filter((c) => c.tier === 'A' && !masterSet.has(c.id))
+      .slice(0, 6);
+  }, [characters, profile.assessment, profile.mastery]);
+
+  // 检测结果估算的待学习量（基于 304 字 L1 一年级）
+  const unknownCount = unknownList.length;
+  const totalL1 = characters.length;
+
+  // 找几个会在 warmup 中复习的字：
+  //   - 妙妙还没掌握的 3 字（学习入口）
+  //   - 如果未掌握 <3，加 妙妙已掌握的（复习）补到 3
+  const warmupChars = useMemo(() => {
+    const picked = unknownList.slice(0, 3);
+    if (picked.length < 3) {
+      const masterSet = new Set(
+        Object.entries(profile.mastery)
+          .filter(([, m]) => m.state === 'mastered')
+          .map(([id]) => id),
+      );
+      const review = characters.filter((c) => masterSet.has(c.id) && !picked.find((p) => p.id === c.id));
+      picked.push(...review.slice(0, 3 - picked.length));
+    }
+    return picked;
+  }, [unknownList, characters, profile.mastery]);
+
+  // 新字 = unknownList 里第一个还没 master 的字
+  const newChar = unknownList[0];
+  const newCharLabel = newChar?.glyph ?? '森';
+
+  // 当妙妙已掌握所有 L1 字时的"通关庆祝"
+  const allMastered = unknownList.length === 0 && characters.length > 0;
+
+  // 动态生成任务列表
+  const dynamicTasks: TaskDef[] = useMemo(() => [
+    {
+      key: 'warmup',
+      emoji: '🟡',
+      tone: 'butter',
+      title: '热身 · 复习字',
+      subtitle: warmupChars.length > 0
+        ? `复习 ${warmupChars.map((c) => c.glyph).join('、')}`
+        : '今天没有要复习的字啦',
+      durationMin: 3,
+      href: '/characters',
+    },
+    {
+      key: 'story',
+      emoji: '🟢',
+      tone: 'mint',
+      title: '绘本',
+      subtitle: '读《小兔子找妈妈》第 3-5 页',
+      durationMin: 5,
+      href: '/story',
+    },
+    {
+      key: 'newchar',
+      emoji: '🔵',
+      tone: 'sky',
+      title: '新字',
+      subtitle: newChar ? `探索「${newCharLabel}」${newChar.meaning?.[0] ? '（' + newChar.meaning[0] + '）' : ''}` : '今天没有新字',
+      durationMin: 3,
+      href: '/characters',
+    },
+    {
+      key: 'readalong',
+      emoji: '🟣',
+      tone: 'lavender',
+      title: '跟读',
+      subtitle: '读 2 句话',
+      durationMin: 2,
+      href: '/readalong',
+    },
+    {
+      key: 'game',
+      emoji: '🩷',
+      tone: 'pink',
+      title: '游戏',
+      subtitle: '森林寻宝',
+      durationMin: 2,
+      href: '/game',
+    },
+  ], [warmupChars, newChar, newCharLabel]);
 
   const handleStart = (task: TaskDef) => {
     playCue('reading-prompt-2').catch(() => {});
@@ -163,16 +258,63 @@ export function DailyPlanPage() {
   };
 
   const handleShowReason = () => {
-    const reason = `${profile.displayName} 今天先复习再探索，「森」字今天第一次见面，所以 Bunny 把它放在第 3 步。`;
+    const reason = newChar
+      ? `${childName} 今天先复习 ${warmupChars.map((c) => c.glyph).join('、')}，再探索新字「${newChar.glyph}」${newChar.meaning?.[0] ? '（' + newChar.meaning[0] + '）' : ''}，最后玩个小游戏放松一下。`
+      : `${childName} 已经认识所有 L1 一年级的 ${totalL1} 个字啦，可以玩个小游戏轻松一下。`;
     playText(reason).catch(() => {});
     alert(reason);
   };
 
+  // 检测结果未做时，引导去测
+  if (!profile.assessment) {
+    return (
+      <div className="page-daily">
+        <TopBar title="今日学习计划" subtitle={`${childName}，先做一次识字量小测试`} />
+        <main className="page-daily__main">
+          <Card variant="butter" padding={28} className="daily-hero">
+            <div className="daily-hero__bunny">
+              <Bunny pose="idle" size={140} />
+            </div>
+            <div className="daily-hero__text">
+              <h2 className="daily-hero__title">先认识一下{childName}</h2>
+              <p className="daily-hero__caption">Bunny 想先用 30 题小测试，看{childName}已经认识哪些字。这样才能给{childName}定制最合适的课程。</p>
+              <div style={{ marginTop: 14 }}>
+                <Button variant="red" size="lg" leading="🎯" onClick={() => navigate('/assessment')}>开始识字量测试</Button>
+              </div>
+            </div>
+          </Card>
+        </main>
+      </div>
+    );
+  }
+
+  if (allMastered) {
+    return (
+      <div className="page-daily">
+        <TopBar title={`${childName}的今日学习`} subtitle={`${childName}已经把 L1 一年级的 ${characters.length} 个字都认识啦`} />
+        <main className="page-daily__main">
+          <Card variant="mint" padding={32} className="daily-hero" style={{ flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <Bunny pose="cheering" size={200} />
+            <h2 className="daily-hero__title" style={{ fontSize: 32, marginTop: 16 }}>🎉 {childName}把 L1 一年级的 {characters.length} 个字都认识啦！</h2>
+            <p className="daily-hero__caption" style={{ marginTop: 12, fontSize: 16, lineHeight: 1.7 }}>
+              恭喜{childName}！Bunny 准备带你进入 L2 课程，认识更多汉字，读更长的故事。
+            </p>
+            <div style={{ marginTop: 18, display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+              <Button variant="red" size="lg" leading="📚" onClick={() => navigate('/story')}>读新故事</Button>
+              <Button variant="mint" size="lg" leading="🎮" onClick={() => navigate('/game')}>玩游戏</Button>
+              <Button variant="lavender" size="lg" leading="🌱" onClick={() => navigate('/assessment')}>重测识字量</Button>
+            </div>
+          </Card>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="page-daily">
       <TopBar
-        title="今日学习计划"
-        subtitle="根据你的学习习惯，Bunny 为你定制"
+        title={`${childName}的今日学习`}
+        subtitle="根据妙妙的识字量，Bunny 为你定制"
       />
 
       <main className="page-daily__main">
@@ -183,17 +325,17 @@ export function DailyPlanPage() {
           </div>
           <div className="daily-hero__text">
             <h2 className="daily-hero__title">
-              今天有 {TASKS.length} 个任务，预计 {totalMinutes} 分钟
+              {childName}今天有 {dynamicTasks.length} 个任务，预计 {totalMinutes} 分钟
             </h2>
             <p className="daily-hero__caption">
-              完成 {completedCount}/{TASKS.length} ·
-              {allDone ? ' 全部完成啦，可以休息啦' : ' 还差 ' + (TASKS.length - completedCount) + ' 个'}
+              完成 {completedCount}/{dynamicTasks.length} ·
+              {allDone ? ` ${childName}全部完成啦，可以休息啦` : ' 还差 ' + (dynamicTasks.length - completedCount) + ' 个'}
             </p>
             {/* 顶部进度条 */}
             <div className="daily-hero__bar">
               <div
                 className="daily-hero__bar-fill"
-                style={{ width: `${(completedCount / TASKS.length) * 100}%` }}
+                style={{ width: `${(completedCount / dynamicTasks.length) * 100}%` }}
               />
             </div>
           </div>
@@ -210,7 +352,7 @@ export function DailyPlanPage() {
 
         {/* 任务列表 */}
         <ul className="daily-tasks">
-          {TASKS.map((task, idx) => {
+          {dynamicTasks.map((task, idx) => {
             const done = completed[task.key];
             return (
               <li key={task.key} className={`daily-task ${done ? 'is-done' : ''}`}>
@@ -244,15 +386,38 @@ export function DailyPlanPage() {
 
         {/* 底部 CTA */}
         <div className="daily-footer">
-          <Button
-            variant="lavender"
-            size="lg"
-            block
-            onClick={handleShowReason}
-            leading="✨"
-          >
-            查看 AI 推荐理由
-          </Button>
+          {allDone ? (
+            <div style={{
+              padding: '20px 24px',
+              borderRadius: 22,
+              background: 'linear-gradient(90deg, var(--bunny-mint) 0%, var(--bunny-butter) 100%)',
+              display: 'flex', alignItems: 'center', gap: 16,
+              boxShadow: 'var(--shadow-pop)',
+            }}>
+              <Bunny pose="cheering" size={64} />
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: 18, fontWeight: 900, color: 'var(--bunny-green-deep)' }}>
+                  🎉 {childName}今天任务全部完成！
+                </div>
+                <div style={{ fontSize: 13, color: 'var(--bunny-ink)', marginTop: 2 }}>
+                  太棒啦！明天见～
+                </div>
+              </div>
+              <Button variant="red" size="md" onClick={() => { setCompleted({ warmup: false, story: false, newchar: false, readalong: false, game: false }); }}>
+                再玩一轮
+              </Button>
+            </div>
+          ) : (
+            <Button
+              variant="lavender"
+              size="lg"
+              block
+              onClick={handleShowReason}
+              leading="✨"
+            >
+              查看 AI 推荐理由
+            </Button>
+          )}
         </div>
       </main>
 

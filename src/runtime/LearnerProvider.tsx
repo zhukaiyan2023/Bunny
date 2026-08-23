@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import type { CharacterMastery, MasteryState, LearnerProfile, SkillProfile, BunnyEvent } from '../domain/types';
+import type { CharacterMastery, MasteryState, LearnerProfile, SkillProfile, BunnyEvent, AssessmentResult } from '../domain/types';
 
 /**
  * LearnerProvider · 学习者状态
@@ -19,7 +19,7 @@ const STORAGE_KEY = 'bunny.learner.v1';
 
 const DEFAULT_PROFILE: LearnerProfile = {
   id: 'default',
-  displayName: '小朋友',
+  displayName: '妙妙',
   bunnyLevel: 1,
   masteredCount: 0,
   learnedCount: 0,
@@ -58,6 +58,10 @@ interface LearnerContextValue {
   recordEvent: (e: BunnyEvent) => void;
   markCharacterExposed: (characterId: string) => void;
   markCharacterCorrect: (characterId: string) => void;
+  markCharacterMastered: (characterId: string) => void;
+  setLearnerName: (name: string) => void;
+  recordAssessment: (result: Omit<AssessmentResult, 'testedAt'>) => void;
+  checkInToday: () => { changed: boolean; streak: number };
   getMastery: (characterId: string) => CharacterMastery | undefined;
 }
 
@@ -144,18 +148,116 @@ export function LearnerProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
+  /**
+    markCharacterMastered — 直接把一个字设为「已掌握」。
+    用于识字量检测后，把妙妙已认识的字直接标为 mastered，
+    不再让她在课程里重复学。
+   */
+  const markCharacterMastered = useCallback((characterId: string) => {
+    setProfile((p) => {
+      const next = { ...p, mastery: { ...p.mastery } };
+      const cur = next.mastery[characterId];
+      if (cur?.state === 'mastered') return next;
+      const wasAny = !!cur;
+      next.mastery[characterId] = {
+        characterId,
+        state: 'mastered',
+        sproutLevel: 3,
+        exposures: wasAny ? cur.exposures : 1,
+        lastSeenAt: Date.now(),
+        correctRate: 1,
+      };
+      if (!wasAny) next.learnedCount = Object.keys(next.mastery).length;
+      next.masteredCount = Object.values(next.mastery).filter(
+        (m) => m.state === 'mastered',
+      ).length;
+      return next;
+    });
+  }, []);
+
+  /**
+    setLearnerName — 改妙妙的名字（默认是「妙妙」）。
+    可用于家长改昵称 / 多孩子共用。
+   */
+  const setLearnerName = useCallback((name: string) => {
+    setProfile((p) => ({ ...p, displayName: name || '妙妙' }));
+  }, []);
+
+  /**
+    recordAssessment — 保存识字量检测结果，并把「认识」的字直接标 mastered。
+    assessment 完成后，Bunny 会把剩下不认识的字当作「待学习列表」进入课程。
+   */
+  const recordAssessment = useCallback(
+    (result: Omit<AssessmentResult, 'testedAt'>) => {
+      setProfile((p) => {
+        const next = { ...p, mastery: { ...p.mastery } };
+        // 把已认识的字标 mastered
+        for (const id of result.knownCharacterIds) {
+          if (!next.mastery[id] || next.mastery[id].state !== 'mastered') {
+            next.mastery[id] = {
+              characterId: id,
+              state: 'mastered',
+              sproutLevel: 3,
+              exposures: 1,
+              lastSeenAt: Date.now(),
+              correctRate: 1,
+            };
+          }
+        }
+        next.masteredCount = Object.values(next.mastery).filter(
+          (m) => m.state === 'mastered',
+        ).length;
+        next.learnedCount = Object.keys(next.mastery).length;
+        next.assessment = { ...result, testedAt: Date.now() };
+        return next;
+      });
+      recordEvent({ type: 'CONTENT_COMPLETE', at: Date.now(), contentId: 'assessment' });
+    },
+    [recordEvent],
+  );
+
   const getMastery = useCallback(
     (characterId: string) => profile.mastery[characterId],
     [profile],
   );
+
+  /**
+    checkInToday — 妙妙每日打卡。
+    - 今日已打卡 → 返回 changed:false
+    - 昨日已打卡 → streak +1
+    - 跨天/首次打卡 → streak 重置为 1
+  */
+  const checkInToday = useCallback((): { changed: boolean; streak: number } => {
+    const today = new Date().toISOString().slice(0, 10);
+    const yesterday = new Date(Date.now() - 86400_000).toISOString().slice(0, 10);
+    const last = profile.lastCheckInDate;
+    if (last === today) return { changed: false, streak: profile.streakDays };
+    let newStreak: number;
+    if (last === yesterday) {
+      newStreak = Math.max(1, profile.streakDays + 1);
+    } else {
+      newStreak = 1;
+    }
+    setProfile((p) => ({
+      ...p,
+      streakDays: newStreak,
+      lastCheckInDate: today,
+    }));
+    recordEvent({ type: 'CONTENT_COMPLETE', at: Date.now(), contentId: 'daily-checkin' });
+    return { changed: true, streak: newStreak };
+  }, [profile.lastCheckInDate, profile.streakDays, recordEvent]);
 
   const value = useMemo<LearnerContextValue>(() => ({
     profile,
     recordEvent,
     markCharacterExposed,
     markCharacterCorrect,
+    markCharacterMastered,
+    setLearnerName,
+    recordAssessment,
+    checkInToday,
     getMastery,
-  }), [profile, recordEvent, markCharacterExposed, markCharacterCorrect, getMastery]);
+  }), [profile, recordEvent, markCharacterExposed, markCharacterCorrect, markCharacterMastered, setLearnerName, recordAssessment, checkInToday, getMastery]);
 
   return (
     <LearnerContext.Provider value={value}>

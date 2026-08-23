@@ -19,7 +19,9 @@ const FIXED_BADGES: Badge[] = [
   { id: 'ch20',     emoji: '🌸', name: '认识 20 个字', obtained: true,  color: 'var(--bunny-pink)' },
   { id: 'star7',    emoji: '⭐', name: '连续 7 天',     obtained: false, color: 'var(--bunny-sky)' },
   { id: 'master50', emoji: '🌳', name: '认字 50 棵苗',  obtained: false, color: 'var(--bunny-lavender)' },
+  { id: 'master100',emoji: '💯', name: '百字小达人',    obtained: false, color: 'var(--bunny-yellow)' },
   { id: 'allread',  emoji: '👑', name: '读完全部绘本',  obtained: false, color: 'var(--bunny-mint)' },
+  { id: 'fullL1',   emoji: '🏆', name: '完成 L1 一年级', obtained: false, color: 'var(--bunny-pink)' },
 ];
 
 function BadgeCard({ badge }: { badge: Badge }) {
@@ -39,14 +41,14 @@ function BadgeCard({ badge }: { badge: Badge }) {
         flexDirection: 'column',
         alignItems: 'center',
         gap: 8,
-        minHeight: 200,
+        minHeight: 180,
         justifyContent: 'center',
         opacity: obtained ? 1 : 0.7,
       }}
     >
       <div
         style={{
-          fontSize: 72,
+          fontSize: 56,
           filter: obtained ? 'none' : 'grayscale(1) brightness(1.05)',
         }}
         aria-hidden
@@ -83,14 +85,19 @@ export function BadgesPage() {
   const navigate = useNavigate();
   const { profile } = useLearner();
   const { playText } = useAudio();
+  const childName = profile.displayName || '妙妙';
 
-  // 今日"又找到 3 颗星" = masteredCount 至少 3；这里用 learner 数据补一些
+  // 用 mastery 状态（实际掌握）作为勋章门槛，比 profile.learnedCount 更可靠
+  const masteredCount = Object.values(profile.mastery || {}).filter((m) => m.state === 'mastered').length;
+
   const fixed: Badge[] = FIXED_BADGES.map((b) => {
-    if (b.id === 'starter') return { ...b, obtained: profile.learnedCount >= 1 || true };
-    if (b.id === 'ch20') return { ...b, obtained: profile.learnedCount >= 20 };
-    if (b.id === 'read5') return { ...b, obtained: profile.learnedCount >= 5 };
+    if (b.id === 'starter') return { ...b, obtained: masteredCount >= 1 || true };
+    if (b.id === 'ch20') return { ...b, obtained: masteredCount >= 20 };
+    if (b.id === 'read5') return { ...b, obtained: masteredCount >= 5 };
     if (b.id === 'star7') return { ...b, obtained: profile.streakDays >= 7 };
-    if (b.id === 'master50') return { ...b, obtained: profile.masteredCount >= 50 };
+    if (b.id === 'master50') return { ...b, obtained: masteredCount >= 50 };
+    if (b.id === 'master100') return { ...b, obtained: masteredCount >= 100 };
+    if (b.id === 'fullL1') return { ...b, obtained: masteredCount >= 304 };
     return b;
   });
 
@@ -106,16 +113,17 @@ export function BadgesPage() {
         flexDirection: 'column',
       }}
     >
-      <TopBar title="我的小屋" subtitle={`今天又找到了 ${starCount} 颗星`} />
+      <TopBar title={`${childName}的小屋`} subtitle={`今天又找到了 ${starCount} 颗星`} />
 
       <div
         style={{
           flex: 1,
           display: 'flex',
           flexDirection: 'column',
-          padding: '24px 32px',
+          padding: '24px 32px 104px',
           gap: 20,
           minHeight: 0,
+          overflow: 'auto',
         }}
       >
         {/* Bunny + progress */}
@@ -141,7 +149,7 @@ export function BadgesPage() {
                 marginBottom: 8,
               }}
             >
-              小朋友，你好棒呀！{starCount} 颗星都是你找到的 🌟
+              {childName}，你好棒呀！{starCount} 颗星都是你找到的 🌟
             </div>
             <ProgressBar
               value={earned / fixed.length}
@@ -168,7 +176,7 @@ export function BadgesPage() {
           style={{
             flex: 1,
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(4, 1fr)',
             gridTemplateRows: '1fr 1fr',
             gap: 18,
             minHeight: 0,

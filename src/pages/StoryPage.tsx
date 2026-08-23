@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { TopBar } from '../components/shell/TopBar';
 import { Bunny } from '../components/mascot/Bunny';
 import { Button } from '../components/ui/Button';
@@ -33,6 +33,9 @@ const STORY_COVERS: Record<string, string> = {
   'book-xiao-tu-de-jia': '/assets/art/l1/stories/cover-xiao-tu-de-jia.jpg',
   'book-tai-yang-he-yue-liang': '/assets/art/l1/stories/cover-tai-yang-he-yue-liang.jpg',
   'book-sen-lin-li-de-yi-tian': '/assets/art/l1/stories/cover-sen-lin-li-de-yi-tian.jpg',
+  'book-wo-de-yi-jia': '/assets/art/l1/stories/cover-wo-de-yi-jia.svg',
+  'book-chun-xia-qiu-dong': '/assets/art/l1/stories/cover-chun-xia-qiu-dong.svg',
+  'book-xiao-dong-ji': '/assets/art/l1/stories/cover-xiao-dong-ji.svg',
   fallback: '/assets/art/l1/stories/cover-xiao-tu-de-jia.jpg',
 };
 
@@ -73,11 +76,76 @@ function PageIllustration({ story, page, index }: { story: Story; page: StoryPag
 
 export function StoryPage() {
   const params = useParams<{ storyId?: string }>();
-  const { stories } = useContent();
-  const { markCharacterExposed } = useLearner();
+  const navigate = useNavigate();
+  const { stories, characters } = useContent();
+  const { profile, markCharacterExposed } = useLearner();
   const { playText, stop } = useAudio();
+  const childName = profile.displayName || '妙妙';
 
-  const story = useMemo(() => stories.find((s) => s.id === params.storyId) ?? stories[0] ?? FALLBACK_STORY, [stories, params.storyId]);
+  // 按 glyph 索引，方便从句子里的字查到 character id
+  const charByGlyph = useMemo(() => {
+    const m: Record<string, string> = {};
+    for (const c of characters) m[c.glyph] = c.id;
+    return m;
+  }, [characters]);
+
+  const storyList = stories.length > 0 ? stories : [FALLBACK_STORY];
+
+  // ===== 故事选择页（/story 不带 storyId）=====
+  if (!params.storyId) {
+    return (
+      <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+        <TopBar title="故事王国" subtitle={`${childName}选一个故事，开始读吧`} />
+        <main style={{ flex: 1, minHeight: 0, padding: '24px 32px 104px', overflow: 'auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 18, maxWidth: 1180, margin: '0 auto' }}>
+            {storyList.map((s) => (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => navigate(`/story/${s.id}`)}
+                style={{
+                  background: '#FFFFFF',
+                  border: '2px solid var(--bunny-border)',
+                  borderRadius: 24,
+                  padding: 0,
+                  boxShadow: 'var(--shadow-soft)',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'stretch',
+                  overflow: 'hidden',
+                  textAlign: 'left',
+                  minHeight: 240,
+                }}
+              >
+                <div style={{
+                  width: '100%',
+                  height: 180,
+                  background: '#FFF4E6',
+                  backgroundImage: `url(${STORY_COVERS[s.id] ?? STORY_COVERS.fallback})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  borderBottom: '2px solid var(--bunny-border)',
+                }} />
+                <div style={{ padding: 18 }}>
+                  <div style={{ fontSize: 22, fontWeight: 900, color: 'var(--bunny-ink)' }}>《{s.title}》</div>
+                  <div style={{ marginTop: 6, fontSize: 13, color: 'var(--bunny-soft-ink)', lineHeight: 1.6 }}>
+                    {s.pages.length} 页 · 主题：{s.island} · 核心字：{s.coreCharacterIds?.length ?? 0} 个
+                  </div>
+                  <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', borderRadius: 999, background: 'var(--bunny-mint)', color: 'var(--bunny-green-deep)', fontWeight: 900, fontSize: 13 }}>
+                    妙妙读 →
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  const story = useMemo(() => storyList.find((s) => s.id === params.storyId) ?? storyList[0] ?? FALLBACK_STORY, [storyList, params.storyId]);
   const [pageIdx, setPageIdx] = useState(0);
   const [recorded, setRecorded] = useState(false);
   const [highlighted, setHighlighted] = useState<string | null>(null);
@@ -97,13 +165,14 @@ export function StoryPage() {
 
   const onWordClick = (ch: string) => {
     setHighlighted(ch);
-    markCharacterExposed(`char-${ch}`);
+    const charId = charByGlyph[ch];
+    if (charId) markCharacterExposed(charId);
     void playText(ch);
   };
 
   return (
     <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-      <TopBar title={`《${story.title}》`} subtitle={`第 ${currentPage.pageNumber} 页 / 共 ${story.pages.length} 页`} />
+      <TopBar title={`《${story.title}》`} subtitle={`${childName} · 第 ${currentPage.pageNumber} 页 / 共 ${story.pages.length} 页`} />
 
       <div style={{ flex: 1, minHeight: 0, display: 'grid', gridTemplateColumns: 'minmax(0, 1.65fr) minmax(320px, .75fr)', gap: 18, padding: '16px 24px 104px', overflow: 'hidden' }}>
         <div style={{ minWidth: 0, minHeight: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -150,6 +219,8 @@ export function StoryPage() {
             <Button variant="ghost" size="lg" disabled={pageIdx === 0} onClick={() => setPageIdx((p) => Math.max(0, p - 1))}>上一页</Button>
             <Button variant="red" size="lg" disabled={pageIdx >= story.pages.length - 1} onClick={() => setPageIdx((p) => Math.min(story.pages.length - 1, p + 1))}>下一页</Button>
           </div>
+
+          <Button variant="mint" size="md" block onClick={() => navigate('/story')}>← 回到故事王国</Button>
         </div>
       </div>
     </div>

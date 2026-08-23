@@ -239,6 +239,8 @@ export interface LearnerProfile {
   learnedCount: number;
   /** 连续学习天数 */
   streakDays: number;
+  /** 上次打卡日（YYYY-MM-DD 字符串），用于判断今日是否已打卡 */
+  lastCheckInDate?: string;
   /** 4 项能力线 */
   skills: SkillProfile;
   /** 每个汉字掌握度 */
@@ -247,7 +249,40 @@ export interface LearnerProfile {
   dailyStats: DailyStats[];
   /** 已获奖励 / 勋章 */
   badges: string[];
+  /** 识字量检测结果（用户做过的最近一次测评） */
+  assessment?: AssessmentResult;
 }
+
+/**
+ * 识字量检测结果
+ *
+ * 妙妙第一次玩 Bunny 时会进入 /assessment 完成一轮「认字小测验」，
+ * 选出 199 字 L1 课程里的 30 个抽样字做「认识/不认识」二选一，
+ * 估出识字量区间（认识 <100 / 100-300 / >300），
+ * 然后把已认识的字直接标 mastered，把不认识的字放入"待学习列表"。
+ */
+export interface AssessmentResult {
+  /** 测试时间戳 */
+  testedAt: number;
+  /** 总题数 */
+  total: number;
+  /** 认识题数 */
+  known: number;
+  /** 估计识字量区间 */
+  band: AssessmentBand;
+  /** 测试涉及的字符 id 列表 */
+  testedCharacterIds: string[];
+  /** 已掌握的字符 id 列表（用于直接标 mastered） */
+  knownCharacterIds: string[];
+  /** 不认识的字符 id 列表（放入待学习） */
+  unknownCharacterIds: string[];
+}
+
+export type AssessmentBand = 'starter' | 'beginner' | 'intermediate' | 'advanced';
+//   starter     : 认识 < 50 字
+//   beginner    : 认识 50-150 字
+//   intermediate: 认识 150-300 字
+//   advanced    : 认识 > 300 字
 
 // ============================================================================
 // CONTENT PACK · 启动时一次性载入的全部内容

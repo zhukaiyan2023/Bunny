@@ -150,7 +150,9 @@ function StageCard({ stage, index }: { stage: Stage; index: number }) {
 
 export function EvolutionPage() {
   const { profile } = useLearner();
-  const learned = profile.learnedCount ?? Object.keys(profile.mastery).length;
+  const childName = profile.displayName || '妙妙';
+  const masteredCount = Object.values(profile.mastery || {}).filter((m) => m.state === 'mastered').length;
+  const learned = masteredCount;
   const stageIdx = learned < 100 ? 0 : learned < 300 ? 1 : learned < 1500 ? 2 : 3;
   const currentStage = STAGES[stageIdx];
 
@@ -164,7 +166,7 @@ export function EvolutionPage() {
       }}
     >
       <TopBar
-        title="字时光机"
+        title={`${childName}的字时光机`}
         subtitle="从 3 岁到 12 岁，Bunny 陪你走过 3000 字"
       />
 
@@ -173,9 +175,10 @@ export function EvolutionPage() {
           flex: 1,
           display: 'flex',
           flexDirection: 'column',
-          padding: '20px 32px',
+          padding: '20px 32px 104px',
           gap: 16,
           minHeight: 0,
+          overflow: 'auto',
         }}
       >
         {/* Stage current indicator */}
@@ -201,7 +204,7 @@ export function EvolutionPage() {
                 marginBottom: 6,
               }}
             >
-              你现在在 →
+              {childName}现在在 →
               <span style={{ color: currentStage.ringColor, marginLeft: 8 }}>
                 {currentStage.age} · {currentStage.title}
               </span>
@@ -209,7 +212,7 @@ export function EvolutionPage() {
             <ProgressBar
               value={Math.min(1, learned / currentStage.chars)}
               total={currentStage.chars}
-              label="本阶段进度"
+              label={`${childName}本阶段进度`}
               color="mint"
               width={500}
             />

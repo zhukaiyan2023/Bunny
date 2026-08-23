@@ -15,6 +15,7 @@ import { DailyPlanPage } from './pages/DailyPlanPage';
 import { LevelPage } from './pages/LevelPage';
 import { CurriculumPage } from './pages/CurriculumPage';
 import { ParentReportPage } from './pages/ParentReportPage';
+import { AssessmentPage } from './pages/AssessmentPage';
 import './App.css';
 
 /**
@@ -43,6 +44,7 @@ export default function App() {
 
               {/* 主线 6-9 岁 */}
               <Route path="/story" element={<StoryPage />} />
+              <Route path="/story/:storyId" element={<StoryPage />} />
               <Route path="/characters" element={<CharacterMuseumPage />} />
               <Route path="/game" element={<GamePage />} />
               <Route path="/readalong" element={<ReadAlongPage />} />
@@ -57,6 +59,9 @@ export default function App() {
               <Route path="/level" element={<LevelPage />} />
               <Route path="/curriculum" element={<CurriculumPage />} />
               <Route path="/parent" element={<ParentReportPage />} />
+
+              {/* 识字量检测（妙妙的第一次小测试） */}
+              <Route path="/assessment" element={<AssessmentPage />} />
 
               {/* Fallback */}
               <Route path="*" element={<Navigate to="/" replace />} />

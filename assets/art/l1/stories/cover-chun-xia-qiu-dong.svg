@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC1CC"/>
+      <stop offset="0.5" stop-color="#FFE9A8"/>
+      <stop offset="1" stop-color="#B5DEFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg2)"/>
+  <g>
+    <!-- Spring (top-left) -->
+    <circle cx="180" cy="180" r="60" fill="#FFC1CC" opacity="0.7"/>
+    <circle cx="200" cy="160" r="20" fill="#FFC1CC"/>
+    <!-- Summer (top-right) -->
+    <circle cx="600" cy="180" r="60" fill="#FFD15C"/>
+    <g stroke="#FFD15C" stroke-width="4" stroke-linecap="round">
+      <line x1="600" y1="80" x2="600" y2="120"/>
+      <line x1="500" y1="180" x2="540" y2="180"/>
+      <line x1="660" y1="180" x2="700" y2="180"/>
+      <line x1="540" y1="120" x2="560" y2="140"/>
+      <line x1="660" y1="240" x2="640" y2="220"/>
+    </g>
+    <!-- Autumn (bottom-left) -->
+    <path d="M 180 460 Q 200 380 220 460" fill="#FF9F43" stroke="#7A4F00" stroke-width="3"/>
+    <circle cx="160" cy="450" r="30" fill="#FF9F43"/>
+    <!-- Winter (bottom-right) -->
+    <circle cx="600" cy="440" r="55" fill="#FFFFFF" stroke="#B5DEFF" stroke-width="3"/>
+    <circle cx="600" cy="430" r="30" fill="#FFFFFF" stroke="#B5DEFF" stroke-width="3"/>
+    <circle cx="600" cy="425" r="15" fill="#FFFFFF" stroke="#B5DEFF" stroke-width="3"/>
+  </g>
+  <text x="400" y="320" text-anchor="middle" font-size="56" font-family="sans-serif" font-weight="bold" fill="#2C2C54">Four Seasons</text>
+</svg>

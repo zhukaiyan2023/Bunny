@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A8E6CF"/>
+      <stop offset="1" stop-color="#C6F0D8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <g>
+    <!-- Cat (left) -->
+    <ellipse cx="180" cy="320" rx="70" ry="80" fill="#FF9F43"/>
+    <circle cx="180" cy="220" r="55" fill="#FF9F43"/>
+    <polygon points="130,180 145,140 165,200" fill="#FF9F43"/>
+    <polygon points="230,180 215,140 195,200" fill="#FF9F43"/>
+    <circle cx="160" cy="220" r="6" fill="#2C2C54"/>
+    <circle cx="200" cy="220" r="6" fill="#2C2C54"/>
+    <path d="M 170 240 Q 180 250 190 240" stroke="#2C2C54" stroke-width="3" fill="none"/>
+    <!-- Dog (center) -->
+    <ellipse cx="400" cy="340" rx="80" ry="85" fill="#D9C2F0"/>
+    <circle cx="400" cy="240" r="60" fill="#D9C2F0"/>
+    <ellipse cx="370" cy="200" rx="22" ry="38" fill="#D9C2F0"/>
+    <ellipse cx="430" cy="200" rx="22" ry="38" fill="#D9C2F0"/>
+    <circle cx="385" cy="240" r="6" fill="#2C2C54"/>
+    <circle cx="415" cy="240" r="6" fill="#2C2C54"/>
+    <ellipse cx="400" cy="260" rx="8" ry="6" fill="#2C2C54"/>
+    <!-- Bird (right) -->
+    <ellipse cx="620" cy="320" rx="60" ry="50" fill="#B5DEFF"/>
+    <circle cx="620" cy="250" r="40" fill="#B5DEFF"/>
+    <polygon points="600,260 580,270 600,275" fill="#FFD15C"/>
+    <circle cx="610" cy="245" r="4" fill="#2C2C54"/>
+  </g>
+  <text x="400" y="490" text-anchor="middle" font-size="44" font-family="sans-serif" font-weight="bold" fill="#1F6A4D">Little Animals</text>
+</svg>

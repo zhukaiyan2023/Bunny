@@ -20,7 +20,11 @@ interface AudioContextValue {
   stop: () => void;
   isPlaying: boolean;
   currentCueId: string | null;
+  muted: boolean;
+  toggleMuted: () => void;
 }
+
+const MUTE_KEY = 'bunny.audio.muted.v1';
 
 const AudioContext = createContext<AudioContextValue | null>(null);
 
@@ -28,6 +32,13 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const { audio } = useContent();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  // 静音开关（家长控制）
+  const [muted, setMuted] = useState<boolean>(() => {
+    try { return localStorage.getItem(MUTE_KEY) === '1'; } catch { return false; }
+  });
+  useEffect(() => {
+    try { localStorage.setItem(MUTE_KEY, muted ? '1' : '0'); } catch {}
+  }, [muted]);
   const [currentCueId, setCurrentCueId] = useState<string | null>(null);
 
   // 创建单例 audio 元素
@@ -56,6 +67,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
 
   const playCue = useCallback(
     async (cueId: string) => {
+      if (muted) return; // 静音状态直接跳过
       const cue = findCue(cueId);
       if (!cue) {
         console.warn('[audio] cue not found:', cueId);
@@ -94,7 +106,29 @@ export function AudioProvider({ children }: { children: ReactNode }) {
    */
   const playText = useCallback(
     async (text: string, opts?: { voice?: 'kid' | 'warm' }) => {
-      // 找匹配长度 / 关键字的 cue 替代
+      // 优先用浏览器自带的 Web Speech API（中文 + 童声）
+      if (muted) return;
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+        try {
+          // 截断已经说过的语音，避免叠在一起
+          window.speechSynthesis.cancel();
+          const utter = new SpeechSynthesisUtterance(text);
+          utter.lang = 'zh-CN';
+          utter.rate = 0.85;
+          utter.pitch = 1.15; // 童声感
+          utter.volume = 1;
+          // 找中文女声 / 童声
+          const voices = window.speechSynthesis.getVoices();
+          const zhVoice = voices.find((v) => /zh|chinese|cmn/i.test(v.lang)) ?? voices.find((v) => /female|girl|child|kid/i.test(v.name));
+          if (zhVoice) utter.voice = zhVoice;
+          window.speechSynthesis.speak(utter);
+          return;
+        } catch {
+          // 静默失败 → 落到 audio cue
+        }
+      }
+
+      // 兜底：找匹配长度 / 关键字的 cue 替代
       const fallback = audio.find((c) =>
         c.kind === 'praise' && text.includes(c.text.split('，')[0]),
       );
@@ -116,13 +150,28 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     setCurrentCueId(null);
   }, []);
 
+  const toggleMuted = useCallback(() => {
+    setMuted((m) => {
+      const next = !m;
+      // 静音时立即停止当前播放
+      if (next) {
+        audioRef.current?.pause();
+        setIsPlaying(false);
+        try { window.speechSynthesis?.cancel(); } catch {}
+      }
+      return next;
+    });
+  }, []);
+
   const value = useMemo<AudioContextValue>(() => ({
     playCue,
     playText,
     stop,
     isPlaying,
     currentCueId,
-  }), [playCue, playText, stop, isPlaying, currentCueId]);
+    muted,
+    toggleMuted,
+  }), [playCue, playText, stop, isPlaying, currentCueId, muted, toggleMuted]);
 
   return (
     <AudioContext.Provider value={value}>
