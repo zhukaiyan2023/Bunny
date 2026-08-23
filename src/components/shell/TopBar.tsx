@@ -5,19 +5,20 @@ import './TopBar.css';
 interface TopBarProps {
   title: string;
   subtitle?: string;
+  /** 默认不显示返回。Bunny Pad 使用 BottomNav 作为一级导航。 */
   showBack?: boolean;
-  /** Right-side chip / progress indicator (e.g. "47 / 3000 字") */
+  /** Right-side chip / progress indicator */
   right?: ReactNode;
 }
 
 /**
- * TopBar — 1366×96 white-translucent bar with Bunny avatar + title.
- * Mirrors the Open Design prototypes (panel-3-6-01-home / -02 / -07 …).
+ * TopBar — Pad 横屏顶部标题栏。
+ * 一级页面默认不显示返回按钮；只有真正的二级/沉浸式页面才显式传 showBack=true。
  */
 export function TopBar({
   title,
   subtitle,
-  showBack = true,
+  showBack = false,
   right,
 }: TopBarProps) {
   const navigate = useNavigate();
