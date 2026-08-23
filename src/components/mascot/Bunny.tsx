@@ -22,43 +22,19 @@ interface BunnyProps {
   ariaLabel?: string;
 }
 
-export function Bunny({
-  pose = 'idle',
-  size = 180,
-  showBackpack = true,
-  className,
-  style,
-  ariaLabel = 'Bunny 主角白兔',
-}: BunnyProps) {
-  const transform =
-    pose === 'happy'
-      ? 'translate(0 -8)'
-      : pose === 'cheering'
-        ? 'translate(0 -5) scale(1.03)'
-        : '';
+export function Bunny({ pose = 'idle', size = 180, showBackpack = true, className, style, ariaLabel = 'Bunny 主角白兔' }: BunnyProps) {
+  const transform = pose === 'happy' ? 'translate(0 -8)' : pose === 'cheering' ? 'translate(0 -5) scale(1.03)' : '';
 
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="-120 -145 240 270"
-      role="img"
-      aria-label={ariaLabel}
-      className={className}
-      style={style}
-      overflow="visible"
-    >
+    <svg width={size} height={size} viewBox="-120 -150 240 330" role="img" aria-label={ariaLabel} className={className} style={style} overflow="visible">
       <g transform={transform}>
-        {/* 长耳朵：从头顶明显向上延伸 */}
         <path d="M-46-30 C-58-78-58-124-38-135 C-19-122-19-72-24-28Z" fill="#FFFFFF" stroke="#2C2C54" strokeWidth="4" />
         <path d="M-43-43 C-49-82-48-111-38-119 C-30-105-31-75-32-43Z" fill="#FFD3DC" />
         <path d="M46-30 C58-78 58-124 38-135 C19-122 19-72 24-28Z" fill="#FFFFFF" stroke="#2C2C54" strokeWidth="4" />
         <path d="M43-43 C49-82 48-111 38-119 C30-105 31-75 32-43Z" fill="#FFD3DC" />
 
-        {/* 身体 */}
         <ellipse cx="0" cy="75" rx="72" ry="78" fill="#FFFFFF" stroke="#2C2C54" strokeWidth="4" />
 
-        {/* 书包 */}
         {showBackpack && (
           <>
             <path d="M-46 52 L-52 112 Q-52 126-38 126 H38 Q52 126 52 112 L46 52Z" fill="#E94545" stroke="#2C2C54" strokeWidth="4" />
@@ -68,30 +44,23 @@ export function Bunny({
           </>
         )}
 
-        {/* 头 */}
         <circle cx="0" cy="0" r="58" fill="#FFFFFF" stroke="#2C2C54" strokeWidth="4" />
-
-        {/* 腮红 */}
         <ellipse cx="-34" cy="18" rx="13" ry="8" fill="#FFC1CC" />
         <ellipse cx="34" cy="18" rx="13" ry="8" fill="#FFC1CC" />
 
-        {/* 眼睛 */}
         <circle cx="-20" cy="-8" r="9" fill="#2C2C54" />
         <circle cx="20" cy="-8" r="9" fill="#2C2C54" />
         <circle cx="-17" cy="-11" r="3" fill="#FFFFFF" />
         <circle cx="23" cy="-11" r="3" fill="#FFFFFF" />
 
-        {/* 鼻子 */}
         <ellipse cx="0" cy="19" rx="6" ry="4" fill="#FFB5C4" />
 
-        {/* 嘴巴 */}
         {pose === 'happy' ? (
           <path d="M-12 28 Q0 40 12 28 Q0 49-12 28Z" fill="#FFC1CC" stroke="#2C2C54" strokeWidth="3" />
         ) : (
           <path d="M-12 29 Q0 38 12 29" fill="none" stroke="#2C2C54" strokeWidth="3" strokeLinecap="round" />
         )}
 
-        {/* 手臂 */}
         {pose === 'cheering' ? (
           <>
             <path d="M-58 67 Q-93 36-88 4" fill="none" stroke="#2C2C54" strokeWidth="12" strokeLinecap="round" />
@@ -106,7 +75,6 @@ export function Bunny({
           </>
         )}
 
-        {/* 脚 */}
         <ellipse cx="-30" cy="145" rx="28" ry="16" fill="#FFFFFF" stroke="#2C2C54" strokeWidth="4" />
         <ellipse cx="30" cy="145" rx="28" ry="16" fill="#FFFFFF" stroke="#2C2C54" strokeWidth="4" />
       </g>
@@ -114,10 +82,7 @@ export function Bunny({
   );
 }
 
-export function SmileyFace({
-  size = 80,
-  earColor = '#FFD3DC',
-}: { size?: number; earColor?: string }) {
+export function SmileyFace({ size = 80, earColor = '#FFD3DC' }: { size?: number; earColor?: string }) {
   return (
     <svg width={size} height={size} viewBox="-36 -50 72 92" aria-hidden>
       <ellipse cx="-16" cy="-34" rx="8" ry="18" fill="#FFFFFF" stroke="#2C2C54" strokeWidth="3" />
@@ -134,30 +99,9 @@ export function SmileyFace({
   );
 }
 
-export function AvatarFrame({
-  size = 120,
-  shape = 'circle',
-  color = 'var(--bunny-mint)',
-  children,
-}: {
-  size?: number;
-  shape?: 'circle' | 'rounded';
-  color?: string;
-  children: ReactNode;
-}) {
+export function AvatarFrame({ size = 120, shape = 'circle', color = 'var(--bunny-mint)', children }: { size?: number; shape?: 'circle' | 'rounded'; color?: string; children: ReactNode }) {
   return (
-    <div
-      style={{
-        width: size,
-        height: size,
-        borderRadius: shape === 'circle' ? '50%' : '24px',
-        background: color,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        boxShadow: 'inset 0 -3px 0 rgba(0,0,0,0.05)',
-      }}
-    >
+    <div style={{ width: size, height: size, borderRadius: shape === 'circle' ? '50%' : '24px', background: color, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'inset 0 -3px 0 rgba(0,0,0,0.05)' }}>
       {children}
     </div>
   );
