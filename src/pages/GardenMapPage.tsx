@@ -14,65 +14,49 @@ interface IslandSeed {
   color: string;
 }
 
-const ISLAND_SEEDS: IslandSeed[] = [
-  { id: 'starter',  title: '起步',  emoji: '🌱', capacity: 50,  color: 'linear-gradient(160deg, #C6F0D8 0%, #A8E6CF 100%)' },
-  { id: 'family',   title: '家',    emoji: '🏠', capacity: 300, color: 'linear-gradient(160deg, #FFE9A8 0%, #FFC76B 100%)' },
-  { id: 'animals',  title: '动物',  emoji: '🐰', capacity: 300, color: 'linear-gradient(160deg, #FFC1CC 0%, #FF9F43 100%)' },
-  { id: 'plants',   title: '植物',  emoji: '🌳', capacity: 300, color: 'linear-gradient(160deg, #C6F0D8 0%, #6FD7A0 100%)' },
-  { id: 'body',     title: '身体',  emoji: '👀', capacity: 300, color: 'linear-gradient(160deg, #D9C2F0 0%, #B5DEFF 100%)' },
-  { id: 'actions',  title: '动作',  emoji: '🏃', capacity: 300, color: 'linear-gradient(160deg, #B5DEFF 0%, #A8E6CF 100%)' },
-  { id: 'colors',   title: '颜色',  emoji: '🎨', capacity: 300, color: 'linear-gradient(160deg, #FFC1CC 0%, #D9C2F0 100%)' },
-  { id: 'nature',   title: '自然',  emoji: '☁️', capacity: 300, color: 'linear-gradient(160deg, #B5DEFF 0%, #FFE9A8 100%)' },
-  { id: 'numbers',  title: '数字',  emoji: '🔢', capacity: 300, color: 'linear-gradient(160deg, #FFE9A8 0%, #A8E6CF 100%)' },
-  { id: 'stories',  title: '故事',  emoji: '📚', capacity: 600, color: 'linear-gradient(160deg, #D9C2F0 0%, #FFC1CC 100%)' },
+const DEFAULT_ISLANDS: IslandSeed[] = [
+  { id: 'starter', title: '起步森林', emoji: '🌱', capacity: 50, color: '#A8E6CF' },
+  { id: 'family', title: '温暖小屋', emoji: '🏠', capacity: 300, color: '#FFE9A8' },
+  { id: 'animals', title: '动物谷', emoji: '🐾', capacity: 300, color: '#FFC1CC' },
+  { id: 'plants', title: '树木岛', emoji: '🌳', capacity: 300, color: '#C6F0D8' },
+  { id: 'body', title: '身体城', emoji: '👀', capacity: 300, color: '#D9C2F0' },
+  { id: 'actions', title: '动作山', emoji: '🏃', capacity: 300, color: '#B5DEFF' },
+  { id: 'colors', title: '彩虹园', emoji: '🎨', capacity: 300, color: '#FFC1CC' },
+  { id: 'nature', title: '自然湖', emoji: '☁️', capacity: 300, color: '#B5DEFF' },
+  { id: 'numbers', title: '数字村', emoji: '🔢', capacity: 300, color: '#FFE9A8' },
+  { id: 'stories', title: '故事城堡', emoji: '📚', capacity: 600, color: '#D9C2F0' },
 ];
 
-function IslandBubble({
-  seed,
-  active,
-  onClick,
-}: {
-  seed: IslandSeed;
-  active: boolean;
-  onClick: () => void;
-}) {
+function Node({ seed, index, active, progress, onClick }: { seed: IslandSeed; index: number; active: boolean; progress: number; onClick: () => void }) {
   return (
     <button
       type="button"
+      disabled={!active}
       onClick={onClick}
       style={{
-        width: 180,
-        height: 180,
-        borderRadius: '50%',
-        background: active ? seed.color : 'var(--bunny-cream)',
-        border: active ? '3px solid #FFFFFF' : '2px dashed var(--bunny-border)',
+        position: 'relative',
+        width: 176,
+        minHeight: 166,
+        borderRadius: 30,
+        border: active ? '3px solid rgba(255,255,255,.95)' : '2px solid rgba(255,255,255,.7)',
+        background: active ? seed.color : 'rgba(255,255,255,.65)',
         boxShadow: active ? 'var(--shadow-pop)' : 'none',
+        opacity: active ? 1 : .52,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 4,
-        cursor: active ? 'pointer' : 'default',
+        gap: 6,
         fontFamily: 'inherit',
-        opacity: active ? 1 : 0.55,
-        position: 'relative',
       }}
-      disabled={!active}
     >
-      <div style={{ fontSize: 56 }}>{seed.emoji}</div>
-      <div style={{ fontSize: 18, fontWeight: 800, color: 'var(--bunny-ink)' }}>{seed.title}</div>
-      <div
-        style={{
-          fontSize: 11,
-          fontWeight: 700,
-          color: 'var(--bunny-soft-ink)',
-          padding: '3px 10px',
-          borderRadius: 999,
-          background: 'rgba(255,255,255,0.8)',
-        }}
-      >
-        {seed.capacity} 字
+      <div style={{ position: 'absolute', top: 10, left: 12, width: 28, height: 28, borderRadius: '50%', background: 'rgba(255,255,255,.75)', display: 'grid', placeItems: 'center', fontSize: 14, fontWeight: 900, color: 'var(--bunny-soft-ink)' }}>{index + 1}</div>
+      <div style={{ fontSize: 50, lineHeight: 1 }}>{seed.emoji}</div>
+      <div style={{ fontSize: 19, fontWeight: 900, color: 'var(--bunny-ink)' }}>{seed.title}</div>
+      <div style={{ width: 120, height: 8, background: 'rgba(255,255,255,.65)', borderRadius: 999, overflow: 'hidden' }}>
+        <div style={{ width: `${Math.min(100, progress)}%`, height: '100%', background: 'var(--bunny-green-deep)', borderRadius: 999 }} />
       </div>
+      <div style={{ fontSize: 11, fontWeight: 800, color: 'var(--bunny-soft-ink)' }}>{Math.round((progress / 100) * seed.capacity)} / {seed.capacity} 字</div>
     </button>
   );
 }
@@ -82,208 +66,59 @@ export function GardenMapPage() {
   const { islands, characters } = useContent();
   const { profile } = useLearner();
 
-  // 合并 islands（来自 content）+ 兜底
-  const islandData = useMemo<IslandSeed[]>(() => {
-    if (islands.length > 0) {
-      return islands.map((isl) => {
-        const seed = ISLAND_SEEDS.find((s) => s.id === isl.id);
-        return {
-          id: isl.id,
-          title: isl.title,
-          emoji: isl.emoji,
-          capacity: isl.capacity,
-          color: seed?.color ?? 'linear-gradient(160deg, #FFE9A8 0%, #A8E6CF 100%)',
-        } as IslandSeed;
-      });
-    }
-    return ISLAND_SEEDS;
-  }, [islands]);
+  const data = useMemo(() => (islands.length ? islands.map((island) => {
+    const fallback = DEFAULT_ISLANDS.find((item) => item.id === island.id);
+    return { id: island.id, title: island.title, emoji: island.emoji, capacity: island.capacity, color: fallback?.color ?? '#D9C2F0' };
+  }) : DEFAULT_ISLANDS), [islands]);
 
-  // 计算每个字掌握数（按 island 字段）
-  const islandProgress = useMemo(() => {
-    const counts: Record<string, number> = {};
+  const progress = useMemo(() => {
+    const map: Record<string, number> = {};
     for (const c of characters) {
-      const island = (c as any).island ?? 'starter';
-      const id = (c as any).id;
-      const mastery = profile.mastery[id];
-      if (mastery && mastery.state !== 'unknown') {
-        counts[island] = (counts[island] ?? 0) + 1;
-      }
+      const state = profile.mastery[c.id]?.state;
+      if (state && state !== 'unknown') map[c.island ?? 'starter'] = (map[c.island ?? 'starter'] ?? 0) + 1;
     }
-    return counts;
+    return map;
   }, [characters, profile.mastery]);
 
-  // 顺序：主角 starter 先激活，其余按 learner 数据判断激活
-  const activeIslands = useMemo(() => {
-    const totalLearned = profile.learnedCount ?? 0;
-    return islandData.map((isl) => ({
-      ...isl,
-      active: isl.id === 'starter' || totalLearned >= 5,
-    }));
-  }, [islandData, profile.learnedCount]);
+  const learned = profile.learnedCount ?? Object.keys(profile.mastery).length;
+  const totalCapacity = data.reduce((sum, item) => sum + item.capacity, 0);
 
-  const totalSeeds = profile.learnedCount ?? Object.keys(profile.mastery).length;
-  const totalCapacity = islandData.reduce((sum, isl) => sum + isl.capacity, 0);
-
-  const sproutBadge = (
-    <div
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: 8,
-        padding: '10px 20px',
-        borderRadius: 999,
-        background: 'var(--bunny-mint)',
-        border: '2px solid var(--bunny-mint-deep)',
-        boxShadow: 'var(--shadow-soft)',
-      }}
-    >
-      <span style={{ fontSize: 22 }}>🌱</span>
-      <span style={{ fontSize: 18, fontWeight: 800, color: 'var(--bunny-green-deep)' }}>
-        {totalSeeds} 棵苗
-      </span>
-    </div>
-  );
+  const go = (id: string) => {
+    if (id === 'animals') return navigate('/story');
+    if (id === 'stories') return navigate('/story');
+    return navigate('/characters');
+  };
 
   return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0, left: 0, right: 0, bottom: 0,
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <TopBar title="字花园全景" subtitle="你种下了多少棵小苗？" right={sproutBadge} />
+    <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      <TopBar title="冒险乐园" subtitle="沿着 Bunny 的路线，一站一站认识汉字" right={<div style={{ padding: '9px 14px', borderRadius: 999, background: 'var(--bunny-mint)', color: 'var(--bunny-green-deep)', fontWeight: 900 }}>{learned} / 3000 字</div>} />
 
-      <div
-        style={{
-          flex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          padding: '20px 24px',
-          gap: 16,
-          minHeight: 0,
-        }}
-      >
-        {/* Bunny dialogue */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 16,
-            background: '#FFFFFF',
-            border: '2px solid var(--bunny-border)',
-            borderRadius: 28,
-            padding: '12px 20px',
-            boxShadow: 'var(--shadow-soft)',
-          }}
-        >
-          <Bunny pose="idle" size={80} />
-          <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--bunny-ink)' }}>
-            小苗一棵棵长起来，花园呀越来越暖 ✨
-          </div>
+      <main style={{ flex: 1, minHeight: 0, padding: '14px 22px 104px', display: 'grid', gridTemplateRows: 'auto minmax(0, 1fr) auto', gap: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '10px 18px', background: '#fff', border: '2px solid var(--bunny-border)', borderRadius: 24, boxShadow: 'var(--shadow-soft)' }}>
+          <Bunny pose="cheering" size={86} />
+          <div><div style={{ fontSize: 20, fontWeight: 900, color: 'var(--bunny-ink)' }}>今天去哪里冒险？</div><div style={{ marginTop: 4, fontSize: 13, color: 'var(--bunny-soft-ink)' }}>先从第 1 站出发，完成任务就能解锁下一站。</div></div>
         </div>
 
-        {/* World map with 10 islands */}
-        <div
-          style={{
-            flex: 1,
-            position: 'relative',
-            borderRadius: 36,
-            background: 'linear-gradient(180deg, #C6F0D8 0%, #B5DEFF 60%, #FFE9A8 100%)',
-            border: '2px solid var(--bunny-border)',
-            boxShadow: 'var(--shadow-soft)',
-            overflow: 'hidden',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            gridTemplateRows: '1fr 1fr',
-            gap: 12,
-            padding: 24,
-            alignContent: 'center',
-            justifyContent: 'center',
-            alignItems: 'center',
-            justifyItems: 'center',
-            minHeight: 0,
-          }}
-        >
-          {activeIslands.map((isl) => (
-            <div key={isl.id} style={{ position: 'relative' }}>
-              <IslandBubble
-                seed={isl}
-                active={isl.active}
-                onClick={() => {
-                  if (isl.id === 'family' || isl.id === 'plants' || isl.id === 'stories') {
-                    navigate('/characters');
-                  } else if (isl.id === 'animals') {
-                    navigate('/story');
-                  } else {
-                    navigate('/characters');
-                  }
-                }}
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: -22,
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  fontSize: 12,
-                  fontWeight: 700,
-                  color: 'var(--bunny-soft-ink)',
-                  background: 'rgba(255,255,255,0.85)',
-                  padding: '2px 10px',
-                  borderRadius: 999,
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {islandProgress[isl.id] ?? 0} / {isl.capacity}
-              </div>
-            </div>
-          ))}
-        </div>
+        <section style={{ position: 'relative', minHeight: 0, borderRadius: 34, overflow: 'hidden', border: '2px solid var(--bunny-border)', boxShadow: 'var(--shadow-pop)', background: '#DFF2DE' }}>
+          <img src="/assets/art/l0/backgrounds/bg-meadow.jpg" alt="" aria-hidden style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.22))' }} />
+          <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: 'repeat(5, minmax(140px,1fr))', gridTemplateRows: 'repeat(2, 1fr)', alignItems: 'center', justifyItems: 'center', padding: '24px 20px', gap: 12 }}>
+            {data.map((seed, index) => {
+              const mastered = progress[seed.id] ?? 0;
+              const percent = seed.capacity ? (mastered / seed.capacity) * 100 : 0;
+              const active = index === 0 || learned >= index * 5;
+              return <Node key={seed.id} seed={seed} index={index} active={active} progress={percent} onClick={() => go(seed.id)} />;
+            })}
+          </div>
+          <div style={{ position: 'absolute', left: 26, bottom: 20, padding: '9px 14px', borderRadius: 999, background: 'rgba(255,255,255,.88)', fontSize: 12, fontWeight: 900, color: 'var(--bunny-green-deep)' }}>🌿 每到一站都会遇到新的字、绘本和小游戏</div>
+        </section>
 
-        {/* Total progress */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 16,
-            background: '#FFFFFF',
-            border: '2px solid var(--bunny-border)',
-            borderRadius: 28,
-            padding: '14px 24px',
-            boxShadow: 'var(--shadow-soft)',
-          }}
-        >
-          <div
-            style={{
-              fontSize: 16,
-              fontWeight: 700,
-              color: 'var(--bunny-soft-ink)',
-            }}
-          >
-            总进度
-          </div>
-          <ProgressBar
-            value={totalSeeds / totalCapacity}
-            total={totalCapacity}
-            label="已学"
-            color="mint"
-            width={500}
-          />
-          <div
-            style={{
-              fontSize: 22,
-              fontWeight: 800,
-              color: 'var(--bunny-green-deep)',
-              flexShrink: 0,
-            }}
-          >
-            {totalSeeds} / {totalCapacity} 字
-          </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '11px 18px', background: '#fff', border: '2px solid var(--bunny-border)', borderRadius: 22, boxShadow: 'var(--shadow-soft)' }}>
+          <div style={{ width: 66, fontSize: 14, fontWeight: 900, color: 'var(--bunny-soft-ink)' }}>总进度</div>
+          <ProgressBar value={learned / totalCapacity} total={totalCapacity} label="已学" color="mint" width={520} />
+          <div style={{ marginLeft: 'auto', fontSize: 18, fontWeight: 900, color: 'var(--bunny-green-deep)' }}>{learned} / {totalCapacity} 字</div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
