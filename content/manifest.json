@@ -1,8 +1,11 @@
 {
   "version": "1",
-  "builtAt": "2026-08-22T02:55:59.041Z",
+  "builtAt": "2026-08-23T03:59:07.643Z",
   "cueCount": 72,
-  "artCount": 48,
+  "artCount": 52,
+  "characterCount": 19,
+  "storyCount": 3,
+  "gameCount": 0,
   "cues": [
     {
       "id": "praise-1",
@@ -661,135 +664,159 @@
     {
       "id": "picto-shan",
       "subject": "山",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of three soft rounded mountain peaks like cute little hills, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. three soft rounded green mountain peaks standing side by side in the center of the frame, like three gentle hills. Soft white snow caps on the top of each peak. Foreground: soft green rolling grass with tiny wildflowers and a few small trees. Background: soft pastel gradient sky from pink at horizon to light blue above with two fluffy white clouds. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-shan.jpg",
       "refId": "char-shan"
     },
     {
       "id": "picto-shui",
       "subject": "水",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of gentle flowing water drops and a small wave, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. gentle flowing water stream in the center of the frame, shown as soft curved blue streams with three small water droplets falling nearby. A small waterfall scene with moss-covered rocks at the base, surrounded by small green plants and grass. Background: soft blue to cream gradient sky. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-shui.jpg",
       "refId": "char-shui"
     },
     {
       "id": "picto-huo",
       "subject": "火",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of soft rounded dancing flames, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a friendly dancing flame in the center of the frame. The flame has three soft pointed tongues (top center, top left, top right) like the three dots in the Chinese character, and a rounded base. Warm orange and red colors with a yellow inner glow. Tiny floating sparks around it. Background: warm pastel orange-to-pink gradient sky. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-huo.jpg",
       "refId": "char-huo"
     },
     {
       "id": "picto-mu",
       "subject": "木",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a small chubby tree with a brown trunk and green canopy, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a single tree in the center of the frame. Clear brown trunk with two branches going up-left and up-right, and a soft round green canopy of leaves on top. Soft green grass at the base with tiny flowers. Background: soft pink-to-sky-blue gradient sky with one fluffy white cloud. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-mu.jpg",
       "refId": "char-mu"
     },
     {
       "id": "picto-ri",
       "subject": "日",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft smiling sun with small radiating petals, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a smiling sun in the center of the frame. The sun is round and warm yellow with a cute face: closed happy eyes, pink cheek blush, sweet smile. Short golden rays radiating outward. Below the sun: soft rolling green hills with a small tree. Background: warm yellow-to-orange-to-pink gradient sky. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-ri.jpg",
       "refId": "char-ri"
     },
     {
       "id": "picto-yue",
       "subject": "月",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a crescent moon with a sleepy face, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a crescent moon in the center of the frame. The moon is soft pale yellow with a sleepy face: closed peaceful eyes, slight content smile, pink cheek blush. Background: soft purple-to-blue night sky gradient with a few small twinkling stars and tiny wispy clouds. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-yue.jpg",
       "refId": "char-yue"
     },
     {
       "id": "picto-ren",
       "subject": "人",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a small chubby walking person silhouette, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a small chubby person silhouette in the center of the frame, shown in side profile with a slight walking pose and bent posture like a gentle curve. Soft cream skin tone. Background: soft pink-to-cream gradient sky. Small grass patch and tiny path underfoot. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-ren.jpg",
       "refId": "char-ren"
     },
     {
       "id": "picto-kou",
       "subject": "口",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft rounded square opening shaped like a small mouth, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a soft rounded square in the center of the frame, shaped like a small open mouth. Soft corners and a slight inward curve. Tiny pink lips at the bottom edge, slightly personified. Background: soft pastel pink-to-cream gradient with small flowers around it. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-kou.jpg",
       "refId": "char-kou"
     },
     {
       "id": "picto-mu-eye",
       "subject": "目",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a big round cute eye with eyelashes, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a big round cute eye in the center of the frame. The eye has a dark brown iris with a small white highlight, long soft eyelashes, and soft pink eyelid details. Surrounded by a hint of soft skin tone and tiny sparkles. Background: soft pastel peach-to-cream gradient. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-mu-eye.jpg",
       "refId": "char-mu-eye"
     },
     {
       "id": "picto-er",
       "subject": "耳",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft rounded ear shape, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a soft rounded ear shape in the center of the frame. The ear has a soft pink inner part and a pale outer curve. Like a friendly cartoon ear. Background: soft pastel mint-to-cream gradient with tiny flowers floating around. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-er.jpg",
       "refId": "char-er"
     },
     {
       "id": "picto-shou",
       "subject": "手",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a chubby open hand with five small fingers, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a chubby open hand in the center of the frame, palm facing the viewer with five small fingers spread out in a friendly wave. Soft skin tone with pink palm. Background: soft pastel sky-blue-to-cream gradient with tiny hearts floating around. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-shou.jpg",
       "refId": "char-shou"
     },
     {
       "id": "picto-xin",
       "subject": "心",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft pink heart shape with a smile, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a soft pink heart in the center of the frame. The heart has a cute face: closed happy eyes, sweet smile, pink cheek blush. Surrounded by tiny floating hearts and sparkles. Background: soft pink-to-red gradient. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-xin.jpg",
       "refId": "char-xin"
     },
     {
       "id": "picto-zu",
       "subject": "足",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a cute chubby footprint shape, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a chubby footprint shape in the center of the frame, showing the sole of a small foot with five toe pads and a heel pad. Soft skin tone with pink details. Background: soft pastel butter-to-cream gradient with green grass around it. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-zu.jpg",
       "refId": "char-zu"
     },
     {
       "id": "picto-yu",
       "subject": "雨",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of soft rain drops falling from a tiny cloud, NO text NO letters. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. soft rain drops in the center of the frame. A small fluffy white cloud at top with several clear water droplets falling down in vertical lines below it. A small green grass patch at the bottom. Background: soft blue-to-grey gradient sky. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-a/picto-yu.jpg",
       "refId": "char-yu"
     },
     {
       "id": "picto-lin",
       "subject": "林",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of two cute chubby trees standing close together like siblings, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. two trees standing close together in the center of the frame, side by side like siblings. Two brown trunks each with branches going up, and two soft round green canopies of leaves touching slightly. Soft green grass at the base with tiny flowers. Background: soft pastel pink-to-sky-blue gradient sky with one fluffy cloud. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-b/picto-lin.jpg",
       "refId": "char-lin"
     },
     {
       "id": "picto-sen",
       "subject": "森",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of three cute chubby trees grouped together like a tiny forest, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. three trees grouped together in the center of the frame, side by side. Three brown trunks of slightly varying heights with branches, and lush overlapping green canopies creating a dense forest feel. Grass and tiny mushrooms at the base. Background: soft pastel sky-blue gradient with soft sunlight filtering through. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-b/picto-sen.jpg",
       "refId": "char-sen"
     },
     {
       "id": "picto-ming",
       "subject": "明",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a soft smiling sun and a crescent moon smiling together side by side, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a smiling sun on the left and a crescent moon on the right, side by side in the center of the frame. Both have cute faces: closed happy eyes, pink cheek blush, sweet smiles. Background: split gradient — warm yellow-to-pink on the left (day side), soft purple-to-blue on the right (night side). A tiny horizon line at the bottom with grass. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-b/picto-ming.jpg",
       "refId": "char-ming"
     },
     {
       "id": "picto-xiu",
       "subject": "休",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a small chubby person silhouette leaning against a chubby tree, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a small chubby person silhouette on the left leaning against a tree on the right, taking a peaceful rest. The person has a content peaceful pose with closed happy eyes. Soft green grass underfoot with tiny flowers. Background: soft pastel sky gradient with warm sunlight and one fluffy cloud. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-b/picto-xiu.jpg",
       "refId": "char-xiu"
     },
     {
       "id": "picto-hao",
       "subject": "好",
-      "prompt": "A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of a chubby mother figure and a tiny chubby baby figure together with hearts around them, NO text NO letters. The visual scene fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. 3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.",
+      "prompt": "A 3 year old girl picture book illustration. a chubby mother figure and a small chubby child figure standing close together in the center of the frame, side by side with hands held. Both have sweet smiles and pink cheek blush. Tiny pink hearts floating around them. Background: soft pastel pink-to-cream gradient with small flowers. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing. NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
       "outPath": "/assets/art/l1/tier-b/picto-hao.jpg",
       "refId": "char-hao"
+    },
+    {
+      "id": "char-shan-game",
+      "subject": "char-shan-game",
+      "prompt": "A 3 year old girl picture book illustration. A scene composition for the Chinese character 山 (mountain). Center: three soft rounded green mountain peaks with white snow caps. Foreground: rolling green grass with tiny wildflowers and small trees. Background: soft pastel sky with two fluffy white clouds. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing, NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
+      "outPath": "/assets/art/l1/game/char-shan-game.jpg"
+    },
+    {
+      "id": "char-shui-game",
+      "subject": "char-shui-game",
+      "prompt": "A 3 year old girl picture book illustration. A scene composition for the Chinese character 水 (water). Center: gentle flowing water stream shown as soft curved blue lines with three small water droplets. Foreground: moss-covered rocks with small green plants. Background: soft blue to cream gradient. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing, NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
+      "outPath": "/assets/art/l1/game/char-shui-game.jpg"
+    },
+    {
+      "id": "char-mu-game",
+      "subject": "char-mu-game",
+      "prompt": "A 3 year old girl picture book illustration. A scene composition for the Chinese character 木 (tree). Center: a single tree with brown trunk and round green canopy. Foreground: soft grass with tiny flowers. Background: soft pastel sky with one cloud. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing, NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
+      "outPath": "/assets/art/l1/game/char-mu-game.jpg"
+    },
+    {
+      "id": "char-ri-game",
+      "subject": "char-ri-game",
+      "prompt": "A 3 year old girl picture book illustration. A scene composition for the Chinese character 日 (sun). Center: a smiling sun with cute face (closed happy eyes, pink cheek blush, sweet smile) and short golden rays. Below: soft rolling green hills. Background: warm yellow-orange-pink gradient sky. 3 year old girl picture book illustration style, soft pastel color palette (pink mint butter lavender sky blue), dreamy soft warm lighting, rounded chubby shapes with no sharp edges, 3D render with soft shadows, clean uncluttered composition, square 1:1 framing, NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.",
+      "outPath": "/assets/art/l1/game/char-ri-game.jpg"
     },
     {
       "id": "cover-sen-lin-li-de-yi-tian",
@@ -809,5 +836,796 @@
       "prompt": "A 3 year old girl picture book cover illustration. A cute chubby white Bunny character looking up into the distance with sparkly eyes. Background shows a pastel forest with soft pink mountains. Decorated with flowers hearts butterflies. Pastel pink gradient background, dreamy soft warm, rounded chubby shapes with no sharp edges, all elements chubby with cute faces, 3D render, no Chinese text no Chinese characters no alphabet letters no digits no writing anywhere in the image.",
       "outPath": "/assets/art/l1/stories/cover-xiao-tu-de-jia.jpg"
     }
-  ]
+  ],
+  "characters": [
+    {
+      "id": "char-shan",
+      "glyph": "山",
+      "pinyin": [
+        "shān"
+      ],
+      "tone": 1,
+      "meaning": [
+        "山，山坡",
+        "高大的山"
+      ],
+      "radical": "山",
+      "strokes": 3,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "nature",
+      "origin": {
+        "fact": "甲骨文\"山\"是三座山峰的侧视图。",
+        "story": "古时候的人看到远处的山，就在纸上画了三座尖尖的山峰，这就是最早的\"山\"字。",
+        "evolution": [
+          "⛰️",
+          "⿱山山",
+          "山"
+        ]
+      },
+      "words": [
+        "高山",
+        "上山",
+        "山水画"
+      ]
+    },
+    {
+      "id": "char-shui",
+      "glyph": "水",
+      "pinyin": [
+        "shuǐ"
+      ],
+      "tone": 3,
+      "meaning": [
+        "水",
+        "水流"
+      ],
+      "radical": "水",
+      "strokes": 4,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "nature",
+      "origin": {
+        "fact": "甲骨文\"水\"是中间一股水流、两边各三个小点的样子。",
+        "story": "古人看到河水流下来，中间是水流，旁边溅起小水花，就这样画成了\"水\"。",
+        "evolution": [
+          "💧",
+          "𣱳",
+          "水"
+        ]
+      },
+      "words": [
+        "喝水",
+        "水果",
+        "河水"
+      ]
+    },
+    {
+      "id": "char-huo",
+      "glyph": "火",
+      "pinyin": [
+        "huǒ"
+      ],
+      "tone": 3,
+      "meaning": [
+        "火",
+        "火焰"
+      ],
+      "radical": "火",
+      "strokes": 4,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "nature",
+      "origin": {
+        "fact": "甲骨文\"火\"像一团向上蹿的火焰。",
+        "story": "古人看到火苗往上跳，就画了一团尖尖的火焰，这就是\"火\"。",
+        "evolution": [
+          "🔥",
+          "灬",
+          "火"
+        ]
+      },
+      "words": [
+        "火车",
+        "火苗",
+        "火山"
+      ]
+    },
+    {
+      "id": "char-mu",
+      "glyph": "木",
+      "pinyin": [
+        "mù"
+      ],
+      "tone": 4,
+      "meaning": [
+        "木头",
+        "树木"
+      ],
+      "radical": "木",
+      "strokes": 4,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "plants",
+      "origin": {
+        "fact": "甲骨文\"木\"是一棵带根、带干、带枝的树。",
+        "story": "古人看到一棵树，上面有树枝，下面有树根，中间是树干，这就是\"木\"字。",
+        "evolution": [
+          "🌳",
+          "木",
+          "木"
+        ]
+      },
+      "words": [
+        "树木",
+        "木头",
+        "木马"
+      ]
+    },
+    {
+      "id": "char-ri",
+      "glyph": "日",
+      "pinyin": [
+        "rì"
+      ],
+      "tone": 4,
+      "meaning": [
+        "太阳",
+        "日子"
+      ],
+      "radical": "日",
+      "strokes": 4,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "nature",
+      "origin": {
+        "fact": "甲骨文\"日\"是太阳的圆形，里面加一点表示日中。",
+        "story": "古人看到圆圆的太阳，中间加了一点表示光最亮的地方，这就是\"日\"字。",
+        "evolution": [
+          "☀️",
+          "⺊",
+          "日"
+        ]
+      },
+      "words": [
+        "日子",
+        "日出",
+        "生日"
+      ]
+    },
+    {
+      "id": "char-yue",
+      "glyph": "月",
+      "pinyin": [
+        "yuè"
+      ],
+      "tone": 4,
+      "meaning": [
+        "月亮",
+        "月份"
+      ],
+      "radical": "月",
+      "strokes": 4,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "nature",
+      "origin": {
+        "fact": "甲骨文\"月\"是月牙的形状。",
+        "story": "古人看到弯弯的月亮，像一弯小船，就照着画了下来，这就是\"月\"字。",
+        "evolution": [
+          "🌙",
+          "⺼",
+          "月"
+        ]
+      },
+      "words": [
+        "月亮",
+        "月光",
+        "月饼"
+      ]
+    },
+    {
+      "id": "char-ren",
+      "glyph": "人",
+      "pinyin": [
+        "rén"
+      ],
+      "tone": 2,
+      "meaning": [
+        "人",
+        "人类"
+      ],
+      "radical": "人",
+      "strokes": 2,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "body",
+      "origin": {
+        "fact": "甲骨文\"人\"是一个弯腰侧立的人形。",
+        "story": "古人看到人走路的样子，弯着腰侧着身子走路，就画了下来，这就是\"人\"字。",
+        "evolution": [
+          "🧍",
+          "人",
+          "人"
+        ]
+      },
+      "words": [
+        "大人",
+        "人们",
+        "好人"
+      ]
+    },
+    {
+      "id": "char-kou",
+      "glyph": "口",
+      "pinyin": [
+        "kǒu"
+      ],
+      "tone": 3,
+      "meaning": [
+        "嘴",
+        "口"
+      ],
+      "radical": "口",
+      "strokes": 3,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "body",
+      "origin": {
+        "fact": "甲骨文\"口\"是张开嘴的方形。",
+        "story": "古人看到张开的嘴巴，是方方的形状，就照着画了下来，这就是\"口\"字。",
+        "evolution": [
+          "👄",
+          "口",
+          "口"
+        ]
+      },
+      "words": [
+        "口袋",
+        "开口",
+        "口水"
+      ]
+    },
+    {
+      "id": "char-mu-eye",
+      "glyph": "目",
+      "pinyin": [
+        "mù"
+      ],
+      "tone": 4,
+      "meaning": [
+        "眼睛",
+        "看"
+      ],
+      "radical": "目",
+      "strokes": 5,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "body",
+      "origin": {
+        "fact": "甲骨文\"目\"是竖起来的眼睛，里面有一个瞳孔。",
+        "story": "古人看到眼睛，竖着画下来，中间有一个圆圆的瞳孔，这就是\"目\"字。",
+        "evolution": [
+          "👁️",
+          "目",
+          "目"
+        ]
+      },
+      "words": [
+        "目光",
+        "目录",
+        "眼睛"
+      ]
+    },
+    {
+      "id": "char-er",
+      "glyph": "耳",
+      "pinyin": [
+        "ěr"
+      ],
+      "tone": 3,
+      "meaning": [
+        "耳朵"
+      ],
+      "radical": "耳",
+      "strokes": 6,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "body",
+      "origin": {
+        "fact": "甲骨文\"耳\"是人的耳朵形状。",
+        "story": "古人看到大大的耳朵，就像一片叶子，就照着画了下来，这就是\"耳\"字。",
+        "evolution": [
+          "👂",
+          "耳",
+          "耳"
+        ]
+      },
+      "words": [
+        "耳朵",
+        "木耳",
+        "耳目"
+      ]
+    },
+    {
+      "id": "char-shou",
+      "glyph": "手",
+      "pinyin": [
+        "shǒu"
+      ],
+      "tone": 3,
+      "meaning": [
+        "手",
+        "手臂"
+      ],
+      "radical": "手",
+      "strokes": 4,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "body",
+      "origin": {
+        "fact": "甲骨文\"手\"是张开五指的手掌。",
+        "story": "古人看到张开的手掌，五根手指都伸出来，就照着画了下来，这就是\"手\"字。",
+        "evolution": [
+          "🖐️",
+          "扌",
+          "手"
+        ]
+      },
+      "words": [
+        "小手",
+        "手里",
+        "动手"
+      ]
+    },
+    {
+      "id": "char-xin",
+      "glyph": "心",
+      "pinyin": [
+        "xīn"
+      ],
+      "tone": 1,
+      "meaning": [
+        "心，心脏"
+      ],
+      "radical": "心",
+      "strokes": 4,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "body",
+      "origin": {
+        "fact": "甲骨文\"心\"是心脏的形状。",
+        "story": "古人看到心脏的形状，像一颗尖尖的果子，就画了下来，这就是\"心\"字。",
+        "evolution": [
+          "❤️",
+          "⺗",
+          "心"
+        ]
+      },
+      "words": [
+        "开心",
+        "小心",
+        "用心"
+      ]
+    },
+    {
+      "id": "char-zu",
+      "glyph": "足",
+      "pinyin": [
+        "zú"
+      ],
+      "tone": 2,
+      "meaning": [
+        "脚，足"
+      ],
+      "radical": "足",
+      "strokes": 7,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "body",
+      "origin": {
+        "fact": "甲骨文\"足\"是脚的形状，下面是脚趾。",
+        "story": "古人看到人的脚，下面有几个脚趾，就照着画了下来，这就是\"足\"字。",
+        "evolution": [
+          "🦶",
+          "⾛",
+          "足"
+        ]
+      },
+      "words": [
+        "足球",
+        "足够",
+        "足迹"
+      ]
+    },
+    {
+      "id": "char-yu",
+      "glyph": "雨",
+      "pinyin": [
+        "yǔ"
+      ],
+      "tone": 3,
+      "meaning": [
+        "雨，下雨"
+      ],
+      "radical": "雨",
+      "strokes": 8,
+      "tier": "A",
+      "type": "pictograph",
+      "island": "nature",
+      "origin": {
+        "fact": "甲骨文\"雨\"是天上下雨的样子，上有云，下有雨滴。",
+        "story": "古人看到天上乌云下雨，就画了一朵云，下面加几滴雨水，这就是\"雨\"字。",
+        "evolution": [
+          "🌧️",
+          "⻗",
+          "雨"
+        ]
+      },
+      "words": [
+        "下雨",
+        "雨水",
+        "雨伞"
+      ]
+    },
+    {
+      "id": "char-lin",
+      "glyph": "林",
+      "pinyin": [
+        "lín"
+      ],
+      "tone": 2,
+      "meaning": [
+        "树林",
+        "两棵树"
+      ],
+      "radical": "木",
+      "strokes": 8,
+      "tier": "B",
+      "type": "ideogram",
+      "island": "plants",
+      "origin": {
+        "fact": "\"林\"由两个\"木\"组成，表示很多树在一起。",
+        "story": "一棵树不够，要很多很多树，才叫\"林\"。所以古人把两个\"木\"放在一起，变成了\"林\"。",
+        "evolution": [
+          "🌳🌳",
+          "木+木",
+          "林"
+        ]
+      },
+      "words": [
+        "树林",
+        "森林",
+        "林荫道"
+      ],
+      "components": [
+        "char-mu",
+        "char-mu"
+      ]
+    },
+    {
+      "id": "char-sen",
+      "glyph": "森",
+      "pinyin": [
+        "sēn"
+      ],
+      "tone": 1,
+      "meaning": [
+        "森林",
+        "很多很多树"
+      ],
+      "radical": "木",
+      "strokes": 12,
+      "tier": "B",
+      "type": "ideogram",
+      "island": "plants",
+      "origin": {
+        "fact": "\"森\"由三个\"木\"组成，表示非常多的树。",
+        "story": "\"林\"已经很多了，\"森\"还要更多！三个\"木\"放在一起，就是\"森\"。",
+        "evolution": [
+          "🌳🌳🌳",
+          "木+木+木",
+          "森"
+        ]
+      },
+      "words": [
+        "森林",
+        "阴森",
+        "森森"
+      ],
+      "components": [
+        "char-mu",
+        "char-mu",
+        "char-mu"
+      ]
+    },
+    {
+      "id": "char-ming",
+      "glyph": "明",
+      "pinyin": [
+        "míng"
+      ],
+      "tone": 2,
+      "meaning": [
+        "明亮",
+        "清楚"
+      ],
+      "radical": "日",
+      "strokes": 8,
+      "tier": "B",
+      "type": "ideogram",
+      "island": "nature",
+      "origin": {
+        "fact": "\"明\"由\"日\"和\"月\"组成，日月同辉即\"明\"。",
+        "story": "白天有太阳，晚上有月亮，把它们放在一起，就是最明亮的时候。这就是\"明\"字。",
+        "evolution": [
+          "☀️🌙",
+          "日+月",
+          "明"
+        ]
+      },
+      "words": [
+        "明天",
+        "明白",
+        "明亮"
+      ],
+      "components": [
+        "char-ri",
+        "char-yue"
+      ]
+    },
+    {
+      "id": "char-xiu",
+      "glyph": "休",
+      "pinyin": [
+        "xiū"
+      ],
+      "tone": 1,
+      "meaning": [
+        "休息"
+      ],
+      "radical": "亻",
+      "strokes": 6,
+      "tier": "B",
+      "type": "ideogram",
+      "island": "actions",
+      "origin": {
+        "fact": "\"休\"由\"人\"和\"木\"组成，表示人靠在树旁。",
+        "story": "一个人走路走累了，靠在大树旁边休息一下，这就是\"休\"字。",
+        "evolution": [
+          "🧍🌳",
+          "人+木",
+          "休"
+        ]
+      },
+      "words": [
+        "休息",
+        "退休",
+        "休止符"
+      ],
+      "components": [
+        "char-ren",
+        "char-mu"
+      ]
+    },
+    {
+      "id": "char-hao",
+      "glyph": "好",
+      "pinyin": [
+        "hǎo"
+      ],
+      "tone": 3,
+      "meaning": [
+        "好，美好"
+      ],
+      "radical": "女",
+      "strokes": 6,
+      "tier": "B",
+      "type": "ideogram",
+      "island": "family",
+      "origin": {
+        "fact": "\"好\"由\"女\"和\"子\"组成，表示女子与孩子。",
+        "story": "有妈妈有孩子，一家人在一起，就是\"好\"。古时候觉得这是最美好的事情。",
+        "evolution": [
+          "👩👦",
+          "女+子",
+          "好"
+        ]
+      },
+      "words": [
+        "好的",
+        "好看",
+        "好吃"
+      ],
+      "components": [
+        "char-nv",
+        "char-zi"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "book-sen-lin-li-de-yi-tian",
+      "title": "森林里的一天",
+      "coverEmoji": "🌳🐰",
+      "level": 1,
+      "island": "nature",
+      "coreCharacterIds": [
+        "char-sen",
+        "char-lin",
+        "char-da",
+        "char-xiao"
+      ],
+      "ageMin": 3,
+      "ageMax": 6,
+      "pages": [
+        {
+          "pageNumber": 1,
+          "text": "森林里，住着一只小小兔。",
+          "background": "forest-deep",
+          "characterIds": [
+            "char-sen",
+            "char-lin",
+            "char-li"
+          ],
+          "audioId": "story-sen-lin-li-de-yi-tian-p1"
+        },
+        {
+          "pageNumber": 2,
+          "text": "小小兔有大大大的耳朵，短短的尾巴。",
+          "background": "forest-character",
+          "characterIds": [
+            "char-da",
+            "char-xiao",
+            "char-er"
+          ],
+          "audioId": "story-sen-lin-li-de-yi-tian-p2"
+        },
+        {
+          "pageNumber": 3,
+          "text": "它喜欢下雨天在森林里跳来跳去。",
+          "background": "forest-rain",
+          "characterIds": [
+            "char-yu",
+            "char-tian"
+          ],
+          "audioId": "story-sen-lin-li-de-yi-tian-p3"
+        },
+        {
+          "pageNumber": 4,
+          "text": "森林里的一天，真美好呀！",
+          "background": "forest-sunset",
+          "characterIds": [
+            "char-hao"
+          ],
+          "audioId": "story-sen-lin-li-de-yi-tian-p4"
+        }
+      ]
+    },
+    {
+      "id": "book-tai-yang-he-yue-liang",
+      "title": "太阳和月亮",
+      "coverEmoji": "☀️🌙",
+      "level": 1,
+      "island": "nature",
+      "coreCharacterIds": [
+        "char-ri",
+        "char-yue",
+        "char-tian"
+      ],
+      "ageMin": 3,
+      "ageMax": 6,
+      "pages": [
+        {
+          "pageNumber": 1,
+          "text": "天上有太阳，照得大地暖暖的。",
+          "background": "sky-day",
+          "characterIds": [
+            "char-ri",
+            "char-tian",
+            "char-shang"
+          ],
+          "audioId": "story-tai-yang-he-yue-liang-p1"
+        },
+        {
+          "pageNumber": 2,
+          "text": "太阳下山了，天慢慢黑下来。",
+          "background": "sky-dusk",
+          "characterIds": [
+            "char-ri",
+            "char-xia"
+          ],
+          "audioId": "story-tai-yang-he-yue-liang-p2"
+        },
+        {
+          "pageNumber": 3,
+          "text": "月亮出来了，亮亮的挂在天上。",
+          "background": "sky-night",
+          "characterIds": [
+            "char-yue",
+            "char-tian"
+          ],
+          "audioId": "story-tai-yang-he-yue-liang-p3"
+        },
+        {
+          "pageNumber": 4,
+          "text": "太阳和月亮，轮流照顾小朋友。",
+          "background": "sky-cycle",
+          "characterIds": [
+            "char-ri",
+            "char-yue"
+          ],
+          "audioId": "story-tai-yang-he-yue-liang-p4"
+        }
+      ]
+    },
+    {
+      "id": "book-xiao-tu-de-jia",
+      "title": "小兔子找妈妈",
+      "coverEmoji": "🐰",
+      "level": 1,
+      "island": "family",
+      "coreCharacterIds": [
+        "char-tu",
+        "char-zi",
+        "char-zhao",
+        "char-ma",
+        "char-zai",
+        "char-li",
+        "char-jia"
+      ],
+      "ageMin": 3,
+      "ageMax": 6,
+      "pages": [
+        {
+          "pageNumber": 1,
+          "text": "小兔子在森林里找妈妈。",
+          "background": "forest",
+          "characterIds": [
+            "char-shan",
+            "char-shui",
+            "char-mu"
+          ],
+          "audioId": "story-xiao-tu-de-jia-p1"
+        },
+        {
+          "pageNumber": 2,
+          "text": "它问大树：我的妈妈在哪里？",
+          "background": "forest-tree",
+          "characterIds": [
+            "char-mu"
+          ],
+          "audioId": "story-xiao-tu-de-jia-p2"
+        },
+        {
+          "pageNumber": 3,
+          "text": "它问小草：我的妈妈在哪里？",
+          "background": "meadow",
+          "characterIds": [
+            "char-ren"
+          ],
+          "audioId": "story-xiao-tu-de-jia-p3"
+        },
+        {
+          "pageNumber": 4,
+          "text": "妈妈在山洞里等它。",
+          "background": "mountain",
+          "characterIds": [
+            "char-shan"
+          ],
+          "audioId": "story-xiao-tu-de-jia-p4"
+        },
+        {
+          "pageNumber": 5,
+          "text": "小兔子终于找到妈妈啦！",
+          "background": "home",
+          "characterIds": [
+            "char-hao"
+          ],
+          "audioId": "story-xiao-tu-de-jia-p5"
+        }
+      ]
+    }
+  ],
+  "games": []
 }

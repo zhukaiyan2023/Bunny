@@ -1,12 +1,13 @@
 {
   "version": "1.0.0",
   "purpose": "phaser-game-assets",
+  "note": "AI-generated picture book style. Same style as picto-* in tier-a/. Replace earlier SVG when Phaser game module is wired up.",
   "characters": [
     {
       "id": "char-shan",
       "glyph": "山",
       "pinyin": "shān",
-      "asset": "/assets/art/l1/game/char-shan-game.svg",
+      "asset": "/assets/art/l1/game/char-shan-game.jpg",
       "pictographObject": "mountain",
       "gameUses": ["find", "climb", "match", "trace", "explore"]
     },
@@ -14,7 +15,7 @@
       "id": "char-shui",
       "glyph": "水",
       "pinyin": "shuǐ",
-      "asset": "/assets/art/l1/game/char-shui-game.svg",
+      "asset": "/assets/art/l1/game/char-shui-game.jpg",
       "pictographObject": "flowing-water",
       "gameUses": ["find", "guide-water", "collect-drops", "match", "explore"]
     },
@@ -22,7 +23,7 @@
       "id": "char-mu",
       "glyph": "木",
       "pinyin": "mù",
-      "asset": "/assets/art/l1/game/char-mu-game.svg",
+      "asset": "/assets/art/l1/game/char-mu-game.jpg",
       "pictographObject": "tree",
       "gameUses": ["find", "plant", "build", "match", "explore"]
     },
@@ -30,7 +31,7 @@
       "id": "char-ri",
       "glyph": "日",
       "pinyin": "rì",
-      "asset": "/assets/art/l1/game/char-ri-game.svg",
+      "asset": "/assets/art/l1/game/char-ri-game.jpg",
       "pictographObject": "sun",
       "gameUses": ["find", "raise-sun", "day-night", "match", "explore"]
     }

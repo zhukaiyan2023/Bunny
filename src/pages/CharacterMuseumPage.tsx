@@ -16,13 +16,16 @@ const FALLBACK_CHARS: Character[] = [
   { id: 'char-yue', glyph: '月', pinyin: ['yuè'], tone: 4, meaning: ['月亮'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像弯弯的月亮。', story: '夜空里的月亮弯弯的，古人就把它画下来。' }, words: ['月亮', '明月'], island: 'nature' },
 ] as Character[];
 
+/**
+ * 汉字教学图统一走 content 里 AI 生成的象形图（jpg）。
+ *
+ * 历史：以前 山/水/木/日/月 走手写 SVG（teach-*.svg），Tier-B 又写错 .png，
+ * 导致页面经常回落到 SVG fallback。现在所有字都用 AI 生成的 picto-*.jpg。
+ */
 function teachingArtPath(ch: Character): string {
   const slug = ch.id.replace(/^char-/, '');
-  const supported = new Set(['shan', 'shui', 'mu', 'ri', 'yue']);
-  if (supported.has(slug)) return `/assets/art/l1/teaching/teach-${slug}.svg`;
-  return ch.tier === 'B'
-    ? `/assets/art/l1/tier-b/picto-${slug}.png`
-    : `/assets/art/l1/tier-a/picto-${slug}.jpg`;
+  const tierDir = ch.tier === 'B' ? 'tier-b' : 'tier-a';
+  return `/assets/art/l1/${tierDir}/picto-${slug}.jpg`;
 }
 
 function TeachingArt({ ch, size = 340 }: { ch: Character; size?: number }) {
@@ -34,7 +37,8 @@ function TeachingArt({ ch, size = 340 }: { ch: Character; size?: number }) {
         alt={`${ch.glyph} 汉字教学图`}
         style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
         onError={(event) => {
-          event.currentTarget.src = `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" rx="24" fill="#FFF4E6"/><text x="200" y="270" text-anchor="middle" font-size="220" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-weight="900" fill="#2C2C54">${ch.glyph}</text></svg>`)}`;
+          // 兜底：picto 缺失时显示带渐变背景的字卡（仅占位，正常流程不会触发）
+          event.currentTarget.src = `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF4E6"/><stop offset="1" stop-color="#FFE0BF"/></linearGradient></defs><rect width="400" height="400" rx="24" fill="url(#g)"/><text x="200" y="270" text-anchor="middle" font-size="220" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-weight="900" fill="#2C2C54">${ch.glyph}</text></svg>`)}`;
         }}
       />
     </div>

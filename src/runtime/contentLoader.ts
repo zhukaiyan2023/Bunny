@@ -45,20 +45,25 @@ export function useContentLoader() {
 
   useEffect(() => {
     try {
-      const characters = manifest.characters;
+      // 防御：manifest 里某些字段可能缺失（旧 manifest 只含 cues/art）
+      const characters: any[] = Array.isArray(manifest.characters) ? manifest.characters : [];
       const charactersById: Record<string, any> = {};
       for (const c of characters) charactersById[c.id] = c;
 
+      const stories: any[] = Array.isArray(manifest.stories) ? manifest.stories : [];
       const storiesById: Record<string, any> = {};
-      for (const s of manifest.stories ?? []) storiesById[s.id] = s;
+      for (const s of stories) storiesById[s.id] = s;
+
+      const games: any[] = Array.isArray(manifest.games) ? manifest.games : [];
+      const cues: any[] = Array.isArray(manifest.cues) ? manifest.cues : [];
 
       const pack: ContentPack = {
         islands: ISLANDS,
         characters,
         charactersById,
-        stories: manifest.stories ?? [],
-        games: manifest.games ?? [],
-        audio: manifest.cues,
+        stories,
+        games,
+        audio: cues,
         meta: {
           version: manifest.version ?? '1',
           level: 'l1',
@@ -66,7 +71,7 @@ export function useContentLoader() {
         },
       };
 
-      // 把 stories 挂到 pack 上（额外的 byId 索引）
+      // 把 storiesById 挂到 pack 上（额外的 byId 索引）
       (pack as any).storiesById = storiesById;
 
       setState({ pack, loading: false, error: null });

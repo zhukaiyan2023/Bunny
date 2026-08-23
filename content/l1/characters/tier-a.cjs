@@ -12,33 +12,43 @@
  *    改用 emoji + 视觉元素来表达"山 / 水 / 火 / 木"等
  */
 
-const STYLE_SUFFIX = '3 year old girl picture book style, pastel pink mint butter lavender palette, dreamy soft warm, rounded chubby shapes with no sharp edges, all characters chubby with big round eyes pink cheek blush sweet smile, 3D render, no Chinese text no Chinese characters no writing, transparent background.';
+const STYLE_SUFFIX =
+  '3 year old girl picture book illustration style, ' +
+  'soft pastel color palette (pink mint butter lavender sky blue), ' +
+  'dreamy soft warm lighting, rounded chubby shapes with no sharp edges, ' +
+  '3D render with soft shadows, clean uncluttered composition, ' +
+  'square 1:1 framing. ' +
+  'NO text NO Chinese characters NO alphabet letters NO digits NO writing NO symbols anywhere in the image.';
 
 /**
- * 为每个 Tier-A 字符生成"主体 + Bunny" 的视觉 prompt
- * 不要求模型写任何字，只画它对应的实物
+ * 为每个 Tier-A 象形字生成"主体场景"插画 prompt
  *
- * 🚫 严禁出现任何字母/字符/汉字/数字
- *    全部用 emoji + 拟人化的实物形态表达
+ * 设计原则（参考 docs/STYLE_GUIDE.md + 用户参考图）：
+ *   - 主体（字义本身）占画面中心 ~60%
+ *   - 配套场景（草地 / 天空 / 石头 / 花朵）填满整个画框
+ *   - 拟人化克制：最多 1 处 cute face，且不喧宾夺主
+ *   - 不出现 Bunny 角色（pictograph 是字本身，不是 Bunny 的故事）
+ *   - 不出现任何文字 / 字母 / 数字
  */
 function buildPictoPrompt(c) {
   const visualSubject = {
-    '山': 'three soft rounded mountain peaks like cute little hills, NO text NO letters',
-    '水': 'gentle flowing water drops and a small wave, NO text NO letters',
-    '火': 'soft rounded dancing flames, NO text NO letters',
-    '木': 'a small chubby tree with a brown trunk and green canopy, NO text NO letters',
-    '日': 'a soft smiling sun with small radiating petals, NO text NO letters',
-    '月': 'a crescent moon with a sleepy face, NO text NO letters',
-    '人': 'a small chubby walking person silhouette, NO text NO letters',
-    '口': 'a soft rounded square opening shaped like a small mouth, NO text NO letters',
-    '目': 'a big round cute eye with eyelashes, NO text NO letters',
-    '耳': 'a soft rounded ear shape, NO text NO letters',
-    '手': 'a chubby open hand with five small fingers, NO text NO letters',
-    '心': 'a soft pink heart shape with a smile, NO text NO letters',
-    '足': 'a cute chubby footprint shape, NO text NO letters',
-    '雨': 'soft rain drops falling from a tiny cloud, NO text NO letters',
-  }[c.glyph] ?? `a cute visual scene for ${c.glyph}, NO text NO letters`;
-  return `A cute chubby white Bunny character (long floppy ears, pink inner ear, red small backpack, big round eyes, pink cheek blush, sweet smile) stands beside a giant visual representation of ${visualSubject}. The visual object fills 60 percent of the right side of the frame. NO letters NO alphabet NO Chinese characters NO digits NO writing anywhere in the image. Background is pastel gradient (pink to butter to mint). Scene decorated with flowers hearts butterflies. ${STYLE_SUFFIX}`;
+    '山': 'three soft rounded green mountain peaks standing side by side in the center of the frame, like three gentle hills. Soft white snow caps on the top of each peak. Foreground: soft green rolling grass with tiny wildflowers and a few small trees. Background: soft pastel gradient sky from pink at horizon to light blue above with two fluffy white clouds.',
+    '水': 'gentle flowing water stream in the center of the frame, shown as soft curved blue streams with three small water droplets falling nearby. A small waterfall scene with moss-covered rocks at the base, surrounded by small green plants and grass. Background: soft blue to cream gradient sky.',
+    '火': 'a friendly dancing flame in the center of the frame. The flame has three soft pointed tongues (top center, top left, top right) like the three dots in the Chinese character, and a rounded base. Warm orange and red colors with a yellow inner glow. Tiny floating sparks around it. Background: warm pastel orange-to-pink gradient sky.',
+    '木': 'a single tree in the center of the frame. Clear brown trunk with two branches going up-left and up-right, and a soft round green canopy of leaves on top. Soft green grass at the base with tiny flowers. Background: soft pink-to-sky-blue gradient sky with one fluffy white cloud.',
+    '日': 'a smiling sun in the center of the frame. The sun is round and warm yellow with a cute face: closed happy eyes, pink cheek blush, sweet smile. Short golden rays radiating outward. Below the sun: soft rolling green hills with a small tree. Background: warm yellow-to-orange-to-pink gradient sky.',
+    '月': 'a crescent moon in the center of the frame. The moon is soft pale yellow with a sleepy face: closed peaceful eyes, slight content smile, pink cheek blush. Background: soft purple-to-blue night sky gradient with a few small twinkling stars and tiny wispy clouds.',
+    '人': 'a small chubby person silhouette in the center of the frame, shown in side profile with a slight walking pose and bent posture like a gentle curve. Soft cream skin tone. Background: soft pink-to-cream gradient sky. Small grass patch and tiny path underfoot.',
+    '口': 'a soft rounded square in the center of the frame, shaped like a small open mouth. Soft corners and a slight inward curve. Tiny pink lips at the bottom edge, slightly personified. Background: soft pastel pink-to-cream gradient with small flowers around it.',
+    '目': 'a big round cute eye in the center of the frame. The eye has a dark brown iris with a small white highlight, long soft eyelashes, and soft pink eyelid details. Surrounded by a hint of soft skin tone and tiny sparkles. Background: soft pastel peach-to-cream gradient.',
+    '耳': 'a soft rounded ear shape in the center of the frame. The ear has a soft pink inner part and a pale outer curve. Like a friendly cartoon ear. Background: soft pastel mint-to-cream gradient with tiny flowers floating around.',
+    '手': 'a chubby open hand in the center of the frame, palm facing the viewer with five small fingers spread out in a friendly wave. Soft skin tone with pink palm. Background: soft pastel sky-blue-to-cream gradient with tiny hearts floating around.',
+    '心': 'a soft pink heart in the center of the frame. The heart has a cute face: closed happy eyes, sweet smile, pink cheek blush. Surrounded by tiny floating hearts and sparkles. Background: soft pink-to-red gradient.',
+    '足': 'a chubby footprint shape in the center of the frame, showing the sole of a small foot with five toe pads and a heel pad. Soft skin tone with pink details. Background: soft pastel butter-to-cream gradient with green grass around it.',
+    '雨': 'soft rain drops in the center of the frame. A small fluffy white cloud at top with several clear water droplets falling down in vertical lines below it. A small green grass patch at the bottom. Background: soft blue-to-grey gradient sky.',
+  }[c.glyph] ?? `a cute visual scene for ${c.glyph} in the center of the frame with soft pastel picture book style surroundings.`;
+
+  return `A 3 year old girl picture book illustration. ${visualSubject} ${STYLE_SUFFIX}`;
 }
 
 const TIER_A = [

@@ -37,8 +37,12 @@ const ID_REGEX = /^[a-z0-9][a-z0-9-]*$/;
 const errors = [];
 const cueById = new Map();
 const artById = new Map();
+const idBySource = new Map();
 const cues = [];
 const art = [];
+const characters = [];
+const stories = [];
+const games = [];
 
 function registerCue(cue, source) {
   if (!ID_REGEX.test(cue.id)) {
@@ -64,6 +68,32 @@ function registerArt(item, source) {
   }
   artById.set(item.id, source);
   art.push(item);
+}
+
+function registerCharacter(c, source) {
+  if (!c || typeof c.id !== 'string') {
+    errors.push(`[${source}] character 缺少 id 字段`);
+    return;
+  }
+  if (idBySource.has(c.id)) {
+    errors.push(`[${source}] character id "${c.id}" 与 [${idBySource.get(c.id)}] 重复`);
+    return;
+  }
+  idBySource.set(c.id, source);
+  characters.push(c);
+}
+
+function registerStory(s, source) {
+  if (!s || typeof s.id !== 'string') {
+    errors.push(`[${source}] story 缺少 id 字段`);
+    return;
+  }
+  if (idBySource.has(s.id)) {
+    errors.push(`[${source}] story id "${s.id}" 与 [${idBySource.get(s.id)}] 重复`);
+    return;
+  }
+  idBySource.set(s.id, source);
+  stories.push(s);
 }
 
 async function loadLevel(level) {
@@ -102,6 +132,29 @@ async function loadOne(file, source) {
   if (def && Array.isArray(def.art)) {
     for (const item of def.art) registerArt(item, source);
   }
+  if (def && Array.isArray(def.characters)) {
+    for (const c of def.characters) registerCharacter(c, source);
+  }
+  // story 文件导出的是 `story`（单数对象），不是数组
+  if (def && def.story && typeof def.story === 'object' && !Array.isArray(def.story)) {
+    registerStory(def.story, source);
+  } else if (def && Array.isArray(def.stories)) {
+    for (const s of def.stories) registerStory(s, source);
+  }
+  if (def && Array.isArray(def.games)) {
+    for (const g of def.games) {
+      if (!g || typeof g.id !== 'string') {
+        errors.push(`[${source}] game 缺少 id 字段`);
+        continue;
+      }
+      if (idBySource.has(g.id)) {
+        errors.push(`[${source}] game id "${g.id}" 与 [${idBySource.get(g.id)}] 重复`);
+        continue;
+      }
+      idBySource.set(g.id, source);
+      games.push(g);
+    }
+  }
 }
 
 async function main() {
@@ -122,13 +175,22 @@ async function main() {
     builtAt: new Date().toISOString(),
     cueCount: cues.length,
     artCount: art.length,
+    characterCount: characters.length,
+    storyCount: stories.length,
+    gameCount: games.length,
     cues,
     art,
+    characters,
+    stories,
+    games,
   };
 
   const args = process.argv.slice(2);
   if (args.includes('--dry-run')) {
-    console.log(`[cue-manifest] ${cues.length} cues · ${art.length} art items`);
+    console.log(
+      `[cue-manifest] ${cues.length} cues · ${art.length} art · ` +
+      `${characters.length} characters · ${stories.length} stories · ${games.length} games`,
+    );
     if (errors.length) {
       console.log('\n错误：');
       for (const e of errors) console.log('  - ' + e);
@@ -146,7 +208,11 @@ async function main() {
   if (outIdx !== -1 && args[outIdx + 1]) {
     const outPath = path.resolve(args[outIdx + 1]);
     await fs.writeFile(outPath, JSON.stringify(manifest, null, 2));
-    console.log(`[cue-manifest] wrote ${outPath} (${cues.length} cues · ${art.length} art)`);
+    console.log(
+      `[cue-manifest] wrote ${outPath} ` +
+      `(${cues.length} cues · ${art.length} art · ` +
+      `${characters.length} characters · ${stories.length} stories · ${games.length} games)`,
+    );
   }
 
   if (errors.length) {
