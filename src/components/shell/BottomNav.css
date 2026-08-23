@@ -1,53 +1,74 @@
 .bottom-nav {
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  height: 88px;
+  height: clamp(76px, 9.2vh, 88px);
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 16px;
-  background: #FFFFFF;
+  justify-content: center;
+  gap: clamp(4px, 1.2vw, 18px);
+  padding: 8px clamp(12px, 2vw, 24px) calc(8px + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,.96);
   border-top: 1px solid var(--bunny-border);
+  box-shadow: 0 -10px 28px rgba(20,50,75,.08);
   z-index: 50;
 }
 
 .bottom-nav__tab {
-  flex: 1;
+  flex: 1 1 0;
+  max-width: 180px;
+  min-width: 96px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 4px;
-  padding: 8px 6px;
+  padding: 4px 8px;
   border-radius: 18px;
   color: var(--bunny-soft-ink);
-  transition: transform 0.15s ease;
-  min-height: 72px;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+  min-height: 62px;
 }
 
 .bottom-nav__tab:hover { transform: translateY(-2px); }
 
 .bottom-nav__tab.is-active {
   color: var(--bunny-red);
+  background: rgba(255,233,168,.34);
 }
 
 .bottom-nav__tab.is-active .bottom-nav__emoji {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
   background: var(--bunny-red);
   color: #FFFFFF;
-  font-size: 28px;
+  font-size: 22px;
+  box-shadow: 0 4px 10px rgba(233,69,69,.24);
 }
 
 .bottom-nav__emoji {
-  font-size: 28px;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #f6f3ef;
+  font-size: 22px;
   line-height: 1;
 }
 
 .bottom-nav__label {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: clamp(12px, 1vw, 14px);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .bottom-nav { gap: 0; padding-inline: 6px; }
+  .bottom-nav__tab { min-width: 72px; }
+  .bottom-nav__label { font-size: 11px; }
 }
