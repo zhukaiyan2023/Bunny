@@ -9,53 +9,34 @@ import { useAudio } from '../runtime/AudioProvider';
 import type { Character } from '../domain/types';
 
 const FALLBACK_CHARS: Character[] = [
-  { id: 'char-shan', glyph: '山', pinyin: ['shān'], tone: 1, meaning: ['mountain'], strokes: 3, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像三座山峰。', story: '高高的大山呀，就像三座尖尖的小帽子。' }, words: [], island: 'nature' },
-  { id: 'char-shui', glyph: '水', pinyin: ['shuǐ'], tone: 3, meaning: ['water'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像流水的样子。', story: '小水滴呀，弯弯地流下来。' }, words: [], island: 'nature' },
-  { id: 'char-mu', glyph: '木', pinyin: ['mù'], tone: 4, meaning: ['tree'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像一棵树。', story: '一棵树呀，有根有干有叶子。' }, words: [], island: 'plants' },
-  { id: 'char-ri', glyph: '日', pinyin: ['rì'], tone: 4, meaning: ['sun'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像太阳的形状。', story: '暖暖的小太阳呀，圆圆的。' }, words: [], island: 'nature' },
-  { id: 'char-yue', glyph: '月', pinyin: ['yuè'], tone: 4, meaning: ['moon'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像弯弯的月亮。', story: '弯弯的小月亮呀，像小船。' }, words: [], island: 'nature' },
+  { id: 'char-shan', glyph: '山', pinyin: ['shān'], tone: 1, meaning: ['山峰'], strokes: 3, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像三座山峰。', story: '高高的山峰，就像一排起伏的山。' }, words: ['大山', '山上'], island: 'nature' },
+  { id: 'char-shui', glyph: '水', pinyin: ['shuǐ'], tone: 3, meaning: ['水流'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，表示流动的水。', story: '水会弯弯曲曲地流动，所以古人画出了水流的样子。' }, words: ['河水', '喝水'], island: 'nature' },
+  { id: 'char-mu', glyph: '木', pinyin: ['mù'], tone: 4, meaning: ['树木'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像一棵有根、有干、有枝的树。', story: '古人看到树，把树根、树干和树枝画下来，慢慢就变成了“木”。' }, words: ['木头', '树木'], island: 'plants' },
+  { id: 'char-ri', glyph: '日', pinyin: ['rì'], tone: 4, meaning: ['太阳'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，本义与太阳有关。', story: '抬头看太阳，古人把它画下来，后来慢慢写成“日”。' }, words: ['日出', '生日'], island: 'nature' },
+  { id: 'char-yue', glyph: '月', pinyin: ['yuè'], tone: 4, meaning: ['月亮'], strokes: 4, tier: 'A', type: 'pictograph', origin: { fact: '象形字，像弯弯的月亮。', story: '夜空里的月亮弯弯的，古人就把它画下来。' }, words: ['月亮', '明月'], island: 'nature' },
 ] as Character[];
 
-function artPath(ch: Character): string {
+function teachingArtPath(ch: Character): string {
   const slug = ch.id.replace(/^char-/, '');
+  const supported = new Set(['shan', 'shui', 'mu', 'ri', 'yue']);
+  if (supported.has(slug)) return `/assets/art/l1/teaching/teach-${slug}.svg`;
   return ch.tier === 'B'
     ? `/assets/art/l1/tier-b/picto-${slug}.png`
     : `/assets/art/l1/tier-a/picto-${slug}.jpg`;
 }
 
-function CharArt({ ch, size = 280 }: { ch: Character; size?: number }) {
-  const src = artPath(ch);
+function TeachingArt({ ch, size = 340 }: { ch: Character; size?: number }) {
+  const src = teachingArtPath(ch);
   return (
-    <div
-      style={{
-        width: size,
-        height: size,
-        borderRadius: 30,
-        overflow: 'hidden',
-        background: 'linear-gradient(180deg, #FFFFFF 0%, #FFF4E6 100%)',
-        border: '2px solid var(--bunny-border)',
-        boxShadow: 'var(--shadow-soft)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <div style={{ width: size, height: size, borderRadius: 32, overflow: 'hidden', background: '#fff', border: '3px solid var(--bunny-border)', boxShadow: 'var(--shadow-pop)' }}>
       <img
         src={src}
-        alt={`${ch.glyph} 插画`}
-        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        alt={`${ch.glyph} 汉字教学图`}
+        style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
         onError={(event) => {
-          event.currentTarget.style.display = 'none';
-          const fallback = event.currentTarget.parentElement?.querySelector('[data-fallback]') as HTMLElement | null;
-          if (fallback) fallback.style.display = 'flex';
+          event.currentTarget.src = `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" rx="24" fill="#FFF4E6"/><text x="200" y="270" text-anchor="middle" font-size="220" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-weight="900" fill="#2C2C54">${ch.glyph}</text></svg>`)}`;
         }}
       />
-      <div
-        data-fallback
-        style={{ display: 'none', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: size * 0.62, fontWeight: 900, color: 'var(--bunny-ink)' }}
-      >
-        {ch.glyph}
-      </div>
     </div>
   );
 }
@@ -67,23 +48,22 @@ function PreviewCard({ ch, onClick, active }: { ch: Character; onClick: () => vo
       onClick={onClick}
       style={{
         minWidth: 0,
-        minHeight: 148,
+        minHeight: 142,
         border: active ? '3px solid var(--bunny-red)' : '2px solid var(--bunny-border)',
         background: active ? 'var(--bunny-butter)' : '#FFFFFF',
         borderRadius: 20,
         padding: 10,
-        cursor: 'pointer',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 6,
+        gap: 5,
         fontFamily: 'inherit',
         boxShadow: active ? 'var(--shadow-pop)' : 'var(--shadow-soft)',
       }}
     >
-      <img src={artPath(ch)} alt="" aria-hidden style={{ width: 72, height: 72, objectFit: 'cover', borderRadius: 14 }} />
-      <div style={{ fontSize: 20, fontWeight: 900, color: 'var(--bunny-ink)' }}>{ch.glyph}</div>
-      <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--bunny-soft-ink)' }}>{ch.pinyin[0]}</div>
+      <div style={{ fontSize: 42, fontWeight: 900, color: 'var(--bunny-ink)', lineHeight: 1 }}>{ch.glyph}</div>
+      <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--bunny-blue-deep)' }}>{ch.pinyin[0]}</div>
+      <div style={{ fontSize: 11, color: 'var(--bunny-soft-ink)' }}>{ch.meaning?.[0] ?? ''}</div>
     </button>
   );
 }
@@ -93,105 +73,70 @@ export function CharacterMuseumPage() {
   const { markCharacterExposed } = useLearner();
   const { playText } = useAudio();
 
-  const list: Character[] = useMemo(
-    () => (characters.length > 0 ? characters.slice(0, 8) : FALLBACK_CHARS),
-    [characters],
-  );
+  const list = useMemo<Character[]>(() => {
+    const source = characters.length > 0 ? characters : FALLBACK_CHARS;
+    const preferred = ['char-shan', 'char-shui', 'char-mu', 'char-ri', 'char-yue'];
+    const ordered = preferred.map((id) => source.find((c) => c.id === id)).filter(Boolean) as Character[];
+    return ordered.length >= 5 ? ordered.slice(0, 8) : source.slice(0, 8);
+  }, [characters]);
 
   const [idx, setIdx] = useState(0);
-  const main = list[idx] ?? list[0];
-  const next3 = useMemo(() => {
-    const out: Character[] = [];
-    for (let i = 1; i <= 3; i++) {
-      const c = list[(idx + i) % list.length];
-      if (c) out.push(c);
-    }
-    return out;
-  }, [list, idx]);
+  const main = list[idx] ?? list[0] ?? FALLBACK_CHARS[0];
+  const next3 = useMemo(() => [1, 2, 3].map((offset) => list[(idx + offset) % list.length]).filter(Boolean), [idx, list]);
 
-  const handleNext = () => {
-    setIdx((i) => (i + 1) % list.length);
-    const next = list[(idx + 1) % list.length];
-    if (next) markCharacterExposed(next.id);
-  };
-
-  const onReadWithBunny = () => {
+  const handleRead = () => {
     void playText(`${main.glyph}，${main.pinyin[0]}`);
     markCharacterExposed(main.id);
   };
 
   return (
-    <div className="page-character-museum" style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-      <TopBar title="汉字花园" subtitle={`今天认识 ${next3.length + 1} 个字`} />
+    <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      <TopBar title="汉字花园" subtitle="先认识字，再发现这个字为什么这样写" />
 
-      <div
-        style={{
-          flex: 1,
-          minHeight: 0,
-          display: 'grid',
-          gridTemplateColumns: 'minmax(460px, 1.05fr) minmax(360px, .95fr)',
-          gap: 20,
-          padding: 'clamp(14px, 1.8vw, 24px) clamp(16px, 2.2vw, 32px) 104px',
-          overflow: 'auto',
-        }}
-      >
-        <Card variant="soft" padding={24} style={{ minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 10 }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: 'var(--bunny-soft-ink)' }}>字宝宝 · {main.tier ?? 'A'} 阶</div>
-            <div style={{ padding: '7px 12px', borderRadius: 999, background: 'var(--bunny-mint)', fontSize: 13, fontWeight: 800, color: 'var(--bunny-green-deep)', whiteSpace: 'nowrap' }}>{main.meaning?.[0] ?? '字'}</div>
-          </div>
-
-          <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 22, flexWrap: 'wrap', padding: '10px 0' }}>
-            <CharArt ch={main} size={Math.min(320, 32 * 10)} />
-            <div style={{ minWidth: 160, textAlign: 'left' }}>
-              <div style={{ fontSize: 'clamp(48px, 5vw, 76px)', lineHeight: 1, fontWeight: 900, color: 'var(--bunny-ink)' }}>{main.glyph}</div>
-              <div style={{ marginTop: 12, fontSize: 'clamp(24px, 2.4vw, 34px)', fontWeight: 900, color: 'var(--bunny-blue-deep)' }}>{main.pinyin.join(' · ')}</div>
-              <div style={{ marginTop: 12, fontSize: 15, color: 'var(--bunny-soft-ink)', lineHeight: 1.6 }}>笔画：{main.strokes} 画<br />造字：{main.type === 'pictograph' ? '象形字' : '会意 / 形声类'}</div>
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
-            <Button variant="red" size="lg" leading="🐰" onClick={onReadWithBunny}>跟 Bunny 读</Button>
-            <Button variant="mint" size="lg" leading="→" onClick={handleNext}>下一个</Button>
-          </div>
-        </Card>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minHeight: 0 }}>
-          <Card variant="lavender" padding={20} style={{ flex: '0 0 auto' }}>
-            <div style={{ fontSize: 13, fontWeight: 900, color: 'var(--bunny-lavender-deep)' }}>汉字来历</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(150px, .9fr) 1.1fr', gap: 16, marginTop: 10, alignItems: 'center' }}>
-              <img src={artPath(main)} alt={`${main.glyph} 场景图`} style={{ width: '100%', aspectRatio: '1', objectFit: 'cover', borderRadius: 18, background: '#fff' }} />
+      <div style={{ flex: 1, minHeight: 0, padding: '18px 24px 104px', overflow: 'auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(560px, 1.2fr) minmax(380px, .8fr)', gap: 20, minHeight: '100%' }}>
+          <Card variant="soft" padding={24} style={{ minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
               <div>
-                <div style={{ fontSize: 22, fontWeight: 900, color: 'var(--bunny-ink)' }}>为什么是“{main.glyph}”？</div>
-                <div style={{ marginTop: 8, fontSize: 15, lineHeight: 1.65, color: 'var(--bunny-soft-ink)' }}>{main.origin?.story ?? main.origin?.fact ?? '这个字宝宝，等你来发现。'}</div>
-                <div style={{ marginTop: 12, padding: '10px 12px', borderRadius: 14, background: 'rgba(255,255,255,.72)', fontSize: 13, fontWeight: 800, color: 'var(--bunny-ink)' }}>先看图 → 再听故事 → 最后自己说一遍</div>
+                <div style={{ fontSize: 13, fontWeight: 900, color: 'var(--bunny-soft-ink)' }}>汉字本体 · 第一视觉元素</div>
+                <div style={{ marginTop: 4, fontSize: 28, fontWeight: 900, color: 'var(--bunny-ink)' }}>{main.glyph}</div>
+              </div>
+              <div style={{ padding: '8px 14px', borderRadius: 999, background: 'var(--bunny-mint)', color: 'var(--bunny-green-deep)', fontWeight: 900 }}>{main.meaning?.[0] ?? '汉字'}</div>
+            </div>
+
+            <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 28, flexWrap: 'wrap', padding: '18px 0' }}>
+              <TeachingArt ch={main} size={Math.min(400, 42 * 9)} />
+              <div style={{ width: 180 }}>
+                <div style={{ fontSize: 'clamp(62px, 6vw, 92px)', fontWeight: 900, lineHeight: 1, color: 'var(--bunny-ink)' }}>{main.glyph}</div>
+                <div style={{ marginTop: 14, fontSize: 32, fontWeight: 900, color: 'var(--bunny-blue-deep)' }}>{main.pinyin[0]}</div>
+                <div style={{ marginTop: 14, fontSize: 15, lineHeight: 1.7, color: 'var(--bunny-soft-ink)' }}>笔画：{main.strokes} 画<br />类型：{main.type === 'pictograph' ? '象形字' : '构字字'}<br />常用词：{main.words?.slice(0, 2).join('、') || '—'}</div>
               </div>
             </div>
-          </Card>
 
-          <Card variant="butter" padding={16} style={{ flex: '0 0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <Bunny pose="idle" size={76} />
-              <div style={{ fontSize: 15, lineHeight: 1.55, fontWeight: 800, color: 'var(--bunny-amber-deep)' }}>{main.glyph} 一共 {main.strokes} 画。Bunny 会先读给你听，再邀请你读。</div>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>
+              <Button variant="red" size="lg" leading="🐰" onClick={handleRead}>跟 Bunny 读</Button>
+              <Button variant="mint" size="lg" onClick={() => { const next = (idx + 1) % list.length; setIdx(next); markCharacterExposed(list[next].id); }}>下一个</Button>
             </div>
           </Card>
 
-          <div style={{ minHeight: 0 }}>
-            <div style={{ fontSize: 14, fontWeight: 900, color: 'var(--bunny-soft-ink)', marginBottom: 9 }}>接下来认识</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 10 }}>
-              {next3.map((ch) => (
-                <PreviewCard
-                  key={ch.id}
-                  ch={ch}
-                  onClick={() => {
-                    const targetIdx = list.indexOf(ch);
-                    if (targetIdx >= 0) {
-                      setIdx(targetIdx);
-                      markCharacterExposed(ch.id);
-                    }
-                  }}
-                />
-              ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minHeight: 0 }}>
+            <Card variant="lavender" padding={20}>
+              <div style={{ fontSize: 14, fontWeight: 900, color: 'var(--bunny-lavender-deep)' }}>汉字来历</div>
+              <div style={{ marginTop: 10, fontSize: 25, fontWeight: 900, color: 'var(--bunny-ink)' }}>为什么是“{main.glyph}”？</div>
+              <div style={{ marginTop: 10, fontSize: 16, lineHeight: 1.75, color: 'var(--bunny-soft-ink)' }}>{main.origin?.story ?? main.origin?.fact}</div>
+              <div style={{ marginTop: 14, padding: 14, borderRadius: 16, background: 'rgba(255,255,255,.72)', fontSize: 14, fontWeight: 800, color: 'var(--bunny-ink)' }}>① 看“{main.glyph}” ② 听故事 ③ 跟读 ④ 回到绘本里再遇见它</div>
+            </Card>
+
+            <Card variant="butter" padding={18}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <Bunny pose="idle" size={84} />
+                <div style={{ fontSize: 15, lineHeight: 1.65, fontWeight: 800, color: 'var(--bunny-amber-deep)' }}>Bunny 会先读一遍，再邀请你读一遍。读对以后，这个字会长大一级。</div>
+              </div>
+            </Card>
+
+            <div style={{ minHeight: 0 }}>
+              <div style={{ fontSize: 14, fontWeight: 900, color: 'var(--bunny-soft-ink)', marginBottom: 8 }}>接下来</div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 10 }}>{next3.map((ch) => <PreviewCard key={ch.id} ch={ch} onClick={() => { const target = list.indexOf(ch); if (target >= 0) { setIdx(target); markCharacterExposed(ch.id); } }} />)}</div>
             </div>
           </div>
         </div>
